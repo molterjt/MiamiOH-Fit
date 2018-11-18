@@ -236,13 +236,13 @@ class SubmitWorkoutScreen extends React.Component{
             this.createExerciseSet(id, Workout.id, sets);
         });
         return(
-            <ScrollView style={styles.rowCard}>
+            <ScrollView showsVerticalScrollIndicator={false} style={styles.rowCard}>
                 <View style={styles.rowContainer}>
                     <View style={styles.rowText} >
                         <Text style={{fontSize:18, textAlign:'center', color: '#fff'}} numberOfLines={2} ellipsizeMode ={'tail'}>
                             {Workout.title}
                         </Text>
-                        <ScrollView>
+                        <ScrollView showsVerticalScrollIndicator={false}>
                             {Workout.exercises.map(({name, reps, sets, intensity, id, tempo}) => (
                                     <View key={id}>
                                         <Text style={styles.title} key={id}>
@@ -352,19 +352,19 @@ const styles = StyleSheet.create({
         marginRight: 10,
         marginLeft: 10,
         borderRadius: 4,
-        shadowOffset:{  width: 1,  height: 1,  },
-        shadowColor: '#CCC',
-        shadowOpacity: 1.0,
-        shadowRadius: 3,
+        // shadowOffset:{  width: 1,  height: 1,  },
+        // shadowColor: '#CCC',
+        // shadowOpacity: 1.0,
+        // shadowRadius: 3,
     },
 
     rowCard:{
         marginTop: 10,
         borderRadius: 4,
-        shadowOffset:{  width: -1,  height: 1,  },
-        shadowColor: 'black',
-        shadowOpacity: 1.0,
-        shadowRadius: 3
+        // shadowOffset:{  width: -1,  height: 1,  },
+        // shadowColor: 'black',
+        // shadowOpacity: 1.0,
+        // shadowRadius: 3
     },
     exerciseCard:{
         marginTop: 10,
@@ -387,7 +387,7 @@ const styles = StyleSheet.create({
         color: '#ACACAC'
     },
     rowText: {
-        flex: 4,
+        flex: 1,
         flexDirection: 'column',
         marginBottom: 200,
     }

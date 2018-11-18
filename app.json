@@ -1,27 +1,38 @@
 {
   "expo": {
-    "name": "MiamiOH-Fit_Android",
-    "description": "A very interesting project.",
-    "slug": "test-Android",
+    "name": "MiamiOH-Fit",
+    "description": "MiamiOH Rec Fitness ",
+    "slug": "MiamiOH-Fit",
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/MiamiFitnessSplashCircle.png",
+    "icon": "./assets/images/MiamiFitnessSplash.png",
     "splash": {
       "image": "./assets/images/MiamiFitnessSplashCircle.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 30000
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.J14Development.MiamiOHFit",
+      "infoPlist": {
+        "NSLocationAlwaysUsageDescription" : "Application needs to collect GPS location for feature access"
+      }
+    },
+    "android": {
+      "package": "com.J14Development.MiamiOHFit",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+      ]
     }
   }
 }

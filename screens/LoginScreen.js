@@ -174,35 +174,37 @@ class Login extends React.Component{
                 variables: {email, password},
             }).catch(error => {
                 console.log(error.message);
-                this.setState({graphQL_Error: error.message})
+                this.setState({graphQL_Error: error.message});
             });
-            const {token} = result.data.authenticateUser;
-            const {id} = result.data.authenticateUser;
-            this._saveUserToken(token);
-            this._saveUserId(id);
-            console.log("LoginScreen => Token: " +token);
-            console.log("LoginScreen => ID: " + id);
+            if(result){
+                const {token} = result.data.authenticateUser;
+                const {id} = result.data.authenticateUser;
+                this._saveUserToken(token);
+                this._saveUserId(id);
+                console.log("LoginScreen => Token: " +token);
+                console.log("LoginScreen => ID: " + id);
+                this.props.navigation.navigate('Intro');
+            }
 
-            this.props.navigation.navigate('Intro');
         } else {
             const result = await this.props.signupUser({
                 variables: {email, password, username}
             }).catch(error => {
                 console.log(error.message);
-                this.setState({graphQL_Error: error.message})
+                this.setState({graphQL_Error: error.message});
             });
-
-            const {token} = result.data.signupUser;
-            const {id} = result.data.signupUser;
-            Alert.alert('','You have successfully registered. Now Login then update your Profile in Settings');
-            console.log('LoginScreen => Token:' + token);
-            console.log('LoginScreen => UserId:' + id);
-            this._saveUserToken(token);
-            this._saveUserId(id);
-            this.hideActivityIndicator();
-            this.setState({login: true});
-
-            //this.props.navigation.navigate('Login');
+            if(result){
+                const {token} = result.data.signupUser;
+                const {id} = result.data.signupUser;
+                Alert.alert('','You have successfully registered. Now Login then update your Profile in Settings');
+                console.log('LoginScreen => Token:' + token);
+                console.log('LoginScreen => UserId:' + id);
+                this._saveUserToken(token);
+                this._saveUserId(id);
+                this.hideActivityIndicator();
+                this.setState({login: true});
+                //this.props.navigation.navigate('Login');
+            }
         }
     };
 

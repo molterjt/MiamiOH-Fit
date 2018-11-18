@@ -1,0 +1,3 @@
+targets:
+  dev: shared-us-west-2/cjf6zsqxj3n420141z09rpv9j
+  default: dev

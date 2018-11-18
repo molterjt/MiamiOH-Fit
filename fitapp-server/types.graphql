@@ -1,0 +1,343 @@
+
+type User @model{
+  id: ID! @isUnique
+  username: String! @isUnique
+  firstName: String
+  lastName: String
+  password: String!
+  email: String! @isUnique
+  dateOfBirth: String
+  phone: String
+  imageUrl: String
+  authenticated: Boolean @defaultValue(value: "false")
+  classes: [GroupFitClass!]! @relation(name: "UsersClasses")
+  workouts: [Workout!]! @relation(name: "UsersWorkouts")
+  usersSets: [ExerciseSets!]! @relation(name: "UsersSets")
+  events: [Event!]! @relation(name: "UsersEvents")
+  interests: [Interest!]! @relation(name: "UsersInterests")
+  memberships: [Membership!]! @relation(name: "MembershipUsers")
+  checkins: [Checkin!]! @relation(name: "UserCheckins")
+  comments: [Comment!]! @relation(name: "UserComment")
+  pictures: [Picture!]! @relation(name: "UsersPictures")
+  advertisments: [MarketingAd!]! @relation(name: "UserMarketing")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type MarketingAd @model{
+  id: ID! @isUnique
+  title: String!
+  isPublished: Boolean @defaultValue(value: "false")
+  description: String
+  imageUrl: String
+  users: [User!]! @relation(name: "UserMarketing")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type NewsItem @model{
+  id: ID! @isUnique
+  title: String
+  isPublished: Boolean @defaultValue(value: "false")
+  instructor: String @defaultValue(value: "")
+  blurb: String
+  imageUrl: String
+  location: String @defaultValue(value: "")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Comment @model{
+  id: ID! @isUnique
+  content: String!
+  date: DateTime
+  postedBy: User @relation(name: "UserComment")
+  pictureComment: Picture @relation(name: "PictureComment")
+  workoutComment: Workout @relation(name: "WorkoutComment")
+  classComment: GroupFitClass @relation(name: "GroupFitClassComment")
+  eventComment: Event @relation(name: "EventComment")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Picture @model{
+  id: ID! @isUnique
+  title: String!
+  description: String
+  imageUrl: String
+  date: DateTime
+  users: [User!]! @relation(name: "UsersPictures")
+  comments: [Comment!]! @relation(name: "PictureComment")
+  classes: GroupFitClass @relation(name: "GroupFitClassPictures")
+  workouts: Workout @relation(name: "WorkoutPictures")
+  facilities: Facility @relation(name: "FacilityPictures")
+  events: Event @relation(name: "EventPictures")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Checkin @model{
+  id: ID! @isUnique
+  checked: Boolean @defaultValue(value: "false")
+  location: String
+  timeCheck: String
+  sortTime: DateTime
+  users: [User!]! @relation(name: "UserCheckins")
+  workouts: [Workout!]! @relation(name: "WorkoutCheckins")
+  classes: [GroupFitClass!]! @relation(name: "GroupFitClassCheckins")
+  events: [Event!]! @relation(name: "EventCheckins")
+  memberships: [Membership!]! @relation(name: "MembershipCheckins")
+  facilities: [Facility!]! @relation(name: "FacilityCheckins")
+  session: Session @relation(name: "SessionCheckin")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Membership @model{
+  id: ID! @isUnique
+  title: String!
+  type: String
+  rateMember: String
+  rateNonMember: String
+  url: String
+  category: [MembershipCategory!]! @relation(name: "CategoryMemberships")
+  startDate: String
+  endDate: String
+  haveSessions: Boolean @defaultValue(value: "false")
+  sessions: [Session!]! @relation(name: "MembershipSession")
+  startBalance: Int
+  currentBalance: Int
+  users: [User!]! @relation(name: "MembershipUsers")
+  checkins: [Checkin!]! @relation(name: "MembershipCheckins")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Session @model{
+  id: ID! @isUnique
+  sessionNum: Int
+  date: String
+  class: GroupFitClass @relation(name: "GroupFitClassSession")
+  workout: Workout @relation(name: "WorkoutSession")
+  checkin: Checkin @relation(name: "SessionCheckin")
+  trainer: Trainer @relation(name: "TrainerSessions")
+  membership: Membership @relation(name: "MembershipSession")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type MembershipCategory @model{
+  id: ID! @isUnique
+  title: String!
+  description: String
+  memberships: [Membership!]! @relation(name: "CategoryMemberships")
+}
+
+type Interest @model{
+  id: ID! @isUnique
+  title: String!
+  description: String
+  users: [User!]! @relation(name: "UsersInterests")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type WorkoutCategory @model{
+  id: ID! @isUnique
+  title: String!
+  description: String
+  imageUrl: String
+  workouts: [Workout!]! @relation(name: "WorkoutCategories")
+}
+
+type Workout @model{
+  id: ID! @isUnique
+  title: String!
+  isPublished: Boolean @defaultValue(value: "false")
+  type: [WorkoutCategory!]! @relation(name: "WorkoutCategories")
+  date: String
+  publishDate: DateTime
+  days: [Day!]! @relation(name: "WorkoutDays")
+  description: String
+  exercises: [Exercise!]! @relation(name: "WorkoutExercises")
+  author: Trainer @relation(name: "TrainerWorkouts")
+  users: [User!]! @relation(name: "UsersWorkouts")
+  exerciseSets: [ExerciseSets!]! @relation(name: "WorkoutExerciseSets")
+  imageUrl: String
+  videoUrl: String
+  pictures: [Picture!]! @relation(name: "WorkoutPictures")
+  checkins: [Checkin!]! @relation(name: "WorkoutCheckins")
+  comments: [Comment!]! @relation(name: "WorkoutComment")
+  sessions: [Session!]! @relation(name: "WorkoutSession")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Exercise @model{
+  id: ID! @isUnique
+  name: String!
+  description: String
+  sets: String
+  exerciseSets: [ExerciseSets!]! @relation(name: "ExerciseSets")
+  reps: String
+  intensity: String
+  tempo: String
+  restIntervals: String
+  workouts: [Workout!]! @relation(name: "WorkoutExercises")
+  imageUrl: String
+  videoUrl: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type ExerciseSets @model {
+  id: ID! @isUnique
+  setName: String
+  repsHit: String
+  weightUsed: String
+  timeCheck: String
+  sortTime: DateTime
+  setOrder: String
+  setOrderNo: Int
+  usersSets: [User!]! @relation(name: "UsersSets")
+  exercises: [Exercise!]! @relation(name: "ExerciseSets")
+  workoutSets: Workout @relation(name: "WorkoutExerciseSets")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Event @model{
+  id: ID! @isUnique
+  name: String!
+  isPublished: Boolean @defaultValue(value: "false")
+  imageUrl: String
+  videoUrl: String
+  registerUrl: String
+  date: String
+  publishDate: DateTime
+  time: String
+  fees: String
+  description: String
+  discount: String
+  location: Facility @relation(name: "EventLocations")
+  days: [Day!]! @relation(name: "EventDays")
+  users: [User!]! @relation(name: "UsersEvents")
+  pictures: [Picture!]! @relation(name: "EventPictures")
+  checkins: [Checkin!]! @relation(name: "EventCheckins")
+  comments: [Comment!]! @relation(name: "EventComment")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Day @model{
+  id: ID! @isUnique
+  name: String! @isUnique
+  hours: String
+  open: Boolean
+  classes: [GroupFitClass!]! @relation(name: "ClassDays")
+  events: [Event!]! @relation(name: "EventDays")
+  workouts: [Workout!]! @relation(name: "WorkoutDays")
+}
+
+type Facility @model{
+  id: ID! @isUnique
+  facilityName: String!
+  buildingName: String
+  address: String
+  open: Boolean
+  hours: String
+  imageUrl: String
+  videoUrl: String
+  description: String
+  classes: [GroupFitClass!]! @relation(name: "FacilityClasses")
+  events: [Event!]! @relation(name: "EventLocations")
+  checkins: [Checkin!]! @relation(name: "FacilityCheckins")
+  pictures: [Picture!]! @relation(name: "FacilityPictures")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type GroupFitClass @model {
+  id: ID! @isUnique
+  title: String!
+  time: String
+  cancelled: Boolean @defaultValue(value: "false")
+  isPublished: Boolean @defaultValue(value: "false")
+  sortTime: DateTime
+  startTime: DateTime
+  endTime: DateTime
+  season: String
+  days: [Day!]! @relation(name: "ClassDays")
+  location: Facility  @relation(name: "FacilityClasses")
+  capacity: Int
+  instructor: Instructor @relation(name: "InstructorsClasses")
+  imageUrl: String
+  videoUrl: String
+  description: String
+  users: [User!]! @relation(name: "UsersClasses")
+  category: [GroupFitnessClassCategory!]! @relation(name: "GroupFitClassCat")
+  pictures: [Picture!]! @relation(name: "GroupFitClassPictures")
+  checkins: [Checkin!]! @relation(name: "GroupFitClassCheckins")
+  comments: [Comment!]! @relation(name: "GroupFitClassComment")
+  sessions: [Session!]! @relation(name: "GroupFitClassSession")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type GroupFitnessClassCategory @model{
+  id: ID! @isUnique
+  title: String!
+  description: String
+  classes: [GroupFitClass!]! @relation(name: "GroupFitClassCat")
+  imageUrl: String
+}
+
+type Instructor @model {
+  id: ID! @isUnique
+  firstName: String
+  lastName: String
+  email: String @isUnique
+  classes: [GroupFitClass!]! @relation(name: "InstructorsClasses")
+  isTrainer: Boolean @defaultValue(value: false)
+  alsoTrainer: [Trainer!]! @relation(name: "TrainerANDInstructor")
+  imageUrl: String
+  videoUrl: String
+  description: String
+  blurb: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Trainer @model{
+  id: ID! @isUnique
+  firstName: String
+  lastName: String
+  email: String @isUnique
+  alsoInstructor: [Instructor!]! @relation(name: "TrainerANDInstructor")
+  imageUrl: String
+  videoUrl: String
+  description: String
+  certification: String
+  blurb: String
+  workouts: [Workout!]! @relation(name: "TrainerWorkouts")
+  sessions: [Session!]! @relation(name: "TrainerSessions")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+
+
+# added by email-password template: (please uncomment)
+# type User @model {
+#   # Required system field:
+#   id: ID! @isUnique # read-only (managed by Graphcool)
+# 
+#   # Optional system fields (remove if not needed):
+#   createdAt: DateTime! # read-only (managed by Graphcool)
+#   updatedAt: DateTime! # read-only (managed by Graphcool)
+# 
+#   email: String! @isUnique
+#   password: String!
+# }
+# 
+

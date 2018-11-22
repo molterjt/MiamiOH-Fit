@@ -6,7 +6,7 @@
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "platforms": ["ios", "android"],
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/MiamiFitnessSplash.png",
     "splash": {
@@ -24,14 +24,14 @@
       "supportsTablet": false,
       "bundleIdentifier": "com.J14Development.MiamiOHFit",
       "infoPlist": {
-        "NSLocationAlwaysUsageDescription" : "Application needs to collect GPS location for feature access"
+        "NSLocationAlwaysUsageDescription" : "MiamiOH Fit needs to collect GPS location to allow for check-in services relative to location and view current position relative to defined buildings"
       }
     },
     "android": {
       "package": "com.J14Development.MiamiOHFit",
       "permissions": [
         "ACCESS_COARSE_LOCATION",
-        "ACCESS_FINE_LOCATION",
+        "ACCESS_FINE_LOCATION"
       ]
     }
   }

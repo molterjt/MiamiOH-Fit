@@ -123,7 +123,7 @@ class GroupFitnessClass extends React.Component{
         this.setState({videoModalVisible: visible})
     }
 
-    componentWillMount(){
+    componentDidMount(){
         if(Platform.OS === 'android' && !Constants.isDevice){
             this.setState({errorMessage: 'This will not work on Android Simulator. Try on device'});
         } else {

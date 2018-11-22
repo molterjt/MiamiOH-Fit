@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
     Text, View, StatusBar, StyleSheet, ImageBackground, TouchableOpacity, FlatList, TextInput, ScrollView,Dimensions,
-    AsyncStorage, Animated, Modal, Image, Linking, ActivityIndicator, RefreshControl,KeyboardAvoidingView
+    AsyncStorage, Animated, Modal, Image, Linking, ActivityIndicator, RefreshControl,KeyboardAvoidingView,Platform
 } from 'react-native';
 import { Ionicons, MaterialIcons, MaterialCommunityIcons, FontAwesome} from '@expo/vector-icons';
 import NewsItem from '../components/NewsItem';
@@ -118,9 +118,11 @@ class HomeScreen extends React.Component{
                     accessibilityRole={'link'}
                     style={{marginRight: 15, marginTop:7}}
                     onPress={() => navigation.navigate('Settings')}>
-                    <FontAwesome
-                        name={"gear"} type={"MaterialIcons"} size={30} color={'#931414'}
-                    />
+                    {Platform.isPad
+                        ? <FontAwesome name={"gear"} type={"MaterialIcons"} size={W/20} color={'#931414'}/>
+                        : <FontAwesome name={"gear"} type={"MaterialIcons"} size={30} color={'#931414'}/>
+                    }
+
                 </TouchableOpacity>
             ),
             headerLeft: (
@@ -131,11 +133,16 @@ class HomeScreen extends React.Component{
                     accessibilityRole={'link'}
                     style={{marginLeft: 15, marginTop:7}}
                     onPress={() => navigation.navigate('Workouts')}>
-                    <MaterialIcons
-                        name={"fitness-center"} type={"MaterialIcons"} size={30} color={'#931414'}
-                    />
+                    {Platform.isPad
+                        ? <MaterialIcons name={"fitness-center"} type={"MaterialIcons"} size={W/20} color={'#931414'}/>
+                        : <MaterialIcons name={"fitness-center"} type={"MaterialIcons"} size={30} color={'#931414'}/>
+
+                    }
                 </TouchableOpacity>
             ),
+            headerStyle: {
+                height: (Platform.isPad ? H*.07 : H*.08)
+            }
         };
     };
     constructor(props) {
@@ -244,7 +251,7 @@ class HomeScreen extends React.Component{
                         size={20}
                         color={"white"}
                     />
-                    <Text style={{color: "#fff", fontSize: 12}}> MiamiUniversityFitness</Text>
+                    <Text style={styles.instaLink}> MiamiUniversityFitness</Text>
                 </TouchableOpacity>
                 <Modal
                     transparent={false}
@@ -338,7 +345,7 @@ const styles = StyleSheet.create({
     },
     whatNew:{
         color: '#ffffff',
-        fontSize: 15,
+        fontSize: (Platform.isPad ? W/44 :15),
         fontWeight: 'bold',
         marginTop: 20,
         marginRight: 5,
@@ -390,4 +397,8 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         borderColor: "#000000"
     },
+    instaLink:{
+        color:'#fff',
+        fontSize: (Platform.isPad ? W/44 :14)
+    }
 });

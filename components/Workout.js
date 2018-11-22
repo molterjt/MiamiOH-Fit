@@ -1,9 +1,12 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Image,} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, Image,Dimensions,Platform} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
 import {withNavigation} from 'react-navigation';
 import gql from 'graphql-tag';
 import {graphql, compose } from 'react-apollo';
+
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
 
 const CreateWorkoutCheckIn = gql`
     mutation($checked: Boolean, $workoutIdsArr: [ID!], $userIdsArr: [ID!]){
@@ -140,10 +143,11 @@ class Workout extends React.Component{
                                 disabled={false}
                                 onPress={() => this.handleCompleteWorkout(this.props.id)}
                             >
-                                <Ionicons name={"md-checkmark-circle-outline"} size={30} color={'red'} />
-                                <Text style={{
-                                    alignContent: 'center',
-                                    justifyContent: 'center',color:"#fff", alignSelf:'center', fontSize: 12, marginTop: 3}}>Enter Workout Record</Text>
+                                <Ionicons name={"md-checkmark-circle-outline"} size={Platform.isPad ? WIDTH*.05 : WIDTH*.06} color={'red'} />
+                                <Text style={{alignContent: 'center', justifyContent: 'center',color:"#fff",
+                                    alignSelf:'center', fontSize: (Platform.isPad ? WIDTH*.02 :12), marginTop: 3}}>
+                                    Enter Workout Record
+                                </Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -203,26 +207,26 @@ const styles = StyleSheet.create({
     title: {
         paddingLeft: 10,
         paddingTop: 5,
-        fontSize: 16,
+        fontSize: (Platform.isPad ? WIDTH*.03 :16),
         fontWeight: 'bold',
         color: 'red'
     },
     date: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 :14),
         color: '#ffffff'
     },
     info: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 :14),
         color: '#ACACAC'
     },
     description: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 :14),
         fontStyle: 'italic',
         color: '#ACACAC'
     },

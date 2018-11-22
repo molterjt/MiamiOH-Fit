@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     View, Text, Dimensions, Modal, TouchableOpacity, Image, ScrollView, WebView, StatusBar,
-    StyleSheet, ActivityIndicator
+    StyleSheet, ActivityIndicator, Platform
 } from 'react-native';
 import {Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
 import {Query} from 'react-apollo';
@@ -49,13 +49,13 @@ class TrainingMembership extends React.Component{
             <View style={{width: WIDTH*.5, alignItems:'center', alignContent:'center', backgroundColor:'#fff',
                 justifyContent:'space-evenly',borderRightWidth:1, borderBottomWidth:1,}}>
                 <View style={{marginTop: 18, marginLeft: 10, alignItems:'center'}}>
-                    <Text style={{color:"#000", fontWeight:"bold", fontSize: 13}}>{this.props.title}</Text>
+                    <Text style={{color:"#000", fontWeight:"bold", fontSize: (Platform.isPad ? WIDTH*.03 : 13)}}>{this.props.title}</Text>
                     <View style={{flexDirection: "row", marginTop: 5, justifyContent:'center', alignItems:'center', flexWrap: 'wrap',}}>
-                        <Text style={{color:"#535353", fontStyle:"italic", fontSize: 12}}>Member Rate: </Text>
-                        <Text style={{color:"#000", fontSize: 12}}>{this.props.memberRate}</Text>
+                        <Text style={{color:"#535353", fontStyle:"italic", fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Member Rate: </Text>
+                        <Text style={{color:"#000", fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{this.props.memberRate}</Text>
                     </View>
                     <View style={{marginTop: 3}}>
-                        <Text style={{color:"#535353", fontStyle:"italic", fontSize: 10}}>{this.props.memberRateUnitPrice}</Text>
+                        <Text style={{color:"#535353", fontStyle:"italic", fontSize:(Platform.isPad ? WIDTH*.015 : 10)}}>{this.props.memberRateUnitPrice}</Text>
                     </View>
 
                 </View>
@@ -73,7 +73,7 @@ class TrainingMembership extends React.Component{
                             }}
                         >
 
-                            <Text style={{color: "#fff", fontSize: 11}}>Register</Text>
+                            <Text style={{color: "#fff", fontSize: (Platform.isPad ? WIDTH*.018 : 11)}}>Register</Text>
                             <MaterialCommunityIcons
                                 name={"checkbox-marked-circle-outline"}
                                 size={18}
@@ -83,7 +83,7 @@ class TrainingMembership extends React.Component{
                         </TouchableOpacity>
                         :
                         <View style={{flexDirection: "row", paddingTop: 3, paddingBottom: 5}}>
-                            <Text style={{color:"#535353", fontStyle:"italic", fontSize: 12}}>** Register at Rec Pro Shop **</Text>
+                            <Text style={{color:"#535353", fontStyle:"italic", fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>** Register at Rec Pro Shop **</Text>
                         </View>
                 }
 
@@ -135,7 +135,7 @@ class TrainerScreen extends React.Component{
                     <Image
                         resizeMode={"cover"}
                         source={require("../assets/images/barbell-squad-800x400.png")}
-                        style={{width: WIDTH, height: HEIGHT*.25, borderWidth:1, borderRadius:10,}}
+                        style={{width: WIDTH, height: (Platform.isPad ? HEIGHT*.33 : HEIGHT*.25), borderWidth:1, borderRadius:10,}}
                         alt={"Personal Training Squat Instruction"}
                     />
                 </View>
@@ -150,7 +150,7 @@ class TrainerScreen extends React.Component{
                         <Text style={styles.exploreButtonText}>Explore Trainers</Text>
                         <Ionicons
                             name={"ios-expand"}
-                            size={28}
+                            size={WIDTH*.05}
                             alt={"expand facility info"}
                             color={"white"}
                             style={{fontWeight: 'bold'}}
@@ -166,7 +166,7 @@ class TrainerScreen extends React.Component{
                         <Text style={styles.exploreButtonText}>Find a Workout</Text>
                         <Ionicons
                             name={"ios-expand"}
-                            size={28}
+                            size={WIDTH*.05}
                             alt={"expand facility info"}
                             color={"white"}
                             style={{fontWeight: 'bold'}}
@@ -177,7 +177,7 @@ class TrainerScreen extends React.Component{
                 <ScrollView style={{backgroundColor: '#29282A', paddingBottom: 30}}>
                     <View style={{display: 'flex', backgroundColor: '#29282A', alignItems:'center',borderWidth:1, borderColor:'#fff',marginBottom:5,}}>
                         <Text style={{marginTop: 5,  backgroundColor: '#29282A', color:"#fff", fontWeight:"bold", justifyContent:'center',
-                            fontSize: 12, alignSelf:'center', padding: 5}}>
+                            fontSize: (Platform.isPad ? WIDTH*.02 : 12), alignSelf:'center', padding: 5}}>
                             Programs
                         </Text>
                     </View>
@@ -204,7 +204,7 @@ class TrainerScreen extends React.Component{
 
                                     ))}
                                     <View style={{width:WIDTH*.5, alignItems: 'center', }}>
-                                        <Text style={{color:'#000', fontWeight:'bold', fontSize:12, marginBottom:5 }}>Request Info</Text>
+                                        <Text style={{color:'#000', fontWeight:'bold', fontSize:(Platform.isPad ? WIDTH*.02 : 12), marginBottom:5 }}>Request Info</Text>
                                         <TouchableOpacity
                                             accessible={true}
                                             accessibilityLabel={'Training Request Information Button'}
@@ -215,7 +215,7 @@ class TrainerScreen extends React.Component{
 
                                             <MaterialCommunityIcons
                                                 name={"checkbox-marked-circle-outline"}
-                                                size={18}
+                                                size={WIDTH*.04}
                                                 color={"white"}
                                                 alt={"Request Info checkbox-marked symbol"}
                                             />
@@ -291,6 +291,6 @@ const styles = StyleSheet.create({
     },
     exploreButtonText:{
         color: "#fff",
-        fontSize: 16
+        fontSize: (Platform.isPad ? WIDTH*.028 : 16)
     },
 });

@@ -1,17 +1,19 @@
 import React from 'react';
 import {
     Text, View, TouchableOpacity, Modal,TouchableWithoutFeedback,
-    ScrollView, Animated, Dimensions, Image, StyleSheet
+    ScrollView, Animated, Dimensions, Image, StyleSheet, Platform
 } from 'react-native';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Ionicons, MaterialCommunityIcons,SimpleLineIcons, MaterialIcons } from '@expo/vector-icons';
 import MapView, {Marker} from "react-native-maps";
-
+import {Constants, Location, Permissions} from 'expo';
 const { width, height } = Dimensions.get("window");
 
 const CARD_HEIGHT = height / 2.8;
 const CARD_WIDTH = CARD_HEIGHT - 20;
+const GEOLOCATION_OPTIONS = { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 };
+
 
 const FACILITYLIST = gql`
     query($buildingTitle: String){
@@ -253,12 +255,43 @@ class FacilitiesScreen extends React.Component {
                 latitudeDelta: 0.045,
                 longitudeDelta: 0.03,
             },
+            location: null,
+            errorMessage: null,
+            userLatitude: undefined,
+            userLongitude: undefined,
+            userLocationAccuracy: undefined,
         };
+        this._getLocationAsync = this._getLocationAsync.bind(this);
     }
+
+    _getLocationAsync = async () => {
+        let {status} = await Permissions.askAsync(Permissions.LOCATION);
+        if(status !== 'granted'){
+            alert('Hey! You might want to enable Location if you would like to use any check-in features');
+            this.setState({
+                errorMessage: 'Permission to access location was denied'
+            });
+        }
+        let location = await Location.getCurrentPositionAsync(GEOLOCATION_OPTIONS);
+        this.setState({
+            location: location,
+            userLatitude: location.coords.latitude,
+            userLongitude: location.coords.longitude,
+            userLocationAccuracy: location.coords.accuracy,
+            myPosition: location.coords
+        });
+        console.log('From State: ' + "\n" + this.state.userLatitude + '\n' + this.state.userLongitude + '\n' + this.state.userLocationAccuracy)
+    };
+
 
     componentWillMount() {
         this.index = 0;
         this.animation = new Animated.Value(0);
+        if(Platform.OS === 'android' && !Constants.isDevice){
+            this.setState({errorMessage: 'This will not work on Android Simulator. Try on device'});
+        } else {
+            this._getLocationAsync();
+        }
     }
     componentDidMount() {
         this.animation.addListener(({ value }) => {
@@ -286,16 +319,16 @@ class FacilitiesScreen extends React.Component {
                 }
             }, 10);
         });
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                this.setState({
-                    myPosition: position.coords,
-                    error: null,
-                });
-            },
-            (error) => this.setState({error: error.message}),
-                {enableHighAccuracy:true, timeout: 20000, maximumAge: 1000}
-            );
+        // navigator.geolocation.getCurrentPosition(
+        //     (position) => {
+        //         this.setState({
+        //             myPosition: position.coords,
+        //             error: null,
+        //         });
+        //     },
+        //     (error) => this.setState({error: error.message}),
+        //         {enableHighAccuracy:true, timeout: 20000, maximumAge: 1000}
+        //     );
     }
     render() {
         const interpolations = this.state.markers.map((marker, index) => {

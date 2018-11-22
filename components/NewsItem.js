@@ -1,5 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image,} from 'react-native';
+import {View, Text, StyleSheet, Image, Dimensions,Platform} from 'react-native';
+
+const WIDTH=Dimensions.get('window').width;
+const HEIGHT=Dimensions.get('window').height;
 
 class NewsItem extends React.Component{
     constructor(props){
@@ -14,7 +17,7 @@ class NewsItem extends React.Component{
                 <Image
                     source={{uri: this.props.thumbnail}}
                     style={styles.thumbnail}
-                    resizeMode="cover"
+                    resizeMode="stretch"
                     alt={'NewsItem Picture Representation Thumbnail'}
                 />
                 <View style={styles.rowText}>
@@ -59,33 +62,37 @@ const styles = StyleSheet.create({
     title: {
         paddingLeft: 10,
         paddingTop: 5,
-        fontSize: 18,
+        fontSize: (Platform.isPad ? WIDTH/35 : 18),
         fontWeight: 'bold',
         color: '#fff'
     },
     instructor: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH/40 : 14),
         color: '#fff'
     },
     blurb: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH/40 : 14),
         fontStyle: 'italic',
         color: '#fff'
     },
     location: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH/40 : 14),
         color: '#fff'
     },
+
     thumbnail: {
         flex: 1,
-        height: undefined,
-        width: 200,
+        justifyContent:'center',
+        alignSelf:'center',
+
+        height: (Platform.isPad ? HEIGHT*.18 : HEIGHT*.20),
+        width: (Platform.isPad ? WIDTH*.16 : WIDTH*.22),
         backgroundColor: 'transparent',
         borderColor: '#fff',
         borderWidth: 1,

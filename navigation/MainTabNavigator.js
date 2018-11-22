@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform,Dimensions } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { Ionicons, MaterialCommunityIcons, AntDesign} from '@expo/vector-icons';
 
@@ -23,6 +23,8 @@ import TermsScreen from '../screens/TermsScreen';
 import UserCheckinHistory from '../screens/UserCheckinHistory';
 import IntroScreen from '../screens/IntroScreen';
 
+const W = Dimensions.get('window').width;
+const H = Dimensions.get('window').height;
 
 const HomeStack = createStackNavigator({
         Home: {
@@ -31,7 +33,7 @@ const HomeStack = createStackNavigator({
                 title: 'MiamiOH Fit',
                 headerTitleStyle: {
                     fontFamily: 'StardosStencil-Regular',
-                    fontSize: 28,
+                    fontSize: (Platform.isPad ? W/20 :28),
                     // color:'#931414',
                     color:'#000',
                     textAlign:'center',
@@ -43,6 +45,9 @@ const HomeStack = createStackNavigator({
             screen: SettingsScreen,
             navigationOptions:{
                 title: 'Settings',
+                headerTitleStyle: {
+                    fontSize: (Platform.isPad ? W/40 :18),
+                },
                 headerStyle:{
                     backgroundColor: "#fff"
                 }
@@ -53,6 +58,9 @@ const HomeStack = createStackNavigator({
             path: '/Profile',
             navigationOptions:{
                 title: 'Profile',
+                headerTitleStyle: {
+                    fontSize: (Platform.isPad ? W/40 :18),
+                },
                 headerStyle:{
                     backgroundColor: "#fff"
                 }
@@ -63,6 +71,9 @@ const HomeStack = createStackNavigator({
             path: '/profile',
             navigationOptions:{
                 title: 'Edit Profile',
+                headerTitleStyle: {
+                    fontSize: (Platform.isPad ? W/40 :18),
+                },
                 headerStyle:{
                     backgroundColor: "#fff"
                 }
@@ -124,19 +135,6 @@ const HomeStack = createStackNavigator({
     {initialRouteName: 'Home'},
 );
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
-};
 
 const FacilityStack = createStackNavigator(
     {
@@ -160,6 +158,9 @@ const GFStack = createStackNavigator(
             path: '/',
             navigationOptions:{
                 title: 'Fitness Schedule',
+                headerTitleStyle: {
+                    fontSize: (Platform.isPad ? W/40 :18),
+                },
                 headerStyle:{
                     backgroundColor: "#fff"
                 }
@@ -170,6 +171,9 @@ const GFStack = createStackNavigator(
             path: '/groupFitProgramsScreen',
             navigationOptions:{
                 title: 'Group Fitness Programs',
+                headerTitleStyle: {
+                    fontSize: (Platform.isPad ? W/40 :18),
+                },
                 headerStyle:{
                     backgroundColor: "#fff"
                 }
@@ -200,6 +204,9 @@ const EventStack = createStackNavigator(
             path: '/Events',
             navigationOptions:{
                 title: 'Events',
+                headerTitleStyle: {
+                    fontSize: (Platform.isPad ? W/40 :18),
+                },
                 headerStyle:{
                     backgroundColor: "#fff"
                 }
@@ -249,15 +256,6 @@ const PersonalFITStack = createStackNavigator({
 
 });
 
-PersonalFITStack.navigationOptions = {
-  tabBarLabel: 'Trainers',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
-  ),
-};
 
 export default createBottomTabNavigator({
         HomePage: {
@@ -271,13 +269,14 @@ export default createBottomTabNavigator({
                     color={tintColor}
                 />
             },
+            showLabel:false,
             initialRouteName: 'Home',
 
         },
         SchedulePage: {
             screen: GFStack,
             navigationOptions: {
-                tabBarLabel: 'Class Schedule',
+                tabBarLabel: 'Schedule',
                 tabBarIcon: ({tintColor}) => <Ionicons
                     name={"ios-list"}
                     type={"ionicon"}
@@ -292,9 +291,12 @@ export default createBottomTabNavigator({
                 tabBarLabel: 'Training',
                 tabBarIcon: ({tintColor}) => <Ionicons
                     name={"ios-fitness"}
-                    type={"ionicon"} size={30}
+                    type={"ionicon"}
+                    size={30}
                     color={tintColor}
-                />
+
+                />,
+
             }
         },
         FacilityPage: {
@@ -328,17 +330,17 @@ export default createBottomTabNavigator({
         tabBarOptions: {
             activeTintColor: 'red',
             inactiveTintColor: 'white',
+            showLabel:(!Platform.isPad),
             style: {
                 backgroundColor: '#29282A',
                 paddingBottom: 4,
-                height: 55,
-            },
-        },
-        tabStyle: {
-            width: 120,
+                height: (Platform.isPad ? H*.06 :55),
+                width: W,
 
+            },
         },
         animationEnabled: false,
         swipeEnabled: false,
+
 
 });

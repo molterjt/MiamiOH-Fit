@@ -1,12 +1,14 @@
 
 import React from 'react';
-import {Text, View, TextInput, TouchableOpacity, ScrollView, StyleSheet, KeyboardAvoidingView, Alert, AsyncStorage} from 'react-native';
+import {Text, View, TextInput, TouchableOpacity, ScrollView, StyleSheet, KeyboardAvoidingView, Alert, AsyncStorage, Dimensions, Platform} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
 import gql from 'graphql-tag';
 import {graphql, compose} from 'react-apollo';
 import {withNavigation} from 'react-navigation';
 import moment from 'moment';
 
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
 
 const CreateWorkoutCheckIn = gql`
     mutation($checked: Boolean, $workoutIdsArr: [ID!], $userIdsArr: [ID!], $timeCheck:String){
@@ -239,7 +241,7 @@ class SubmitWorkoutScreen extends React.Component{
             <ScrollView showsVerticalScrollIndicator={false} style={styles.rowCard}>
                 <View style={styles.rowContainer}>
                     <View style={styles.rowText} >
-                        <Text style={{fontSize:18, textAlign:'center', color: '#fff'}} numberOfLines={2} ellipsizeMode ={'tail'}>
+                        <Text style={{fontSize: (Platform.isPad ? WIDTH*.035 : 18), textAlign:'center', color: '#fff'}} numberOfLines={2} ellipsizeMode ={'tail'}>
                             {Workout.title}
                         </Text>
                         <ScrollView showsVerticalScrollIndicator={false}>
@@ -261,9 +263,9 @@ class SubmitWorkoutScreen extends React.Component{
                                         {this.SetBuilder.filter((item) => item.ExKey === id).map((obj, index) =>
                                             <KeyboardAvoidingView style={{padding:2, }} behavior="padding" key={index}>
                                                 <View style={{flexDirection: 'row', display:'flex', justifyContent:'center'}} key={obj.SetId}>
-                                                    <Text style={{color:'white', margin:5}}>{obj.setNo}</Text>
+                                                    <Text style={{color:'white', margin:5,  fontSize: (Platform.isPad ? WIDTH*.025 : 14),}}>{obj.setNo}</Text>
                                                     <TextInput
-                                                        style={{color:'#fff', borderColor:'#fff', borderWidth:1, width:'40%', padding:2, height: 30, margin:5, textAlign:'center'}}
+                                                        style={{color:'#fff', borderColor:'#fff', borderWidth:1, height: HEIGHT*.045, width:'40%', padding:2, margin:5, textAlign:'center'}}
                                                         placeholder={'Weight Hit {lbs}'}
                                                         value={this.state.weightUsed}
                                                         // value={obj.weightUse}
@@ -275,7 +277,7 @@ class SubmitWorkoutScreen extends React.Component{
                                                         keyboardType={'numeric'}
                                                     />
                                                     <TextInput
-                                                        style={{color:'#fff', borderColor:'#fff', borderWidth:1, width:'40%', padding:2, height: 30, margin:5, textAlign:'center'}}
+                                                        style={{color:'#fff', borderColor:'#fff', borderWidth:1, width:'40%', padding:2, height: HEIGHT*.045, margin:5, textAlign:'center'}}
                                                         placeholder={'Reps Hit'}
                                                         accessibilityLabel={'Form field for reps completed for workout exercise set'}
                                                         value={this.state.repHit}
@@ -312,10 +314,10 @@ class SubmitWorkoutScreen extends React.Component{
                                         JSON.stringify(obj.SetId) + ', ' +  obj.setNo + ', ' + JSON.stringify(obj.weightUse) + ', ' + obj.repUse + '***' + obj.workout + ' **** '  )));
                                 }}
                             >
-                                <Ionicons name={"md-checkmark-circle-outline"} size={30} color={'red'} />
+                                <Ionicons name={"md-checkmark-circle-outline"} size={Platform.isPad ? WIDTH*.05 : WIDTH*.07} color={'red'} />
                                 <Text style={{
                                     alignContent: 'center',
-                                    justifyContent: 'center',color:"#fff", alignSelf:'center', fontSize: 12, marginTop: 3}}>Submit Workout Record</Text>
+                                    justifyContent: 'center',color:"#fff", alignSelf:'center', fontSize: (Platform.isPad ? WIDTH*.025 : 14), marginTop: 3}}>Submit Workout Record</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -376,14 +378,14 @@ const styles = StyleSheet.create({
     title: {
         paddingLeft: 10,
         paddingTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 : 14),
         fontWeight: 'bold',
         color: 'red'
     },
     info: {
         paddingLeft: 40,
         paddingTop: 3,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 : 14),
         color: '#ACACAC'
     },
     rowText: {

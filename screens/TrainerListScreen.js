@@ -4,7 +4,7 @@ import {graphql} from 'react-apollo';
 import {
     StyleSheet, ActivityIndicator, Modal, Image, Text,
     View, Dimensions, TouchableWithoutFeedback, RefreshControl,
-    ScrollView, TouchableOpacity} from 'react-native';
+    ScrollView, TouchableOpacity, Platform} from 'react-native';
 import {Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
 
 const WIDTH = Dimensions.get('window').width;
@@ -46,8 +46,8 @@ class TrainerProfile extends React.Component{
                     <Image
                         resizeMode={"cover"}
                         source={this.props.imageUrl ? {uri: this.props.imageUrl} : require("../assets/images/blank-profile.png")}
-                        height={180}
-                        width={WIDTH*.3}
+                        height={HEIGHT*.26}
+                        width={WIDTH*.31}
                         style={styles.profileImage}
                         alt={"Personal Trainer `${this.props.firstName}`"}
                     />
@@ -63,7 +63,7 @@ class TrainerProfile extends React.Component{
                 >
                     <Ionicons
                         name={"ios-expand"}
-                        size={28}
+                        size={Platform.isPad ? WIDTH*.05 : WIDTH*.05}
                         alt={"expand facility info"}
                         color={"white"}
                         style={{fontWeight: 'bold'}}
@@ -93,7 +93,7 @@ class TrainerProfile extends React.Component{
                                             source={{uri: this.props.imageUrl}}
                                             alt={"Trainer Profile Image"}
                                             resizeMode={"cover"}
-                                            style={{width: WIDTH * .6, height: HEIGHT*.37}}
+                                            style={{width: WIDTH * .6, height: HEIGHT*.42}}
                                         />
                                     </View>
                                     <View style={{
@@ -107,7 +107,7 @@ class TrainerProfile extends React.Component{
                                         <Text style={styles.trainerDetailText}>{this.props.certifications}</Text>
                                     </View>
                                     <View style={{margin:3, padding: 5, backgroundColor:'#dedede', borderWidth:1, marginBottom: 10, height: 'auto'}}>
-                                        <Text style={{margin: 5}}>{this.props.description}</Text>
+                                        <Text style={{margin: 5, fontSize:(Platform.isPad ? WIDTH*.02 : 12)}}>{this.props.description}</Text>
                                     </View>
                                 </View>
                             </TouchableWithoutFeedback>
@@ -199,11 +199,11 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         justifyContent: 'space-between',
         width: WIDTH * .32,
-        height: 250,
+        height: HEIGHT*.36,
         borderWidth: 2,
         borderColor: "#000",
         backgroundColor: '#cdcdcd',
-        margin:2
+        margin:1
     },
     profileImage:{
         backgroundColor: "#000",
@@ -211,8 +211,8 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignSelf: 'center',
         // justifyContent: 'flex-start',
-        height: 180,
-        width: WIDTH * .3,
+        height:HEIGHT*.26,
+        width: WIDTH * .31,
         borderWidth: 0,
         borderRadius: 10,
         padding:4,
@@ -221,9 +221,8 @@ const styles = StyleSheet.create({
     profileName:{
         color: '#fff',
         fontWeight:'bold',
-        fontSize: 12,
+        fontSize: (Platform.isPad ? WIDTH*.02 : 12),
         paddingBottom:2,
-
         alignContent: 'center',
         textAlign:'center'
 
@@ -240,10 +239,12 @@ const styles = StyleSheet.create({
         // marginTop: 120,
         paddingTop: 0,
         fontWeight: '800',
-        backgroundColor: '#931414', width:'100%'
+        backgroundColor: '#931414',
+        width:'100%',
+        height: '12%'
     },
     modalContainer: {
-        marginTop: 0,
+        marginTop: 5,
         height: '95%',
         flexDirection: 'column',
         justifyContent:'center',
@@ -255,7 +256,7 @@ const styles = StyleSheet.create({
     ModalInsideView:{
         alignItems: 'center',
         backgroundColor : "#fff",
-        height: '95%' ,
+        height: '91%' ,
         width: '90%',
         borderRadius:10,
         borderWidth: 3,
@@ -271,13 +272,13 @@ const styles = StyleSheet.create({
     },
     trainerDetailText: {
         color: "#fff",
-        fontSize: 12,
+        fontSize: (Platform.isPad ? WIDTH*.02 : 12),
         marginTop: 4,
     },
     trainerDetailName:{
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 16
+        fontSize: (Platform.isPad ? WIDTH*.03 : 16)
     }
 });
 

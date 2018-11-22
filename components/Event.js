@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Image, Modal, WebView, Alert, ActivityIndicator, AsyncStorage} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, Image, Modal, WebView, Alert, ActivityIndicator, AsyncStorage, Platform, Dimensions} from 'react-native';
 import { Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
 import gql from 'graphql-tag';
 import {graphql, compose} from 'react-apollo';
@@ -91,7 +91,7 @@ class Event extends React.Component{
                 <View style={styles.imageRowContainer}>
                     <Image source={{uri: this.props.image}}
                            style={styles.image}
-                           resizeMode="contain"
+                           resizeMode= {Platform.isPad ? "contain" : "contain"}
                            alt={'Banner image for this event'}
                     />
                 </View>
@@ -136,10 +136,10 @@ class Event extends React.Component{
 
                                     }}
                             >
-                                <Text style={{color: "#fff", fontSize: 12}}>Register</Text>
+                                <Text style={{color: "#fff", fontSize: (Platform.isPad ? W/44 : 12)}}>Register</Text>
                                 <MaterialCommunityIcons
                                     name={"checkbox-marked-circle-outline"}
-                                    size={25}
+                                    size={Platform.isPad ? W/20 : 25}
                                     color={"white"}
                                 />
                             </TouchableOpacity>)
@@ -174,10 +174,10 @@ class Event extends React.Component{
 
                                     }}
                                 >
-                                    <Text style={{color: "#fff", fontSize: 12}}>Check-In</Text>
+                                    <Text style={{color: "#fff", fontSize: (Platform.isPad ? W/44 : 12)}}>Check-In</Text>
                                     <MaterialCommunityIcons
                                         name={"checkbox-marked-circle-outline"}
-                                        size={25}
+                                        size={Platform.isPad ? W/20 : 25}
                                         color={"white"}
                                     />
                                 </TouchableOpacity>
@@ -225,6 +225,9 @@ class Event extends React.Component{
 
 export default graphql(CreateEventCheckIn, {name: 'CreateEventCheckInByUser'})(Event);
 
+const W= Dimensions.get('window').width;
+const H = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
 
     rowCard:{
@@ -255,7 +258,7 @@ const styles = StyleSheet.create({
     imageRowContainer: {
         flexDirection: 'row',
         backgroundColor: 'transparent',
-        height: 200,
+        height: H*.32,
         padding: 5,
         marginRight: 10,
         marginLeft: 10,
@@ -264,34 +267,34 @@ const styles = StyleSheet.create({
     title: {
         paddingLeft: 10,
         paddingTop: 5,
-        fontSize: 16,
+        fontSize: (Platform.isPad ? W/30 : 16),
         fontWeight: 'bold',
         color: 'red'
     },
     date: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? W/42 : 14),
         color: '#ffffff',
         fontStyle: "italic"
     },
     info: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? W/42 : 14),
         color: '#ACACAC'
     },
     description: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? W/42 : 14),
         fontStyle: 'italic',
         color: '#ACACAC'
     },
     location: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? W/42 : 14),
         color: '#ACACAC'
     },
     author: {
@@ -303,12 +306,12 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        height: undefined,
-        width: '100%',
+        height: Platform.isPad ? 'auto' : undefined,
+        width:  Platform.isPad ? W*.5 : W*.5,
         backgroundColor: 'transparent'
     },
     rowText: {
-        flex: 4,
+        flex: 1,
         flexDirection: 'column'
     }
 });

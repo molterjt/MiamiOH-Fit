@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Text, View, TextInput, TouchableOpacity, ScrollView, StyleSheet, RefreshControl, ActivityIndicator, AsyncStorage} from 'react-native';
+import {Text, View, TextInput, TouchableOpacity, ScrollView, StyleSheet,
+    RefreshControl, ActivityIndicator, AsyncStorage, Dimensions, Platform} from 'react-native';
 import {Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
 import {withNavigation} from 'react-navigation';
 import Workout from '../components/Workout';
+
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
 
 const GET_WORKOUTS = gql`
     query($load:Int, $skip:Int){
@@ -109,7 +113,7 @@ class WorkoutView extends React.Component{
                                             <Ionicons
                                                 name={'ios-add-circle-outline'}
                                                 color={'white'}
-                                                size={19}
+                                                size={Platform.isPad ? WIDTH*.03 : WIDTH*.05}
                                                 style={{marginLeft: 5, marginTop:3}}
                                             />
                                         </TouchableOpacity>
@@ -225,10 +229,10 @@ class WorkoutScreen extends React.Component{
         const {oneRepMax, weightLifted, repCount, intensityPercent, maxForPercent, intensityLevel} = this.state;
         return(
             <View style={{marginBottom:80, paddingBottom:50}}>
-                <Text style={{backgroundColor: '#156DFA', color: 'white', textAlign: 'center', fontStyle: 'italic', fontSize: 12}}>Estimated One-Rep Max:</Text>
+                <Text style={{backgroundColor: '#156DFA', color: 'white', textAlign: 'center', fontStyle: 'italic', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Estimated One-Rep Max:</Text>
                 <View style={{paddingTop: 8, paddingBottom:8, flexDirection: 'row', alignItems:'center', justifyContent:'center', backgroundColor:'#29282A'}}>
                     <TextInput
-                        style={{width: 80, borderWidth:1, borderColor: '#fff', padding: 8, marginRight: 10, textAlign: 'center', backgroundColor:'#fff'}}
+                        style={{width: WIDTH*.2, borderWidth:1, borderColor: '#fff', padding: 8, marginRight: 10, textAlign: 'center', backgroundColor:'#fff'}}
                         type={'number'}
                         value={weightLifted}
                         onChangeText={ (weightLifted) => {
@@ -241,9 +245,9 @@ class WorkoutScreen extends React.Component{
                         autoCorrect={false}
                         keyboardType={'number-pad'}
                     />
-                    <Text style={{color:'#fff'}}> x </Text>
+                    <Text style={{color:'#fff', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}> x </Text>
                     <TextInput
-                        style={{width: 80, borderWidth:1, borderColor: '#fff', padding: 8, marginLeft: 10, textAlign: 'center', backgroundColor:'#fff'}}
+                        style={{width: WIDTH*.2, borderWidth:1, borderColor: '#fff', padding: 8, marginLeft: 10, textAlign: 'center', backgroundColor:'#fff'}}
                         value={repCount}
                         onChangeText={ (repCount) => {
                             this.setState({repCount: repCount});
@@ -264,15 +268,15 @@ class WorkoutScreen extends React.Component{
                         <MaterialCommunityIcons name={"arrow-right-bold-box-outline"} size={35} color={"#156DFA"}/>
                     </TouchableOpacity>
                     {oneRepMax > 0
-                        ? (<Text style={{fontWeight:'bold', color: '#fff'}}>{oneRepMax} lbs</Text>)
-                        : (<Text style={{fontWeight:'bold', color: '#fff'}}>{oneRepMax}</Text>)
+                        ? (<Text style={{fontWeight:'bold', color: '#fff', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{oneRepMax} lbs</Text>)
+                        : (<Text style={{fontWeight:'bold', color: '#fff', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{oneRepMax}</Text>)
                     }
 
                 </View>
-                <Text style={{backgroundColor: '#156DFA', color: 'white',textAlign: 'center', fontStyle: 'italic', fontSize: 12, }}>Estimated Intensity:</Text>
+                <Text style={{backgroundColor: '#156DFA', color: 'white',textAlign: 'center', fontStyle: 'italic', fontSize: (Platform.isPad ? WIDTH*.02 : 12), }}>Estimated Intensity:</Text>
                 <View style={{paddingTop: 8, paddingBottom:8, flexDirection: 'row', alignItems:'center', justifyContent:'center',borderWidth:1, backgroundColor:'#29282A' }}>
                     <TextInput
-                        style={{width: 50, borderWidth:1, borderColor: '#fff', padding: 8, marginRight: 6, marginLeft:20, textAlign: 'center', backgroundColor: '#fff'}}
+                        style={{width: WIDTH*.15, borderWidth:1, borderColor: '#fff', padding: 8, marginRight: 6, marginLeft:20, textAlign: 'center', backgroundColor: '#fff'}}
                         value={intensityPercent}
                         onChangeText={ (e) => {
                             this.setState({intensityPercent: e});
@@ -285,10 +289,10 @@ class WorkoutScreen extends React.Component{
                         autoCorrect={false}
                         keyboardType={'number-pad'}
                     />
-                    <Text style={{color: "#fff"}}>% </Text>
-                    <Text style={{marginLeft: 8, color: "#fff"}}> of </Text>
+                    <Text style={{color: "#fff", fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>% </Text>
+                    <Text style={{marginLeft: 8, color: "#fff", fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}> of  </Text>
                     <TextInput
-                        style={{width: 80, borderWidth:1, borderColor: '#fff', padding: 8, marginLeft: 16, textAlign: 'center',backgroundColor: '#fff'}}
+                        style={{width: WIDTH*.2, borderWidth:1, borderColor: '#fff', padding: 8, marginLeft: 16, textAlign: 'center',backgroundColor: '#fff'}}
                         value={maxForPercent}
                         onChangeText={ (e) => {
                             this.setState({maxForPercent: e});
@@ -308,7 +312,7 @@ class WorkoutScreen extends React.Component{
                         onPress={() => this.suggestedIntensity(maxForPercent, intensityPercent)}>
                         <MaterialCommunityIcons name={"arrow-right-bold-box-outline"} size={35} color={"#156DFA"}/>
                     </TouchableOpacity>
-                    <Text style={{fontWeight:'bold', color:'#fff'}}>{intensityLevel} lbs</Text>
+                    <Text style={{fontWeight:'bold', color:'#fff', fontSize:(Platform.isPad ? WIDTH*.02 : 12)}}>{intensityLevel} lbs</Text>
                 </View>
                 <AllWorkoutsViewWithData navigation = {this.props.navigation} />
             </View>
@@ -337,14 +341,14 @@ const styles = StyleSheet.create({
     title: {
         paddingLeft: 10,
         paddingTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 :14),
         fontWeight: 'bold',
         color: 'red'
     },
     info: {
         paddingLeft: 40,
         paddingTop: 3,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 :14),
         color: '#ACACAC'
     },
     rowText: {

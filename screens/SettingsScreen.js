@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, StyleSheet, Dimensions, TouchableOpacity, Modal, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, Dimensions, TouchableOpacity, Modal, Platform, ScrollView} from 'react-native';
 import {Ionicons, AntDesign, Entypo} from '@expo/vector-icons';
 import Logout from '../components/Logout';
 
@@ -31,7 +31,11 @@ class SettingsScreen extends React.Component{
                             accessibilityRole={'link'}
                             onPress={() => this.props.navigation.navigate('Profile')}
                         >
-                            <Ionicons name={"md-person"} type={"Ionicons"} size={100}/>
+                            {Platform.isPad
+                                ? <Ionicons name={"md-person"} type={"Ionicons"} size={WIDTH*.25}/>
+                                : <Ionicons name={"md-person"} type={"Ionicons"} size={100}/>
+                            }
+
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -47,7 +51,10 @@ class SettingsScreen extends React.Component{
                                 this.helpModalToggle(true)
                             }}
                         >
-                            <Entypo name={"help-with-circle"} type={"Entypo"} size={90}/>
+                            {Platform.isPad
+                                ? <Entypo name={"help-with-circle"} type={"Entypo"} size={WIDTH*.23}/>
+                                : <Entypo name={"help-with-circle"} type={"Entypo"} size={90}/>
+                            }
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -61,7 +68,11 @@ class SettingsScreen extends React.Component{
                             accessibilityRole={'link'}
                             onPress={() => this.props.navigation.navigate('Terms')}
                         >
-                            <Entypo name={"text-document-inverted"} type={"Ionicons"} size={90}/>
+                            {Platform.isPad
+                                ? <Entypo name={"text-document-inverted"} type={"Ionicons"} size={WIDTH*.23}/>
+                                : <Entypo name={"text-document-inverted"} type={"Ionicons"} size={90}/>
+                            }
+
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -69,7 +80,12 @@ class SettingsScreen extends React.Component{
                     <Text style={styles.headText}>Logout</Text>
                     <View style={styles.boxInner}>
                         <Logout>
-                            <AntDesign name={"logout"} type={"AntDesign"} size={76}/>
+                            {Platform.isPad
+                                ? <AntDesign name={"logout"} type={"AntDesign"} size={WIDTH*.20}/>
+                                : <AntDesign name={"logout"} type={"AntDesign"} size={76}/>
+
+                            }
+
                         </Logout>
 
                     </View>
@@ -96,35 +112,35 @@ class SettingsScreen extends React.Component{
                         <Text style={{color: "#156DFA", marginTop: 7, marginLeft: 8}}>Go Back</Text>
                     </TouchableOpacity>
                     <ScrollView  contentContainerStyle={{alignItems:'center', justifyContent: 'center',}} style={{marginTop: 5,  textAlign:'center', alignContent:"center"}}>
-                        <Text style={{marginTop: 45, fontWeight:'bold', fontSize: 18, textAlign: 'center'}}>Help</Text>
+                        <Text style={{marginTop: 45, fontWeight:'bold', fontSize: (Platform.isPad ? WIDTH/40 :18), textAlign: 'center'}}>Help</Text>
                         <View style={{alignItems:'center', justifyContent: 'center', textAlign:'center', marginTop: 30, padding: 10}}>
                             <Text style={styles.boldQ}>If you forgot your password... </Text>
-                            <Text>For Assistance email [ JeffreyMolter@gmail.com ]</Text>
+                            <Text style={styles.infoText}>For Assistance email [ JeffreyMolter@gmail.com ]</Text>
                         </View>
                         <View style={{alignItems:'center', justifyContent: 'center', textAlign:'center', marginTop: 30, padding: 10}}>
                             <Text style={styles.boldQ}>If you have any problems with the application... </Text>
-                            <Text>For Assistance email [ JeffreyMolter@gmail.com ]</Text>
+                            <Text style={styles.infoText}>For Assistance email [ JeffreyMolter@gmail.com ]</Text>
                         </View>
                         <View style={{alignItems:'center', justifyContent: 'center', textAlign:'center', marginTop: 30, padding: 10}}>
                             <Text style={styles.boldQ}>Why can't I check-in to a class successfully?</Text>
-                            <Text>There are few rules to follow in-order to successfully check-in. First, you may only check-in if the time for the respective class is within a 20 minute window from the start of the class time. Second, you may only check-in if you have enabled your location services for this app. To be successful, you must be within the Miami University Rec Center building.</Text>
+                            <Text style={styles.infoText}>There are few rules to follow in-order to successfully check-in. First, you may only check-in if the time for the respective class is within a 20 minute window from the start of the class time. Second, you may only check-in if you have enabled your location services for this app. To be successful, you must be within the Miami University Rec Center building.</Text>
                         </View>
                         <View style={{alignItems:'center', justifyContent: 'center', textAlign:'center', marginTop: 30, padding: 10}}>
-                            <Text>If you would like to get involved in any Fitness programs... </Text>
+                            <Text style={styles.infoText}>If you would like to get involved in any Fitness programs... </Text>
                             <View style={{alignItems:'center', justifyContent: 'center', textAlign:'center', marginTop: 10, padding: 10}}>
-                                <Text style={{fontWeight:'bold'}}>Personal Training</Text>
-                                <Text>[ molterjt@MiamiOH.edu ]</Text>
-                                <Text>(513) 529-8175</Text>
+                                <Text style={styles.boldQ}>Personal Training</Text>
+                                <Text style={styles.infoText}>[ molterjt@MiamiOH.edu ]</Text>
+                                <Text style={styles.infoText}>(513) 529-8175</Text>
                             </View>
                             <View style={{alignItems:'center', justifyContent: 'center', textAlign:'center', marginTop: 10, padding: 10}}>
-                                <Text style={{fontWeight:'bold'}}>Group Fitness</Text>
-                                <Text>[ speeds@MiamiOH.edu ]</Text>
-                                <Text>(513) 529-2193</Text>
+                                <Text style={styles.boldQ}>Group Fitness</Text>
+                                <Text style={styles.infoText}>[ speeds@MiamiOH.edu ]</Text>
+                                <Text style={styles.infoText}>(513) 529-2193</Text>
                             </View>
                             <View style={{alignItems:'center', justifyContent: 'center', textAlign:'center', marginTop: 10, padding: 10}}>
-                                <Text style={{fontWeight:'bold'}}>Functional Fitness</Text>
-                                <Text>[ cropensw@MiamiOH.edu ]</Text>
-                                <Text>(513) 529-6007</Text>
+                                <Text style={styles.boldQ}>Functional Fitness</Text>
+                                <Text style={styles.infoText}>[ cropensw@MiamiOH.edu ]</Text>
+                                <Text style={styles.infoText}>(513) 529-6007</Text>
                             </View>
                         </View>
                     </ScrollView>
@@ -176,11 +192,15 @@ const styles = StyleSheet.create({
     headText:{
         marginTop: 5,
         fontWeight: 'bold',
-        fontSize: 15,
+        fontSize: (Platform.isPad ? WIDTH/40 : 15),
         color: '#fff',
     },
     boldQ:{
         fontWeight:'bold',
         marginVertical:6,
+        fontSize: (Platform.isPad ? WIDTH/42 : 16),
+    },
+    infoText:{
+        fontSize: (Platform.isPad ? WIDTH/45 : 14),
     }
 });

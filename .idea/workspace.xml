@@ -2,13 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94675a9e-ca09-47af-85e0-41d1d8f0309e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MiamiOH-Fit.iml" afterPath="$PROJECT_DIR$/.idea/MiamiOH-Fit.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/screens/LoginScreen.js" afterPath="$PROJECT_DIR$/screens/LoginScreen.js" />
+      <change beforePath="$PROJECT_DIR$/components/Event.js" afterPath="$PROJECT_DIR$/components/Event.js" />
+      <change beforePath="$PROJECT_DIR$/components/Exercise.js" afterPath="$PROJECT_DIR$/components/Exercise.js" />
+      <change beforePath="$PROJECT_DIR$/components/GroupFitnessClass.js" afterPath="$PROJECT_DIR$/components/GroupFitnessClass.js" />
+      <change beforePath="$PROJECT_DIR$/components/NewsItem.js" afterPath="$PROJECT_DIR$/components/NewsItem.js" />
+      <change beforePath="$PROJECT_DIR$/components/Workout.js" afterPath="$PROJECT_DIR$/components/Workout.js" />
+      <change beforePath="$PROJECT_DIR$/components/WorkoutRecord.js" afterPath="$PROJECT_DIR$/components/WorkoutRecord.js" />
+      <change beforePath="$PROJECT_DIR$/navigation/MainTabNavigator.js" afterPath="$PROJECT_DIR$/navigation/MainTabNavigator.js" />
+      <change beforePath="$PROJECT_DIR$/screens/FacilitiesScreen.js" afterPath="$PROJECT_DIR$/screens/FacilitiesScreen.js" />
+      <change beforePath="$PROJECT_DIR$/screens/HomeScreen.js" afterPath="$PROJECT_DIR$/screens/HomeScreen.js" />
+      <change beforePath="$PROJECT_DIR$/screens/SettingsScreen.js" afterPath="$PROJECT_DIR$/screens/SettingsScreen.js" />
       <change beforePath="$PROJECT_DIR$/screens/SubmitWorkoutScreen.js" afterPath="$PROJECT_DIR$/screens/SubmitWorkoutScreen.js" />
+      <change beforePath="$PROJECT_DIR$/screens/TrainerListScreen.js" afterPath="$PROJECT_DIR$/screens/TrainerListScreen.js" />
+      <change beforePath="$PROJECT_DIR$/screens/TrainerScreen.js" afterPath="$PROJECT_DIR$/screens/TrainerScreen.js" />
+      <change beforePath="$PROJECT_DIR$/screens/WorkoutScreen.js" afterPath="$PROJECT_DIR$/screens/WorkoutScreen.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,25 +30,241 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App.js">
+    <leaf>
+      <file leaf-file-name="TrainerScreen.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/TrainerScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="53" column="14" lean-forward="true" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+            <state relative-caret-position="126">
+              <caret line="217" column="64" lean-forward="true" selection-start-line="217" selection-start-column="64" selection-end-line="217" selection-end-column="64" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#25#0" expanded="true" />
+                <marker date="1542915367294" expanded="true" signature="459:692" ph="query...{&#10;        allMemberships(filter:{type: &quot;training&quot;}, orderBy: startBalance_ASC, skip:1){&#10;            title&#10;            type&#10;            startBalance&#10;            rateMember&#10;            rateNonMember&#10;            url&#10;        }&#10;    }" />
+                <marker date="1542915367294" expanded="true" signature="464:692" ph="{...}" />
+                <marker date="1542915367294" expanded="true" signature="474:488" ph="allMemberships...allMemberships" />
+                <marker date="1542915367294" expanded="true" signature="474:686" ph="allMemberships...{&#10;            title&#10;            type&#10;            startBalance&#10;            rateMember&#10;            rateNonMember&#10;            url&#10;        }" />
+                <marker date="1542915367294" expanded="true" signature="488:550" ph="(...)" />
+                <marker date="1542915367294" expanded="true" signature="489:495" ph="filter...filter" />
+                <marker date="1542915367294" expanded="true" signature="489:514" ph="filter...{type: &quot;training&quot;}" />
+                <marker date="1542915367294" expanded="true" signature="496:514" ph="{...}" />
+                <marker date="1542915367294" expanded="true" signature="497:501" ph="type...type" />
+                <marker date="1542915367294" expanded="true" signature="516:523" ph="orderBy...orderBy" />
+                <marker date="1542915367294" expanded="true" signature="543:547" ph="skip...skip" />
+                <marker date="1542915367294" expanded="true" signature="550:686" ph="{...}" />
+                <marker date="1542915367294" expanded="true" signature="564:569" ph="title...title" />
+                <marker date="1542915367294" expanded="true" signature="582:586" ph="type...type" />
+                <marker date="1542915367294" expanded="true" signature="599:611" ph="startBalance...startBalance" />
+                <marker date="1542915367294" expanded="true" signature="624:634" ph="rateMember...rateMember" />
+                <marker date="1542915367294" expanded="true" signature="647:660" ph="rateNonMember...rateNonMember" />
+                <marker date="1542915367294" expanded="true" signature="673:676" ph="url...url" />
+                <marker date="1542915367294" expanded="true" signature="725:850" ph="query...{&#10;        Membership(id:&quot;cjnwmkhhdmm5s0116wy797q0o&quot;){&#10;            title&#10;            type&#10;            url&#10;        }&#10;    }" />
+                <marker date="1542915367294" expanded="true" signature="730:850" ph="{...}" />
+                <marker date="1542915367294" expanded="true" signature="740:750" ph="Membership...Membership" />
+                <marker date="1542915367294" expanded="true" signature="740:844" ph="Membership...{&#10;            title&#10;            type&#10;            url&#10;        }" />
+                <marker date="1542915367294" expanded="true" signature="750:782" ph="(...)" />
+                <marker date="1542915367294" expanded="true" signature="751:753" ph="id...id" />
+                <marker date="1542915367294" expanded="true" signature="782:844" ph="{...}" />
+                <marker date="1542915367294" expanded="true" signature="796:801" ph="title...title" />
+                <marker date="1542915367294" expanded="true" signature="814:818" ph="type...type" />
+                <marker date="1542915367294" expanded="true" signature="831:834" ph="url...url" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.json">
+      <file leaf-file-name="WorkoutScreen.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/WorkoutScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="61">
+              <caret line="285" column="42" lean-forward="true" selection-start-line="285" selection-start-column="42" selection-end-line="285" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1542916570243" expanded="true" signature="590:962" ph="query...{&#10;        allWorkouts(filter:{isPublished: true} orderBy:createdAt_DESC, first:$load, skip:$skip){&#10;            id&#10;            title&#10;            type{title}&#10;            date&#10;            description&#10;            exercises{name, sets, reps, intensity, tempo, id}&#10;            author{alsoInstructor{id, firstName}}&#10;            imageUrl&#10;        }&#10;    }" />
+                <marker date="1542916570243" expanded="true" signature="595:617" ph="(...)" />
+                <marker date="1542916570243" expanded="true" signature="602:605" ph="Int...Int" />
+                <marker date="1542916570243" expanded="true" signature="613:616" ph="Int...Int" />
+                <marker date="1542916570243" expanded="true" signature="617:962" ph="{...}" />
+                <marker date="1542916570243" expanded="true" signature="627:638" ph="allWorkouts...allWorkouts" />
+                <marker date="1542916570243" expanded="true" signature="627:956" ph="allWorkouts...{&#10;            id&#10;            title&#10;            type{title}&#10;            date&#10;            description&#10;            exercises{name, sets, reps, intensity, tempo, id}&#10;            author{alsoInstructor{id, firstName}}&#10;            imageUrl&#10;        }" />
+                <marker date="1542916570243" expanded="true" signature="638:714" ph="(...)" />
+                <marker date="1542916570243" expanded="true" signature="639:645" ph="filter...filter" />
+                <marker date="1542916570243" expanded="true" signature="639:665" ph="filter...{isPublished: true}" />
+                <marker date="1542916570243" expanded="true" signature="646:665" ph="{...}" />
+                <marker date="1542916570243" expanded="true" signature="647:658" ph="isPublished...isPublished" />
+                <marker date="1542916570243" expanded="true" signature="666:673" ph="orderBy...orderBy" />
+                <marker date="1542916570243" expanded="true" signature="690:695" ph="first...first" />
+                <marker date="1542916570243" expanded="true" signature="703:707" ph="skip...skip" />
+                <marker date="1542916570243" expanded="true" signature="714:956" ph="{...}" />
+                <marker date="1542916570243" expanded="true" signature="728:730" ph="id...id" />
+                <marker date="1542916570243" expanded="true" signature="743:748" ph="title...title" />
+                <marker date="1542916570243" expanded="true" signature="761:765" ph="type...type" />
+                <marker date="1542916570243" expanded="true" signature="761:772" ph="type...{title}" />
+                <marker date="1542916570243" expanded="true" signature="765:772" ph="{...}" />
+                <marker date="1542916570243" expanded="true" signature="766:771" ph="title...title" />
+                <marker date="1542916570243" expanded="true" signature="785:789" ph="date...date" />
+                <marker date="1542916570243" expanded="true" signature="802:813" ph="description...description" />
+                <marker date="1542916570243" expanded="true" signature="826:835" ph="exercises...exercises" />
+                <marker date="1542916570243" expanded="true" signature="826:875" ph="exercises...{name, sets, reps, intensity, tempo, id}" />
+                <marker date="1542916570243" expanded="true" signature="835:875" ph="{...}" />
+                <marker date="1542916570243" expanded="true" signature="836:840" ph="name...name" />
+                <marker date="1542916570243" expanded="true" signature="842:846" ph="sets...sets" />
+                <marker date="1542916570243" expanded="true" signature="848:852" ph="reps...reps" />
+                <marker date="1542916570243" expanded="true" signature="854:863" ph="intensity...intensity" />
+                <marker date="1542916570243" expanded="true" signature="865:870" ph="tempo...tempo" />
+                <marker date="1542916570243" expanded="true" signature="872:874" ph="id...id" />
+                <marker date="1542916570243" expanded="true" signature="888:894" ph="author...author" />
+                <marker date="1542916570243" expanded="true" signature="888:925" ph="author...{alsoInstructor{id, firstName}}" />
+                <marker date="1542916570243" expanded="true" signature="894:925" ph="{...}" />
+                <marker date="1542916570243" expanded="true" signature="895:909" ph="alsoInstructor...alsoInstructor" />
+                <marker date="1542916570243" expanded="true" signature="895:924" ph="alsoInstructor...{id, firstName}" />
+                <marker date="1542916570243" expanded="true" signature="909:924" ph="{...}" />
+                <marker date="1542916570243" expanded="true" signature="910:912" ph="id...id" />
+                <marker date="1542916570243" expanded="true" signature="914:923" ph="firstName...firstName" />
+                <marker date="1542916570243" expanded="true" signature="938:946" ph="imageUrl...imageUrl" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Workout.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/Workout.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1">
+              <caret line="120" column="93" lean-forward="true" selection-start-line="120" selection-start-column="93" selection-end-line="120" selection-end-column="93" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1542916646765" expanded="true" signature="432:678" ph="mutation...{&#10;        createCheckin(checked: $checked, workoutsIds: $workoutIdsArr, usersIds: $userIdsArr){&#10;            id&#10;            createdAt&#10;            workouts{title}&#10;        }&#10;    }" />
+                <marker date="1542916646765" expanded="true" signature="440:502" ph="(...)" />
+                <marker date="1542916646765" expanded="true" signature="451:458" ph="Boolean...Boolean" />
+                <marker date="1542916646765" expanded="true" signature="476:481" ph="[...]" />
+                <marker date="1542916646765" expanded="true" signature="477:479" ph="ID...ID" />
+                <marker date="1542916646765" expanded="true" signature="496:501" ph="[...]" />
+                <marker date="1542916646765" expanded="true" signature="497:499" ph="ID...ID" />
+                <marker date="1542916646765" expanded="true" signature="502:678" ph="{...}" />
+                <marker date="1542916646765" expanded="true" signature="512:525" ph="createCheckin...createCheckin" />
+                <marker date="1542916646765" expanded="true" signature="512:672" ph="createCheckin...{&#10;            id&#10;            createdAt&#10;            workouts{title}&#10;        }" />
+                <marker date="1542916646765" expanded="true" signature="525:596" ph="(...)" />
+                <marker date="1542916646765" expanded="true" signature="526:533" ph="checked...checked" />
+                <marker date="1542916646765" expanded="true" signature="545:556" ph="workoutsIds...workoutsIds" />
+                <marker date="1542916646765" expanded="true" signature="574:582" ph="usersIds...usersIds" />
+                <marker date="1542916646765" expanded="true" signature="596:672" ph="{...}" />
+                <marker date="1542916646765" expanded="true" signature="610:612" ph="id...id" />
+                <marker date="1542916646765" expanded="true" signature="625:634" ph="createdAt...createdAt" />
+                <marker date="1542916646765" expanded="true" signature="647:655" ph="workouts...workouts" />
+                <marker date="1542916646765" expanded="true" signature="647:662" ph="workouts...{title}" />
+                <marker date="1542916646765" expanded="true" signature="655:662" ph="{...}" />
+                <marker date="1542916646765" expanded="true" signature="656:661" ph="title...title" />
+                <marker date="1542916646765" expanded="true" signature="717:1283" ph="mutation...{&#10;        createExerciseSets(&#10;            setName:$setName,&#10;            repsHit:$repsHit,&#10;            weightUsed:$weightUsed,&#10;            exercisesIds: $exercise,&#10;            usersSetsIds: $userId,&#10;            workoutSetsId: $workout,&#10;        ){&#10;            id&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            exercises{name, reps}&#10;            usersSets{firstName}&#10;            workoutSets{title}&#10;        }&#10;    }" />
+                <marker date="1542916646765" expanded="true" signature="726:744" ph="createExerciseSets...createExerciseSets" />
+                <marker date="1542916646765" expanded="true" signature="744:846" ph="(...)" />
+                <marker date="1542916646765" expanded="true" signature="753:758" ph="[...]" />
+                <marker date="1542916646765" expanded="true" signature="754:756" ph="ID...ID" />
+                <marker date="1542916646765" expanded="true" signature="770:776" ph="String...String" />
+                <marker date="1542916646765" expanded="true" signature="788:794" ph="String...String" />
+                <marker date="1542916646765" expanded="true" signature="805:807" ph="ID...ID" />
+                <marker date="1542916646765" expanded="true" signature="822:828" ph="String...String" />
+                <marker date="1542916646765" expanded="true" signature="840:845" ph="[...]" />
+                <marker date="1542916646765" expanded="true" signature="841:843" ph="ID...ID" />
+                <marker date="1542916646765" expanded="true" signature="846:1283" ph="{...}" />
+                <marker date="1542916646765" expanded="true" signature="856:874" ph="createExerciseSets...createExerciseSets" />
+                <marker date="1542916646765" expanded="true" signature="856:1277" ph="createExerciseSets...{&#10;            id&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            exercises{name, reps}&#10;            usersSets{firstName}&#10;            workoutSets{title}&#10;        }" />
+                <marker date="1542916646765" expanded="true" signature="874:1090" ph="(...)" />
+                <marker date="1542916646765" expanded="true" signature="888:895" ph="setName...setName" />
+                <marker date="1542916646765" expanded="true" signature="918:925" ph="repsHit...repsHit" />
+                <marker date="1542916646765" expanded="true" signature="948:958" ph="weightUsed...weightUsed" />
+                <marker date="1542916646765" expanded="true" signature="984:996" ph="exercisesIds...exercisesIds" />
+                <marker date="1542916646765" expanded="true" signature="1021:1033" ph="usersSetsIds...usersSetsIds" />
+                <marker date="1542916646765" expanded="true" signature="1056:1069" ph="workoutSetsId...workoutSetsId" />
+                <marker date="1542916646765" expanded="true" signature="1090:1277" ph="{...}" />
+                <marker date="1542916646765" expanded="true" signature="1104:1106" ph="id...id" />
+                <marker date="1542916646765" expanded="true" signature="1119:1126" ph="setName...setName" />
+                <marker date="1542916646765" expanded="true" signature="1139:1146" ph="repsHit...repsHit" />
+                <marker date="1542916646765" expanded="true" signature="1159:1169" ph="weightUsed...weightUsed" />
+                <marker date="1542916646765" expanded="true" signature="1182:1191" ph="exercises...exercises" />
+                <marker date="1542916646765" expanded="true" signature="1182:1203" ph="exercises...{name, reps}" />
+                <marker date="1542916646765" expanded="true" signature="1191:1203" ph="{...}" />
+                <marker date="1542916646765" expanded="true" signature="1192:1196" ph="name...name" />
+                <marker date="1542916646765" expanded="true" signature="1198:1202" ph="reps...reps" />
+                <marker date="1542916646765" expanded="true" signature="1216:1225" ph="usersSets...usersSets" />
+                <marker date="1542916646765" expanded="true" signature="1216:1236" ph="usersSets...{firstName}" />
+                <marker date="1542916646765" expanded="true" signature="1225:1236" ph="{...}" />
+                <marker date="1542916646765" expanded="true" signature="1226:1235" ph="firstName...firstName" />
+                <marker date="1542916646765" expanded="true" signature="1249:1260" ph="workoutSets...workoutSets" />
+                <marker date="1542916646765" expanded="true" signature="1249:1267" ph="workoutSets...{title}" />
+                <marker date="1542916646765" expanded="true" signature="1260:1267" ph="{...}" />
+                <marker date="1542916646765" expanded="true" signature="1261:1266" ph="title...title" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Exercise.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/Exercise.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="76" column="51" lean-forward="true" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorkoutRecord.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/WorkoutRecord.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="62" column="29" lean-forward="true" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1542917569614" expanded="true" signature="519:1113" ph="query...{&#10;        allExerciseSetses(&#10;            filter: {&#10;                usersSets_every:{id: $userId},&#10;                workoutSets:{id: $workout},&#10;                timeCheck_contains:$timeCheck&#10;&#10;            }&#10;            orderBy: setOrderNo_ASC){&#10;            id&#10;            createdAt&#10;            usersSets{&#10;                firstName&#10;            }&#10;            workoutSets{title, exercises{name, reps, sets}}&#10;            exercises{name}&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            timeCheck&#10;        }&#10;    }" />
+                <marker date="1542917569614" expanded="true" signature="525:539" ph="WorkoutRecords...WorkoutRecords" />
+                <marker date="1542917569614" expanded="true" signature="539:584" ph="(...)" />
+                <marker date="1542917569614" expanded="true" signature="548:550" ph="ID...ID" />
+                <marker date="1542917569614" expanded="true" signature="564:570" ph="String...String" />
+                <marker date="1542917569614" expanded="true" signature="581:583" ph="ID...ID" />
+                <marker date="1542917569614" expanded="true" signature="584:1113" ph="{...}" />
+                <marker date="1542917569614" expanded="true" signature="594:611" ph="allExerciseSetses...allExerciseSetses" />
+                <marker date="1542917569614" expanded="true" signature="594:1107" ph="allExerciseSetses...{&#10;            id&#10;            createdAt&#10;            usersSets{&#10;                firstName&#10;            }&#10;            workoutSets{title, exercises{name, reps, sets}}&#10;            exercises{name}&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            timeCheck&#10;        }" />
+                <marker date="1542917569614" expanded="true" signature="611:823" ph="(...)" />
+                <marker date="1542917569614" expanded="true" signature="625:631" ph="filter...filter" />
+                <marker date="1542917569614" expanded="true" signature="625:786" ph="filter...{&#10;                usersSets_every:{id: $userId},&#10;                workoutSets:{id: $workout},&#10;                timeCheck_contains:$timeCheck&#10;&#10;            }" />
+                <marker date="1542917569614" expanded="true" signature="633:786" ph="{...}" />
+                <marker date="1542917569614" expanded="true" signature="651:666" ph="usersSets_every...usersSets_every" />
+                <marker date="1542917569614" expanded="true" signature="651:680" ph="usersSets_every...{id: $userId}" />
+                <marker date="1542917569614" expanded="true" signature="667:680" ph="{...}" />
+                <marker date="1542917569614" expanded="true" signature="668:670" ph="id...id" />
+                <marker date="1542917569614" expanded="true" signature="698:709" ph="workoutSets...workoutSets" />
+                <marker date="1542917569614" expanded="true" signature="698:724" ph="workoutSets...{id: $workout}" />
+                <marker date="1542917569614" expanded="true" signature="710:724" ph="{...}" />
+                <marker date="1542917569614" expanded="true" signature="711:713" ph="id...id" />
+                <marker date="1542917569614" expanded="true" signature="742:760" ph="timeCheck_contains...timeCheck_contains" />
+                <marker date="1542917569614" expanded="true" signature="799:806" ph="orderBy...orderBy" />
+                <marker date="1542917569614" expanded="true" signature="823:1107" ph="{...}" />
+                <marker date="1542917569614" expanded="true" signature="837:839" ph="id...id" />
+                <marker date="1542917569614" expanded="true" signature="852:861" ph="createdAt...createdAt" />
+                <marker date="1542917569614" expanded="true" signature="874:883" ph="usersSets...usersSets" />
+                <marker date="1542917569614" expanded="true" signature="874:924" ph="usersSets...{&#10;                firstName&#10;            }" />
+                <marker date="1542917569614" expanded="true" signature="883:924" ph="{...}" />
+                <marker date="1542917569614" expanded="true" signature="901:910" ph="firstName...firstName" />
+                <marker date="1542917569614" expanded="true" signature="937:948" ph="workoutSets...workoutSets" />
+                <marker date="1542917569614" expanded="true" signature="937:984" ph="workoutSets...{title, exercises{name, reps, sets}}" />
+                <marker date="1542917569614" expanded="true" signature="948:984" ph="{...}" />
+                <marker date="1542917569614" expanded="true" signature="949:954" ph="title...title" />
+                <marker date="1542917569614" expanded="true" signature="956:965" ph="exercises...exercises" />
+                <marker date="1542917569614" expanded="true" signature="956:983" ph="exercises...{name, reps, sets}" />
+                <marker date="1542917569614" expanded="true" signature="965:983" ph="{...}" />
+                <marker date="1542917569614" expanded="true" signature="966:970" ph="name...name" />
+                <marker date="1542917569614" expanded="true" signature="972:976" ph="reps...reps" />
+                <marker date="1542917569614" expanded="true" signature="978:982" ph="sets...sets" />
+                <marker date="1542917569614" expanded="true" signature="997:1006" ph="exercises...exercises" />
+                <marker date="1542917569614" expanded="true" signature="997:1012" ph="exercises...{name}" />
+                <marker date="1542917569614" expanded="true" signature="1006:1012" ph="{...}" />
+                <marker date="1542917569614" expanded="true" signature="1007:1011" ph="name...name" />
+                <marker date="1542917569614" expanded="true" signature="1025:1032" ph="setName...setName" />
+                <marker date="1542917569614" expanded="true" signature="1045:1052" ph="repsHit...repsHit" />
+                <marker date="1542917569614" expanded="true" signature="1065:1075" ph="weightUsed...weightUsed" />
+                <marker date="1542917569614" expanded="true" signature="1088:1097" ph="timeCheck...timeCheck" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,114 +272,132 @@
       <file leaf-file-name="SubmitWorkoutScreen.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/screens/SubmitWorkoutScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="389" column="15" lean-forward="false" selection-start-line="389" selection-start-column="15" selection-end-line="389" selection-end-column="15" />
+            <state relative-caret-position="476">
+              <caret line="323" column="23" lean-forward="true" selection-start-line="323" selection-start-column="23" selection-end-line="323" selection-end-column="23" />
               <folding>
-                <marker date="1542557845938" expanded="true" signature="406:716" ph="mutation...{&#10;        createCheckin(checked: $checked, workoutsIds: $workoutIdsArr, usersIds: $userIdsArr, timeCheck: $timeCheck){&#10;            id&#10;            createdAt&#10;            timeCheck&#10;            workouts{title}&#10;        }&#10;    }" />
-                <marker date="1542557845938" expanded="true" signature="414:495" ph="(...)" />
-                <marker date="1542557845938" expanded="true" signature="425:432" ph="Boolean...Boolean" />
-                <marker date="1542557845938" expanded="true" signature="450:455" ph="[...]" />
-                <marker date="1542557845938" expanded="true" signature="451:453" ph="ID...ID" />
-                <marker date="1542557845938" expanded="true" signature="470:475" ph="[...]" />
-                <marker date="1542557845938" expanded="true" signature="471:473" ph="ID...ID" />
-                <marker date="1542557845938" expanded="true" signature="488:494" ph="String...String" />
-                <marker date="1542557845938" expanded="true" signature="495:716" ph="{...}" />
-                <marker date="1542557845938" expanded="true" signature="505:518" ph="createCheckin...createCheckin" />
-                <marker date="1542557845938" expanded="true" signature="505:710" ph="createCheckin...{&#10;            id&#10;            createdAt&#10;            timeCheck&#10;            workouts{title}&#10;        }" />
-                <marker date="1542557845938" expanded="true" signature="518:612" ph="(...)" />
-                <marker date="1542557845938" expanded="true" signature="519:526" ph="checked...checked" />
-                <marker date="1542557845938" expanded="true" signature="538:549" ph="workoutsIds...workoutsIds" />
-                <marker date="1542557845938" expanded="true" signature="567:575" ph="usersIds...usersIds" />
-                <marker date="1542557845938" expanded="true" signature="590:599" ph="timeCheck...timeCheck" />
-                <marker date="1542557845938" expanded="true" signature="612:710" ph="{...}" />
-                <marker date="1542557845938" expanded="true" signature="626:628" ph="id...id" />
-                <marker date="1542557845938" expanded="true" signature="641:650" ph="createdAt...createdAt" />
-                <marker date="1542557845938" expanded="true" signature="663:672" ph="timeCheck...timeCheck" />
-                <marker date="1542557845938" expanded="true" signature="685:693" ph="workouts...workouts" />
-                <marker date="1542557845938" expanded="true" signature="685:700" ph="workouts...{title}" />
-                <marker date="1542557845938" expanded="true" signature="693:700" ph="{...}" />
-                <marker date="1542557845938" expanded="true" signature="694:699" ph="title...title" />
-                <marker date="1542557845938" expanded="true" signature="748:968" ph="query...{&#10;        Workout(id:$id){&#10;            id&#10;            title&#10;            type{title}&#10;            description&#10;            exercises{name, sets, reps, intensity, tempo, id}&#10;            imageUrl&#10;        }&#10;    }" />
-                <marker date="1542557845938" expanded="true" signature="753:762" ph="(...)" />
-                <marker date="1542557845938" expanded="true" signature="758:760" ph="ID...ID" />
-                <marker date="1542557845938" expanded="true" signature="762:968" ph="{...}" />
-                <marker date="1542557845938" expanded="true" signature="772:779" ph="Workout...Workout" />
-                <marker date="1542557845938" expanded="true" signature="772:962" ph="Workout...{&#10;            id&#10;            title&#10;            type{title}&#10;            description&#10;            exercises{name, sets, reps, intensity, tempo, id}&#10;            imageUrl&#10;        }" />
-                <marker date="1542557845938" expanded="true" signature="779:787" ph="(...)" />
-                <marker date="1542557845938" expanded="true" signature="780:782" ph="id...id" />
-                <marker date="1542557845938" expanded="true" signature="787:962" ph="{...}" />
-                <marker date="1542557845938" expanded="true" signature="801:803" ph="id...id" />
-                <marker date="1542557845938" expanded="true" signature="816:821" ph="title...title" />
-                <marker date="1542557845938" expanded="true" signature="834:838" ph="type...type" />
-                <marker date="1542557845938" expanded="true" signature="834:845" ph="type...{title}" />
-                <marker date="1542557845938" expanded="true" signature="838:845" ph="{...}" />
-                <marker date="1542557845938" expanded="true" signature="839:844" ph="title...title" />
-                <marker date="1542557845938" expanded="true" signature="858:869" ph="description...description" />
-                <marker date="1542557845938" expanded="true" signature="882:891" ph="exercises...exercises" />
-                <marker date="1542557845938" expanded="true" signature="882:931" ph="exercises...{name, sets, reps, intensity, tempo, id}" />
-                <marker date="1542557845938" expanded="true" signature="891:931" ph="{...}" />
-                <marker date="1542557845938" expanded="true" signature="892:896" ph="name...name" />
-                <marker date="1542557845938" expanded="true" signature="898:902" ph="sets...sets" />
-                <marker date="1542557845938" expanded="true" signature="904:908" ph="reps...reps" />
-                <marker date="1542557845938" expanded="true" signature="910:919" ph="intensity...intensity" />
-                <marker date="1542557845938" expanded="true" signature="921:926" ph="tempo...tempo" />
-                <marker date="1542557845938" expanded="true" signature="928:930" ph="id...id" />
-                <marker date="1542557845938" expanded="true" signature="944:952" ph="imageUrl...imageUrl" />
-                <marker date="1542557845938" expanded="true" signature="1013:1639" ph="mutation...{&#10;        createExerciseSets(setName: $setName, repsHit:$repsHit, weightUsed:$weightUsed, workoutSetsId: $workoutSetsId, exercisesIds: $exercisesIds, usersSetsIds: $usersSetsIds, timeCheck: $timeCheck, setOrderNo:$setOrderNo ){&#10;            id&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            exercises{name, reps}&#10;            usersSets{firstName}&#10;            workoutSets{title}&#10;            timeCheck&#10;        }&#10;    }" />
-                <marker date="1542557845938" expanded="true" signature="1022:1041" ph="createWorkoutRecord...createWorkoutRecord" />
-                <marker date="1542557845938" expanded="true" signature="1041:1198" ph="(...)" />
-                <marker date="1542557845938" expanded="true" signature="1056:1061" ph="[...]" />
-                <marker date="1542557845938" expanded="true" signature="1057:1059" ph="ID...ID" />
-                <marker date="1542557845938" expanded="true" signature="1073:1079" ph="String...String" />
-                <marker date="1542557845938" expanded="true" signature="1091:1097" ph="String...String" />
-                <marker date="1542557845938" expanded="true" signature="1114:1116" ph="ID...ID" />
-                <marker date="1542557845938" expanded="true" signature="1131:1137" ph="String...String" />
-                <marker date="1542557845938" expanded="true" signature="1154:1159" ph="[...]" />
-                <marker date="1542557845938" expanded="true" signature="1155:1157" ph="ID...ID" />
-                <marker date="1542557845938" expanded="true" signature="1173:1179" ph="String...String" />
-                <marker date="1542557845938" expanded="true" signature="1194:1197" ph="Int...Int" />
-                <marker date="1542557845938" expanded="true" signature="1198:1639" ph="{...}" />
-                <marker date="1542557845938" expanded="true" signature="1208:1226" ph="createExerciseSets...createExerciseSets" />
-                <marker date="1542557845938" expanded="true" signature="1208:1633" ph="createExerciseSets...{&#10;            id&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            exercises{name, reps}&#10;            usersSets{firstName}&#10;            workoutSets{title}&#10;            timeCheck&#10;        }" />
-                <marker date="1542557845938" expanded="true" signature="1226:1424" ph="(...)" />
-                <marker date="1542557845938" expanded="true" signature="1227:1234" ph="setName...setName" />
-                <marker date="1542557845938" expanded="true" signature="1246:1253" ph="repsHit...repsHit" />
-                <marker date="1542557845938" expanded="true" signature="1264:1274" ph="weightUsed...weightUsed" />
-                <marker date="1542557845938" expanded="true" signature="1288:1301" ph="workoutSetsId...workoutSetsId" />
-                <marker date="1542557845938" expanded="true" signature="1319:1331" ph="exercisesIds...exercisesIds" />
-                <marker date="1542557845938" expanded="true" signature="1348:1360" ph="usersSetsIds...usersSetsIds" />
-                <marker date="1542557845938" expanded="true" signature="1377:1386" ph="timeCheck...timeCheck" />
-                <marker date="1542557845938" expanded="true" signature="1400:1410" ph="setOrderNo...setOrderNo" />
-                <marker date="1542557845938" expanded="true" signature="1424:1633" ph="{...}" />
-                <marker date="1542557845938" expanded="true" signature="1438:1440" ph="id...id" />
-                <marker date="1542557845938" expanded="true" signature="1453:1460" ph="setName...setName" />
-                <marker date="1542557845938" expanded="true" signature="1473:1480" ph="repsHit...repsHit" />
-                <marker date="1542557845938" expanded="true" signature="1493:1503" ph="weightUsed...weightUsed" />
-                <marker date="1542557845938" expanded="true" signature="1516:1525" ph="exercises...exercises" />
-                <marker date="1542557845938" expanded="true" signature="1516:1537" ph="exercises...{name, reps}" />
-                <marker date="1542557845938" expanded="true" signature="1525:1537" ph="{...}" />
-                <marker date="1542557845938" expanded="true" signature="1526:1530" ph="name...name" />
-                <marker date="1542557845938" expanded="true" signature="1532:1536" ph="reps...reps" />
-                <marker date="1542557845938" expanded="true" signature="1550:1559" ph="usersSets...usersSets" />
-                <marker date="1542557845938" expanded="true" signature="1550:1570" ph="usersSets...{firstName}" />
-                <marker date="1542557845938" expanded="true" signature="1559:1570" ph="{...}" />
-                <marker date="1542557845938" expanded="true" signature="1560:1569" ph="firstName...firstName" />
-                <marker date="1542557845938" expanded="true" signature="1583:1594" ph="workoutSets...workoutSets" />
-                <marker date="1542557845938" expanded="true" signature="1583:1601" ph="workoutSets...{title}" />
-                <marker date="1542557845938" expanded="true" signature="1594:1601" ph="{...}" />
-                <marker date="1542557845938" expanded="true" signature="1595:1600" ph="title...title" />
-                <marker date="1542557845938" expanded="true" signature="1614:1623" ph="timeCheck...timeCheck" />
+                <element signature="e#1#27#0" expanded="true" />
+                <marker date="1542918068855" expanded="true" signature="522:832" ph="mutation...{&#10;        createCheckin(checked: $checked, workoutsIds: $workoutIdsArr, usersIds: $userIdsArr, timeCheck: $timeCheck){&#10;            id&#10;            createdAt&#10;            timeCheck&#10;            workouts{title}&#10;        }&#10;    }" />
+                <marker date="1542918068855" expanded="true" signature="530:611" ph="(...)" />
+                <marker date="1542918068855" expanded="true" signature="541:548" ph="Boolean...Boolean" />
+                <marker date="1542918068855" expanded="true" signature="566:571" ph="[...]" />
+                <marker date="1542918068855" expanded="true" signature="567:569" ph="ID...ID" />
+                <marker date="1542918068855" expanded="true" signature="586:591" ph="[...]" />
+                <marker date="1542918068855" expanded="true" signature="587:589" ph="ID...ID" />
+                <marker date="1542918068855" expanded="true" signature="604:610" ph="String...String" />
+                <marker date="1542918068855" expanded="true" signature="611:832" ph="{...}" />
+                <marker date="1542918068855" expanded="true" signature="621:634" ph="createCheckin...createCheckin" />
+                <marker date="1542918068855" expanded="true" signature="621:826" ph="createCheckin...{&#10;            id&#10;            createdAt&#10;            timeCheck&#10;            workouts{title}&#10;        }" />
+                <marker date="1542918068855" expanded="true" signature="634:728" ph="(...)" />
+                <marker date="1542918068855" expanded="true" signature="635:642" ph="checked...checked" />
+                <marker date="1542918068855" expanded="true" signature="654:665" ph="workoutsIds...workoutsIds" />
+                <marker date="1542918068855" expanded="true" signature="683:691" ph="usersIds...usersIds" />
+                <marker date="1542918068855" expanded="true" signature="706:715" ph="timeCheck...timeCheck" />
+                <marker date="1542918068855" expanded="true" signature="728:826" ph="{...}" />
+                <marker date="1542918068855" expanded="true" signature="742:744" ph="id...id" />
+                <marker date="1542918068855" expanded="true" signature="757:766" ph="createdAt...createdAt" />
+                <marker date="1542918068855" expanded="true" signature="779:788" ph="timeCheck...timeCheck" />
+                <marker date="1542918068855" expanded="true" signature="801:809" ph="workouts...workouts" />
+                <marker date="1542918068855" expanded="true" signature="801:816" ph="workouts...{title}" />
+                <marker date="1542918068855" expanded="true" signature="809:816" ph="{...}" />
+                <marker date="1542918068855" expanded="true" signature="810:815" ph="title...title" />
+                <marker date="1542918068855" expanded="true" signature="864:1084" ph="query...{&#10;        Workout(id:$id){&#10;            id&#10;            title&#10;            type{title}&#10;            description&#10;            exercises{name, sets, reps, intensity, tempo, id}&#10;            imageUrl&#10;        }&#10;    }" />
+                <marker date="1542918068855" expanded="true" signature="869:878" ph="(...)" />
+                <marker date="1542918068855" expanded="true" signature="874:876" ph="ID...ID" />
+                <marker date="1542918068855" expanded="true" signature="878:1084" ph="{...}" />
+                <marker date="1542918068855" expanded="true" signature="888:895" ph="Workout...Workout" />
+                <marker date="1542918068855" expanded="true" signature="888:1078" ph="Workout...{&#10;            id&#10;            title&#10;            type{title}&#10;            description&#10;            exercises{name, sets, reps, intensity, tempo, id}&#10;            imageUrl&#10;        }" />
+                <marker date="1542918068855" expanded="true" signature="895:903" ph="(...)" />
+                <marker date="1542918068855" expanded="true" signature="896:898" ph="id...id" />
+                <marker date="1542918068855" expanded="true" signature="903:1078" ph="{...}" />
+                <marker date="1542918068855" expanded="true" signature="917:919" ph="id...id" />
+                <marker date="1542918068855" expanded="true" signature="932:937" ph="title...title" />
+                <marker date="1542918068855" expanded="true" signature="950:954" ph="type...type" />
+                <marker date="1542918068855" expanded="true" signature="950:961" ph="type...{title}" />
+                <marker date="1542918068855" expanded="true" signature="954:961" ph="{...}" />
+                <marker date="1542918068855" expanded="true" signature="955:960" ph="title...title" />
+                <marker date="1542918068855" expanded="true" signature="974:985" ph="description...description" />
+                <marker date="1542918068855" expanded="true" signature="998:1007" ph="exercises...exercises" />
+                <marker date="1542918068855" expanded="true" signature="998:1047" ph="exercises...{name, sets, reps, intensity, tempo, id}" />
+                <marker date="1542918068855" expanded="true" signature="1007:1047" ph="{...}" />
+                <marker date="1542918068855" expanded="true" signature="1008:1012" ph="name...name" />
+                <marker date="1542918068855" expanded="true" signature="1014:1018" ph="sets...sets" />
+                <marker date="1542918068855" expanded="true" signature="1020:1024" ph="reps...reps" />
+                <marker date="1542918068855" expanded="true" signature="1026:1035" ph="intensity...intensity" />
+                <marker date="1542918068855" expanded="true" signature="1037:1042" ph="tempo...tempo" />
+                <marker date="1542918068855" expanded="true" signature="1044:1046" ph="id...id" />
+                <marker date="1542918068855" expanded="true" signature="1060:1068" ph="imageUrl...imageUrl" />
+                <marker date="1542918068855" expanded="true" signature="1129:1755" ph="mutation...{&#10;        createExerciseSets(setName: $setName, repsHit:$repsHit, weightUsed:$weightUsed, workoutSetsId: $workoutSetsId, exercisesIds: $exercisesIds, usersSetsIds: $usersSetsIds, timeCheck: $timeCheck, setOrderNo:$setOrderNo ){&#10;            id&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            exercises{name, reps}&#10;            usersSets{firstName}&#10;            workoutSets{title}&#10;            timeCheck&#10;        }&#10;    }" />
+                <marker date="1542918068855" expanded="true" signature="1138:1157" ph="createWorkoutRecord...createWorkoutRecord" />
+                <marker date="1542918068855" expanded="true" signature="1157:1314" ph="(...)" />
+                <marker date="1542918068855" expanded="true" signature="1172:1177" ph="[...]" />
+                <marker date="1542918068855" expanded="true" signature="1173:1175" ph="ID...ID" />
+                <marker date="1542918068855" expanded="true" signature="1189:1195" ph="String...String" />
+                <marker date="1542918068855" expanded="true" signature="1207:1213" ph="String...String" />
+                <marker date="1542918068855" expanded="true" signature="1230:1232" ph="ID...ID" />
+                <marker date="1542918068855" expanded="true" signature="1247:1253" ph="String...String" />
+                <marker date="1542918068855" expanded="true" signature="1270:1275" ph="[...]" />
+                <marker date="1542918068855" expanded="true" signature="1271:1273" ph="ID...ID" />
+                <marker date="1542918068855" expanded="true" signature="1289:1295" ph="String...String" />
+                <marker date="1542918068855" expanded="true" signature="1310:1313" ph="Int...Int" />
+                <marker date="1542918068855" expanded="true" signature="1314:1755" ph="{...}" />
+                <marker date="1542918068855" expanded="true" signature="1324:1342" ph="createExerciseSets...createExerciseSets" />
+                <marker date="1542918068855" expanded="true" signature="1324:1749" ph="createExerciseSets...{&#10;            id&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            exercises{name, reps}&#10;            usersSets{firstName}&#10;            workoutSets{title}&#10;            timeCheck&#10;        }" />
+                <marker date="1542918068855" expanded="true" signature="1342:1540" ph="(...)" />
+                <marker date="1542918068855" expanded="true" signature="1343:1350" ph="setName...setName" />
+                <marker date="1542918068855" expanded="true" signature="1362:1369" ph="repsHit...repsHit" />
+                <marker date="1542918068855" expanded="true" signature="1380:1390" ph="weightUsed...weightUsed" />
+                <marker date="1542918068855" expanded="true" signature="1404:1417" ph="workoutSetsId...workoutSetsId" />
+                <marker date="1542918068855" expanded="true" signature="1435:1447" ph="exercisesIds...exercisesIds" />
+                <marker date="1542918068855" expanded="true" signature="1464:1476" ph="usersSetsIds...usersSetsIds" />
+                <marker date="1542918068855" expanded="true" signature="1493:1502" ph="timeCheck...timeCheck" />
+                <marker date="1542918068855" expanded="true" signature="1516:1526" ph="setOrderNo...setOrderNo" />
+                <marker date="1542918068855" expanded="true" signature="1540:1749" ph="{...}" />
+                <marker date="1542918068855" expanded="true" signature="1554:1556" ph="id...id" />
+                <marker date="1542918068855" expanded="true" signature="1569:1576" ph="setName...setName" />
+                <marker date="1542918068855" expanded="true" signature="1589:1596" ph="repsHit...repsHit" />
+                <marker date="1542918068855" expanded="true" signature="1609:1619" ph="weightUsed...weightUsed" />
+                <marker date="1542918068855" expanded="true" signature="1632:1641" ph="exercises...exercises" />
+                <marker date="1542918068855" expanded="true" signature="1632:1653" ph="exercises...{name, reps}" />
+                <marker date="1542918068855" expanded="true" signature="1641:1653" ph="{...}" />
+                <marker date="1542918068855" expanded="true" signature="1642:1646" ph="name...name" />
+                <marker date="1542918068855" expanded="true" signature="1648:1652" ph="reps...reps" />
+                <marker date="1542918068855" expanded="true" signature="1666:1675" ph="usersSets...usersSets" />
+                <marker date="1542918068855" expanded="true" signature="1666:1686" ph="usersSets...{firstName}" />
+                <marker date="1542918068855" expanded="true" signature="1675:1686" ph="{...}" />
+                <marker date="1542918068855" expanded="true" signature="1676:1685" ph="firstName...firstName" />
+                <marker date="1542918068855" expanded="true" signature="1699:1710" ph="workoutSets...workoutSets" />
+                <marker date="1542918068855" expanded="true" signature="1699:1717" ph="workoutSets...{title}" />
+                <marker date="1542918068855" expanded="true" signature="1710:1717" ph="{...}" />
+                <marker date="1542918068855" expanded="true" signature="1711:1716" ph="title...title" />
+                <marker date="1542918068855" expanded="true" signature="1730:1739" ph="timeCheck...timeCheck" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="TrainerListScreen.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screens/TrainerListScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="420">
+              <caret line="274" column="18" lean-forward="true" selection-start-line="274" selection-start-column="18" selection-end-line="274" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1542914435893" expanded="true" signature="483:715" ph="query...{&#10;        allTrainers(orderBy: createdAt_ASC){&#10;            firstName&#10;            lastName&#10;            imageUrl&#10;            description&#10;            certification&#10;            blurb&#10;            email&#10;            id&#10;        }&#10;    }" />
+                <marker date="1542914435893" expanded="true" signature="488:715" ph="{...}" />
+                <marker date="1542914435893" expanded="true" signature="498:509" ph="allTrainers...allTrainers" />
+                <marker date="1542914435893" expanded="true" signature="498:709" ph="allTrainers...{&#10;            firstName&#10;            lastName&#10;            imageUrl&#10;            description&#10;            certification&#10;            blurb&#10;            email&#10;            id&#10;        }" />
+                <marker date="1542914435893" expanded="true" signature="509:533" ph="(...)" />
+                <marker date="1542914435893" expanded="true" signature="510:517" ph="orderBy...orderBy" />
+                <marker date="1542914435893" expanded="true" signature="533:709" ph="{...}" />
+                <marker date="1542914435893" expanded="true" signature="547:556" ph="firstName...firstName" />
+                <marker date="1542914435893" expanded="true" signature="569:577" ph="lastName...lastName" />
+                <marker date="1542914435893" expanded="true" signature="590:598" ph="imageUrl...imageUrl" />
+                <marker date="1542914435893" expanded="true" signature="611:622" ph="description...description" />
+                <marker date="1542914435893" expanded="true" signature="635:648" ph="certification...certification" />
+                <marker date="1542914435893" expanded="true" signature="661:666" ph="blurb...blurb" />
+                <marker date="1542914435893" expanded="true" signature="679:684" ph="email...email" />
+                <marker date="1542914435893" expanded="true" signature="697:699" ph="id...id" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,35 +418,38 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/components/Workout.js" />
         <option value="$PROJECT_DIR$/screens/InstructorScreen.js" />
-        <option value="$PROJECT_DIR$/components/WorkoutRecord.js" />
         <option value="$PROJECT_DIR$/screens/UserCheckinHistory.js" />
         <option value="$PROJECT_DIR$/screens/SingleClassDetailScreen.js" />
-        <option value="$PROJECT_DIR$/components/GroupFitnessClass.js" />
         <option value="$PROJECT_DIR$/screens/EditProfileScreen.js" />
-        <option value="$PROJECT_DIR$/screens/FacilitiesScreen.js" />
-        <option value="$PROJECT_DIR$/screens/TrainerScreen.js" />
         <option value="$PROJECT_DIR$/screens/GroupFitProgramsScreen.js" />
         <option value="$PROJECT_DIR$/navigation/AppNavigator.js" />
         <option value="$PROJECT_DIR$/App.js" />
         <option value="$PROJECT_DIR$/components/UserProfile.js" />
         <option value="$PROJECT_DIR$/screens/HomeScreenExpo.js" />
         <option value="$PROJECT_DIR$/components/__tests__/StyledText-test.js" />
-        <option value="$PROJECT_DIR$/screens/TrainerListScreen.js" />
         <option value="$PROJECT_DIR$/components/Logout.js" />
         <option value="$PROJECT_DIR$/screens/ProfileScreen.js" />
-        <option value="$PROJECT_DIR$/screens/HomeScreen.js" />
         <option value="$PROJECT_DIR$/screens/ScheduleScreen.js" />
-        <option value="$PROJECT_DIR$/screens/SettingsScreen.js" />
-        <option value="$PROJECT_DIR$/screens/WorkoutScreen.js" />
-        <option value="$PROJECT_DIR$/navigation/MainTabNavigator.js" />
         <option value="$PROJECT_DIR$/../MiamiOH-Fit_Android/app.json" />
         <option value="$PROJECT_DIR$/../MiamiOH-Fit_Android/package-lock.json" />
         <option value="$PROJECT_DIR$/../MiamiOH-Fit_Android/screens/EditProfileScreen.js" />
         <option value="$PROJECT_DIR$/screens/LoginScreen.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/screens/FacilitiesScreen.js" />
+        <option value="$PROJECT_DIR$/components/GroupFitnessClass.js" />
         <option value="$PROJECT_DIR$/app.json" />
+        <option value="$PROJECT_DIR$/screens/SettingsScreen.js" />
+        <option value="$PROJECT_DIR$/screens/HomeScreen.js" />
+        <option value="$PROJECT_DIR$/components/NewsItem.js" />
+        <option value="$PROJECT_DIR$/navigation/MainTabNavigator.js" />
+        <option value="$PROJECT_DIR$/components/Event.js" />
+        <option value="$PROJECT_DIR$/screens/TrainerListScreen.js" />
+        <option value="$PROJECT_DIR$/screens/TrainerScreen.js" />
+        <option value="$PROJECT_DIR$/screens/WorkoutScreen.js" />
+        <option value="$PROJECT_DIR$/components/Workout.js" />
+        <option value="$PROJECT_DIR$/components/Exercise.js" />
+        <option value="$PROJECT_DIR$/components/WorkoutRecord.js" />
         <option value="$PROJECT_DIR$/screens/SubmitWorkoutScreen.js" />
       </list>
     </option>
@@ -219,10 +465,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="207" />
+    <option name="x" value="363" />
     <option name="y" value="23" />
-    <option name="width" value="1279" />
-    <option name="height" value="803" />
+    <option name="width" value="1426" />
+    <option name="height" value="802" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -242,7 +488,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -254,13 +499,12 @@
             <path>
               <item name="MiamiOH-Fit" type="b2602c69:ProjectViewProjectNode" />
               <item name="MiamiOH-Fit" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MiamiOH-Fit" type="b2602c69:ProjectViewProjectNode" />
               <item name="MiamiOH-Fit" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="navigation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MiamiOH-Fit" type="b2602c69:ProjectViewProjectNode" />
@@ -271,6 +515,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -318,22 +563,27 @@
       <workItem from="1542219700047" duration="60141000" />
       <workItem from="1542550320711" duration="37000" />
       <workItem from="1542550367624" duration="31000" />
-      <workItem from="1542550491681" duration="3147000" />
+      <workItem from="1542550491681" duration="3899000" />
+      <workItem from="1542667726303" duration="4053000" />
+      <workItem from="1542772428171" duration="26000" />
+      <workItem from="1542823616092" duration="8091000" />
+      <workItem from="1542833199420" duration="34000" />
+      <workItem from="1542833534375" duration="9897000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63356000" />
+    <option name="totallyTimeSpent" value="86209000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="207" y="23" width="1279" height="803" extended-state="0" />
+    <frame x="363" y="23" width="1426" height="802" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21780604" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2113879" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="GraphQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32768363" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="GraphQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267544" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -363,21 +613,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../MiamiOH-Fit_Android/screens/GroupFitProgramsScreen.js" />
-    <entry file="file://$PROJECT_DIR$/components/TabBarIcon.js" />
-    <entry file="file://$PROJECT_DIR$/constants/Colors.js" />
-    <entry file="file://$PROJECT_DIR$/constants/Layout.js" />
-    <entry file="file://$PROJECT_DIR$/screens/LinksScreen.js" />
-    <entry file="file://$PROJECT_DIR$/screens/HomeScreenExpo.js" />
-    <entry file="file://$PROJECT_DIR$/components/StyledText.js" />
-    <entry file="file://$PROJECT_DIR$/components/__tests__/StyledText-test.js" />
-    <entry file="file://$PROJECT_DIR$/assets/images/icon.png" />
-    <entry file="file://$PROJECT_DIR$/../MiamiOH-Fit_Android/.watchmanconfig" />
-    <entry file="file://$PROJECT_DIR$/__tests__/App-test.js" />
-    <entry file="file://$PROJECT_DIR$/../MiamiOH-Fit_Android/.expo/settings.json" />
-    <entry file="file://$PROJECT_DIR$/../MiamiOH-Fit_Android/screens/TrainerListScreen.js" />
-    <entry file="file://$PROJECT_DIR$/../MiamiOH-Fit_Android/.expo/packager-info.json" />
-    <entry file="file://$PROJECT_DIR$/../MiamiOH-Fit_Android/.gitignore" />
     <entry file="file://$PROJECT_DIR$/../MiamiOH-Fit_Android/node_modules/react-native/Libraries/Renderer/oss/ReactNativeRenderer-dev.js" />
     <entry file="file://$PROJECT_DIR$/../MiamiOH-Fit_Android/screens/SubmitWorkoutScreen.js" />
     <entry file="file://$PROJECT_DIR$/../MiamiOH-Fit_Android/App.js" />
@@ -409,7 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -417,18 +651,60 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/MiamiFitnessSplash.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/MiamiFitnessSplashCircle.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Facility.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/GroupFitnessClass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/LoginScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="176" column="62" lean-forward="false" selection-start-line="176" selection-start-column="62" selection-end-line="176" selection-end-column="62" />
+        <state relative-caret-position="56">
+          <caret line="296" column="6" lean-forward="false" selection-start-line="296" selection-start-column="6" selection-end-line="296" selection-end-column="6" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
             <marker date="1542550941405" expanded="true" signature="17151:17352" ph="mutation...{&#10;        signupUser(email:$email,password: $password, username: $username){&#10;            id&#10;            token&#10;        }&#10;    }" />
             <marker date="1542550941405" expanded="true" signature="17160:17170" ph="SignUpUser...SignUpUser" />
             <marker date="1542550941405" expanded="true" signature="17170:17227" ph="(...)" />
@@ -463,141 +739,487 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App.js">
+    <entry file="file://$PROJECT_DIR$/screens/FacilitiesScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="53" column="14" lean-forward="true" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+        <state relative-caret-position="44">
+          <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/SettingsScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="117" column="57" lean-forward="false" selection-start-line="117" selection-start-column="57" selection-end-line="117" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/HomeScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5385">
+          <caret line="369" column="29" lean-forward="false" selection-start-line="369" selection-start-column="29" selection-end-line="369" selection-end-column="29" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
+            <marker date="1542829099597" expanded="true" signature="821:1032" ph="query...{&#10;        allNewsItems(filter:{isPublished:true}, orderBy:updatedAt_DESC){&#10;            id&#10;            imageUrl&#10;            title&#10;            blurb&#10;            instructor&#10;            location&#10;        }&#10;    }" />
+            <marker date="1542829099597" expanded="true" signature="826:1032" ph="{...}" />
+            <marker date="1542829099597" expanded="true" signature="836:848" ph="allNewsItems...allNewsItems" />
+            <marker date="1542829099597" expanded="true" signature="836:1026" ph="allNewsItems...{&#10;            id&#10;            imageUrl&#10;            title&#10;            blurb&#10;            instructor&#10;            location&#10;        }" />
+            <marker date="1542829099597" expanded="true" signature="848:899" ph="(...)" />
+            <marker date="1542829099597" expanded="true" signature="849:855" ph="filter...filter" />
+            <marker date="1542829099597" expanded="true" signature="849:874" ph="filter...{isPublished:true}" />
+            <marker date="1542829099597" expanded="true" signature="856:874" ph="{...}" />
+            <marker date="1542829099597" expanded="true" signature="857:868" ph="isPublished...isPublished" />
+            <marker date="1542829099597" expanded="true" signature="876:883" ph="orderBy...orderBy" />
+            <marker date="1542829099597" expanded="true" signature="899:1026" ph="{...}" />
+            <marker date="1542829099597" expanded="true" signature="913:915" ph="id...id" />
+            <marker date="1542829099597" expanded="true" signature="928:936" ph="imageUrl...imageUrl" />
+            <marker date="1542829099597" expanded="true" signature="949:954" ph="title...title" />
+            <marker date="1542829099597" expanded="true" signature="967:972" ph="blurb...blurb" />
+            <marker date="1542829099597" expanded="true" signature="985:995" ph="instructor...instructor" />
+            <marker date="1542829099597" expanded="true" signature="1008:1016" ph="location...location" />
+            <marker date="1542829099597" expanded="true" signature="1073:1361" ph="mutation...{&#10;        createComment(&#10;            content: $content,&#10;            userCommentId: $userCommentId,&#10;        ){&#10;            id&#10;            content&#10;            classComment{title}&#10;            userComment{username}&#10;        }&#10;    }" />
+            <marker date="1542829099597" expanded="true" signature="1082:1095" ph="createComment...createComment" />
+            <marker date="1542829099597" expanded="true" signature="1095:1135" ph="(...)" />
+            <marker date="1542829099597" expanded="true" signature="1106:1112" ph="String...String" />
+            <marker date="1542829099597" expanded="true" signature="1131:1133" ph="ID...ID" />
+            <marker date="1542829099597" expanded="true" signature="1135:1361" ph="{...}" />
+            <marker date="1542829099597" expanded="true" signature="1145:1158" ph="createComment...createComment" />
+            <marker date="1542829099597" expanded="true" signature="1145:1355" ph="createComment...{&#10;            id&#10;            content&#10;            classComment{title}&#10;            userComment{username}&#10;        }" />
+            <marker date="1542829099597" expanded="true" signature="1158:1243" ph="(...)" />
+            <marker date="1542829099597" expanded="true" signature="1172:1179" ph="content...content" />
+            <marker date="1542829099597" expanded="true" signature="1203:1216" ph="userCommentId...userCommentId" />
+            <marker date="1542829099597" expanded="true" signature="1243:1355" ph="{...}" />
+            <marker date="1542829099597" expanded="true" signature="1257:1259" ph="id...id" />
+            <marker date="1542829099597" expanded="true" signature="1272:1279" ph="content...content" />
+            <marker date="1542829099597" expanded="true" signature="1292:1304" ph="classComment...classComment" />
+            <marker date="1542829099597" expanded="true" signature="1292:1311" ph="classComment...{title}" />
+            <marker date="1542829099597" expanded="true" signature="1304:1311" ph="{...}" />
+            <marker date="1542829099597" expanded="true" signature="1305:1310" ph="title...title" />
+            <marker date="1542829099597" expanded="true" signature="1324:1335" ph="userComment...userComment" />
+            <marker date="1542829099597" expanded="true" signature="1324:1345" ph="userComment...{username}" />
+            <marker date="1542829099597" expanded="true" signature="1335:1345" ph="{...}" />
+            <marker date="1542829099597" expanded="true" signature="1336:1344" ph="username...username" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/components/NewsItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        <state relative-caret-position="224">
+          <caret line="62" column="22" lean-forward="false" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/images/MiamiFitnessSplash.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/images/MiamiFitnessSplashCircle.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
+    <entry file="file://$PROJECT_DIR$/node_modules/metro/src/lib/polyfills/require.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        <state relative-caret-position="291">
+          <caret line="291" column="0" lean-forward="false" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Event.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="296" column="47" lean-forward="false" selection-start-line="296" selection-start-column="47" selection-end-line="296" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1542841073533" expanded="true" signature="398:744" ph="mutation...{&#10;        createCheckin(checked: $checked, eventsIds: $eventsIds, usersIds: $usersIds, timeCheck: $timeCheck){&#10;            id&#10;            createdAt&#10;            timeCheck&#10;            events{name}&#10;            users{username}&#10;        }&#10;    }" />
+            <marker date="1542841073533" expanded="true" signature="407:431" ph="CreateEventCheckInByUser...CreateEventCheckInByUser" />
+            <marker date="1542841073533" expanded="true" signature="431:506" ph="(...)" />
+            <marker date="1542841073533" expanded="true" signature="442:449" ph="Boolean...Boolean" />
+            <marker date="1542841073533" expanded="true" signature="463:468" ph="[...]" />
+            <marker date="1542841073533" expanded="true" signature="464:466" ph="ID...ID" />
+            <marker date="1542841073533" expanded="true" signature="481:486" ph="[...]" />
+            <marker date="1542841073533" expanded="true" signature="482:484" ph="ID...ID" />
+            <marker date="1542841073533" expanded="true" signature="499:505" ph="String...String" />
+            <marker date="1542841073533" expanded="true" signature="506:744" ph="{...}" />
+            <marker date="1542841073533" expanded="true" signature="516:529" ph="createCheckin...createCheckin" />
+            <marker date="1542841073533" expanded="true" signature="516:738" ph="createCheckin...{&#10;            id&#10;            createdAt&#10;            timeCheck&#10;            events{name}&#10;            users{username}&#10;        }" />
+            <marker date="1542841073533" expanded="true" signature="529:615" ph="(...)" />
+            <marker date="1542841073533" expanded="true" signature="530:537" ph="checked...checked" />
+            <marker date="1542841073533" expanded="true" signature="549:558" ph="eventsIds...eventsIds" />
+            <marker date="1542841073533" expanded="true" signature="572:580" ph="usersIds...usersIds" />
+            <marker date="1542841073533" expanded="true" signature="593:602" ph="timeCheck...timeCheck" />
+            <marker date="1542841073533" expanded="true" signature="615:738" ph="{...}" />
+            <marker date="1542841073533" expanded="true" signature="629:631" ph="id...id" />
+            <marker date="1542841073533" expanded="true" signature="644:653" ph="createdAt...createdAt" />
+            <marker date="1542841073533" expanded="true" signature="666:675" ph="timeCheck...timeCheck" />
+            <marker date="1542841073533" expanded="true" signature="688:694" ph="events...events" />
+            <marker date="1542841073533" expanded="true" signature="688:700" ph="events...{name}" />
+            <marker date="1542841073533" expanded="true" signature="694:700" ph="{...}" />
+            <marker date="1542841073533" expanded="true" signature="695:699" ph="name...name" />
+            <marker date="1542841073533" expanded="true" signature="713:718" ph="users...users" />
+            <marker date="1542841073533" expanded="true" signature="713:728" ph="users...{username}" />
+            <marker date="1542841073533" expanded="true" signature="718:728" ph="{...}" />
+            <marker date="1542841073533" expanded="true" signature="719:727" ph="username...username" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/navigation/MainTabNavigator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="337" column="16" lean-forward="true" selection-start-line="337" selection-start-column="16" selection-end-line="337" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/TrainerScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="217" column="64" lean-forward="true" selection-start-line="217" selection-start-column="64" selection-end-line="217" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <marker date="1542915367294" expanded="true" signature="459:692" ph="query...{&#10;        allMemberships(filter:{type: &quot;training&quot;}, orderBy: startBalance_ASC, skip:1){&#10;            title&#10;            type&#10;            startBalance&#10;            rateMember&#10;            rateNonMember&#10;            url&#10;        }&#10;    }" />
+            <marker date="1542915367294" expanded="true" signature="464:692" ph="{...}" />
+            <marker date="1542915367294" expanded="true" signature="474:488" ph="allMemberships...allMemberships" />
+            <marker date="1542915367294" expanded="true" signature="474:686" ph="allMemberships...{&#10;            title&#10;            type&#10;            startBalance&#10;            rateMember&#10;            rateNonMember&#10;            url&#10;        }" />
+            <marker date="1542915367294" expanded="true" signature="488:550" ph="(...)" />
+            <marker date="1542915367294" expanded="true" signature="489:495" ph="filter...filter" />
+            <marker date="1542915367294" expanded="true" signature="489:514" ph="filter...{type: &quot;training&quot;}" />
+            <marker date="1542915367294" expanded="true" signature="496:514" ph="{...}" />
+            <marker date="1542915367294" expanded="true" signature="497:501" ph="type...type" />
+            <marker date="1542915367294" expanded="true" signature="516:523" ph="orderBy...orderBy" />
+            <marker date="1542915367294" expanded="true" signature="543:547" ph="skip...skip" />
+            <marker date="1542915367294" expanded="true" signature="550:686" ph="{...}" />
+            <marker date="1542915367294" expanded="true" signature="564:569" ph="title...title" />
+            <marker date="1542915367294" expanded="true" signature="582:586" ph="type...type" />
+            <marker date="1542915367294" expanded="true" signature="599:611" ph="startBalance...startBalance" />
+            <marker date="1542915367294" expanded="true" signature="624:634" ph="rateMember...rateMember" />
+            <marker date="1542915367294" expanded="true" signature="647:660" ph="rateNonMember...rateNonMember" />
+            <marker date="1542915367294" expanded="true" signature="673:676" ph="url...url" />
+            <marker date="1542915367294" expanded="true" signature="725:850" ph="query...{&#10;        Membership(id:&quot;cjnwmkhhdmm5s0116wy797q0o&quot;){&#10;            title&#10;            type&#10;            url&#10;        }&#10;    }" />
+            <marker date="1542915367294" expanded="true" signature="730:850" ph="{...}" />
+            <marker date="1542915367294" expanded="true" signature="740:750" ph="Membership...Membership" />
+            <marker date="1542915367294" expanded="true" signature="740:844" ph="Membership...{&#10;            title&#10;            type&#10;            url&#10;        }" />
+            <marker date="1542915367294" expanded="true" signature="750:782" ph="(...)" />
+            <marker date="1542915367294" expanded="true" signature="751:753" ph="id...id" />
+            <marker date="1542915367294" expanded="true" signature="782:844" ph="{...}" />
+            <marker date="1542915367294" expanded="true" signature="796:801" ph="title...title" />
+            <marker date="1542915367294" expanded="true" signature="814:818" ph="type...type" />
+            <marker date="1542915367294" expanded="true" signature="831:834" ph="url...url" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/TrainerListScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="274" column="18" lean-forward="true" selection-start-line="274" selection-start-column="18" selection-end-line="274" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1542914435893" expanded="true" signature="483:715" ph="query...{&#10;        allTrainers(orderBy: createdAt_ASC){&#10;            firstName&#10;            lastName&#10;            imageUrl&#10;            description&#10;            certification&#10;            blurb&#10;            email&#10;            id&#10;        }&#10;    }" />
+            <marker date="1542914435893" expanded="true" signature="488:715" ph="{...}" />
+            <marker date="1542914435893" expanded="true" signature="498:509" ph="allTrainers...allTrainers" />
+            <marker date="1542914435893" expanded="true" signature="498:709" ph="allTrainers...{&#10;            firstName&#10;            lastName&#10;            imageUrl&#10;            description&#10;            certification&#10;            blurb&#10;            email&#10;            id&#10;        }" />
+            <marker date="1542914435893" expanded="true" signature="509:533" ph="(...)" />
+            <marker date="1542914435893" expanded="true" signature="510:517" ph="orderBy...orderBy" />
+            <marker date="1542914435893" expanded="true" signature="533:709" ph="{...}" />
+            <marker date="1542914435893" expanded="true" signature="547:556" ph="firstName...firstName" />
+            <marker date="1542914435893" expanded="true" signature="569:577" ph="lastName...lastName" />
+            <marker date="1542914435893" expanded="true" signature="590:598" ph="imageUrl...imageUrl" />
+            <marker date="1542914435893" expanded="true" signature="611:622" ph="description...description" />
+            <marker date="1542914435893" expanded="true" signature="635:648" ph="certification...certification" />
+            <marker date="1542914435893" expanded="true" signature="661:666" ph="blurb...blurb" />
+            <marker date="1542914435893" expanded="true" signature="679:684" ph="email...email" />
+            <marker date="1542914435893" expanded="true" signature="697:699" ph="id...id" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/WorkoutScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="285" column="42" lean-forward="true" selection-start-line="285" selection-start-column="42" selection-end-line="285" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1542916570243" expanded="true" signature="590:962" ph="query...{&#10;        allWorkouts(filter:{isPublished: true} orderBy:createdAt_DESC, first:$load, skip:$skip){&#10;            id&#10;            title&#10;            type{title}&#10;            date&#10;            description&#10;            exercises{name, sets, reps, intensity, tempo, id}&#10;            author{alsoInstructor{id, firstName}}&#10;            imageUrl&#10;        }&#10;    }" />
+            <marker date="1542916570243" expanded="true" signature="595:617" ph="(...)" />
+            <marker date="1542916570243" expanded="true" signature="602:605" ph="Int...Int" />
+            <marker date="1542916570243" expanded="true" signature="613:616" ph="Int...Int" />
+            <marker date="1542916570243" expanded="true" signature="617:962" ph="{...}" />
+            <marker date="1542916570243" expanded="true" signature="627:638" ph="allWorkouts...allWorkouts" />
+            <marker date="1542916570243" expanded="true" signature="627:956" ph="allWorkouts...{&#10;            id&#10;            title&#10;            type{title}&#10;            date&#10;            description&#10;            exercises{name, sets, reps, intensity, tempo, id}&#10;            author{alsoInstructor{id, firstName}}&#10;            imageUrl&#10;        }" />
+            <marker date="1542916570243" expanded="true" signature="638:714" ph="(...)" />
+            <marker date="1542916570243" expanded="true" signature="639:645" ph="filter...filter" />
+            <marker date="1542916570243" expanded="true" signature="639:665" ph="filter...{isPublished: true}" />
+            <marker date="1542916570243" expanded="true" signature="646:665" ph="{...}" />
+            <marker date="1542916570243" expanded="true" signature="647:658" ph="isPublished...isPublished" />
+            <marker date="1542916570243" expanded="true" signature="666:673" ph="orderBy...orderBy" />
+            <marker date="1542916570243" expanded="true" signature="690:695" ph="first...first" />
+            <marker date="1542916570243" expanded="true" signature="703:707" ph="skip...skip" />
+            <marker date="1542916570243" expanded="true" signature="714:956" ph="{...}" />
+            <marker date="1542916570243" expanded="true" signature="728:730" ph="id...id" />
+            <marker date="1542916570243" expanded="true" signature="743:748" ph="title...title" />
+            <marker date="1542916570243" expanded="true" signature="761:765" ph="type...type" />
+            <marker date="1542916570243" expanded="true" signature="761:772" ph="type...{title}" />
+            <marker date="1542916570243" expanded="true" signature="765:772" ph="{...}" />
+            <marker date="1542916570243" expanded="true" signature="766:771" ph="title...title" />
+            <marker date="1542916570243" expanded="true" signature="785:789" ph="date...date" />
+            <marker date="1542916570243" expanded="true" signature="802:813" ph="description...description" />
+            <marker date="1542916570243" expanded="true" signature="826:835" ph="exercises...exercises" />
+            <marker date="1542916570243" expanded="true" signature="826:875" ph="exercises...{name, sets, reps, intensity, tempo, id}" />
+            <marker date="1542916570243" expanded="true" signature="835:875" ph="{...}" />
+            <marker date="1542916570243" expanded="true" signature="836:840" ph="name...name" />
+            <marker date="1542916570243" expanded="true" signature="842:846" ph="sets...sets" />
+            <marker date="1542916570243" expanded="true" signature="848:852" ph="reps...reps" />
+            <marker date="1542916570243" expanded="true" signature="854:863" ph="intensity...intensity" />
+            <marker date="1542916570243" expanded="true" signature="865:870" ph="tempo...tempo" />
+            <marker date="1542916570243" expanded="true" signature="872:874" ph="id...id" />
+            <marker date="1542916570243" expanded="true" signature="888:894" ph="author...author" />
+            <marker date="1542916570243" expanded="true" signature="888:925" ph="author...{alsoInstructor{id, firstName}}" />
+            <marker date="1542916570243" expanded="true" signature="894:925" ph="{...}" />
+            <marker date="1542916570243" expanded="true" signature="895:909" ph="alsoInstructor...alsoInstructor" />
+            <marker date="1542916570243" expanded="true" signature="895:924" ph="alsoInstructor...{id, firstName}" />
+            <marker date="1542916570243" expanded="true" signature="909:924" ph="{...}" />
+            <marker date="1542916570243" expanded="true" signature="910:912" ph="id...id" />
+            <marker date="1542916570243" expanded="true" signature="914:923" ph="firstName...firstName" />
+            <marker date="1542916570243" expanded="true" signature="938:946" ph="imageUrl...imageUrl" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Workout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="120" column="93" lean-forward="true" selection-start-line="120" selection-start-column="93" selection-end-line="120" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1542916646765" expanded="true" signature="432:678" ph="mutation...{&#10;        createCheckin(checked: $checked, workoutsIds: $workoutIdsArr, usersIds: $userIdsArr){&#10;            id&#10;            createdAt&#10;            workouts{title}&#10;        }&#10;    }" />
+            <marker date="1542916646765" expanded="true" signature="440:502" ph="(...)" />
+            <marker date="1542916646765" expanded="true" signature="451:458" ph="Boolean...Boolean" />
+            <marker date="1542916646765" expanded="true" signature="476:481" ph="[...]" />
+            <marker date="1542916646765" expanded="true" signature="477:479" ph="ID...ID" />
+            <marker date="1542916646765" expanded="true" signature="496:501" ph="[...]" />
+            <marker date="1542916646765" expanded="true" signature="497:499" ph="ID...ID" />
+            <marker date="1542916646765" expanded="true" signature="502:678" ph="{...}" />
+            <marker date="1542916646765" expanded="true" signature="512:525" ph="createCheckin...createCheckin" />
+            <marker date="1542916646765" expanded="true" signature="512:672" ph="createCheckin...{&#10;            id&#10;            createdAt&#10;            workouts{title}&#10;        }" />
+            <marker date="1542916646765" expanded="true" signature="525:596" ph="(...)" />
+            <marker date="1542916646765" expanded="true" signature="526:533" ph="checked...checked" />
+            <marker date="1542916646765" expanded="true" signature="545:556" ph="workoutsIds...workoutsIds" />
+            <marker date="1542916646765" expanded="true" signature="574:582" ph="usersIds...usersIds" />
+            <marker date="1542916646765" expanded="true" signature="596:672" ph="{...}" />
+            <marker date="1542916646765" expanded="true" signature="610:612" ph="id...id" />
+            <marker date="1542916646765" expanded="true" signature="625:634" ph="createdAt...createdAt" />
+            <marker date="1542916646765" expanded="true" signature="647:655" ph="workouts...workouts" />
+            <marker date="1542916646765" expanded="true" signature="647:662" ph="workouts...{title}" />
+            <marker date="1542916646765" expanded="true" signature="655:662" ph="{...}" />
+            <marker date="1542916646765" expanded="true" signature="656:661" ph="title...title" />
+            <marker date="1542916646765" expanded="true" signature="717:1283" ph="mutation...{&#10;        createExerciseSets(&#10;            setName:$setName,&#10;            repsHit:$repsHit,&#10;            weightUsed:$weightUsed,&#10;            exercisesIds: $exercise,&#10;            usersSetsIds: $userId,&#10;            workoutSetsId: $workout,&#10;        ){&#10;            id&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            exercises{name, reps}&#10;            usersSets{firstName}&#10;            workoutSets{title}&#10;        }&#10;    }" />
+            <marker date="1542916646765" expanded="true" signature="726:744" ph="createExerciseSets...createExerciseSets" />
+            <marker date="1542916646765" expanded="true" signature="744:846" ph="(...)" />
+            <marker date="1542916646765" expanded="true" signature="753:758" ph="[...]" />
+            <marker date="1542916646765" expanded="true" signature="754:756" ph="ID...ID" />
+            <marker date="1542916646765" expanded="true" signature="770:776" ph="String...String" />
+            <marker date="1542916646765" expanded="true" signature="788:794" ph="String...String" />
+            <marker date="1542916646765" expanded="true" signature="805:807" ph="ID...ID" />
+            <marker date="1542916646765" expanded="true" signature="822:828" ph="String...String" />
+            <marker date="1542916646765" expanded="true" signature="840:845" ph="[...]" />
+            <marker date="1542916646765" expanded="true" signature="841:843" ph="ID...ID" />
+            <marker date="1542916646765" expanded="true" signature="846:1283" ph="{...}" />
+            <marker date="1542916646765" expanded="true" signature="856:874" ph="createExerciseSets...createExerciseSets" />
+            <marker date="1542916646765" expanded="true" signature="856:1277" ph="createExerciseSets...{&#10;            id&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            exercises{name, reps}&#10;            usersSets{firstName}&#10;            workoutSets{title}&#10;        }" />
+            <marker date="1542916646765" expanded="true" signature="874:1090" ph="(...)" />
+            <marker date="1542916646765" expanded="true" signature="888:895" ph="setName...setName" />
+            <marker date="1542916646765" expanded="true" signature="918:925" ph="repsHit...repsHit" />
+            <marker date="1542916646765" expanded="true" signature="948:958" ph="weightUsed...weightUsed" />
+            <marker date="1542916646765" expanded="true" signature="984:996" ph="exercisesIds...exercisesIds" />
+            <marker date="1542916646765" expanded="true" signature="1021:1033" ph="usersSetsIds...usersSetsIds" />
+            <marker date="1542916646765" expanded="true" signature="1056:1069" ph="workoutSetsId...workoutSetsId" />
+            <marker date="1542916646765" expanded="true" signature="1090:1277" ph="{...}" />
+            <marker date="1542916646765" expanded="true" signature="1104:1106" ph="id...id" />
+            <marker date="1542916646765" expanded="true" signature="1119:1126" ph="setName...setName" />
+            <marker date="1542916646765" expanded="true" signature="1139:1146" ph="repsHit...repsHit" />
+            <marker date="1542916646765" expanded="true" signature="1159:1169" ph="weightUsed...weightUsed" />
+            <marker date="1542916646765" expanded="true" signature="1182:1191" ph="exercises...exercises" />
+            <marker date="1542916646765" expanded="true" signature="1182:1203" ph="exercises...{name, reps}" />
+            <marker date="1542916646765" expanded="true" signature="1191:1203" ph="{...}" />
+            <marker date="1542916646765" expanded="true" signature="1192:1196" ph="name...name" />
+            <marker date="1542916646765" expanded="true" signature="1198:1202" ph="reps...reps" />
+            <marker date="1542916646765" expanded="true" signature="1216:1225" ph="usersSets...usersSets" />
+            <marker date="1542916646765" expanded="true" signature="1216:1236" ph="usersSets...{firstName}" />
+            <marker date="1542916646765" expanded="true" signature="1225:1236" ph="{...}" />
+            <marker date="1542916646765" expanded="true" signature="1226:1235" ph="firstName...firstName" />
+            <marker date="1542916646765" expanded="true" signature="1249:1260" ph="workoutSets...workoutSets" />
+            <marker date="1542916646765" expanded="true" signature="1249:1267" ph="workoutSets...{title}" />
+            <marker date="1542916646765" expanded="true" signature="1260:1267" ph="{...}" />
+            <marker date="1542916646765" expanded="true" signature="1261:1266" ph="title...title" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Exercise.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="76" column="51" lean-forward="true" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/WorkoutRecord.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="62" column="29" lean-forward="true" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1542917569614" expanded="true" signature="519:1113" ph="query...{&#10;        allExerciseSetses(&#10;            filter: {&#10;                usersSets_every:{id: $userId},&#10;                workoutSets:{id: $workout},&#10;                timeCheck_contains:$timeCheck&#10;&#10;            }&#10;            orderBy: setOrderNo_ASC){&#10;            id&#10;            createdAt&#10;            usersSets{&#10;                firstName&#10;            }&#10;            workoutSets{title, exercises{name, reps, sets}}&#10;            exercises{name}&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            timeCheck&#10;        }&#10;    }" />
+            <marker date="1542917569614" expanded="true" signature="525:539" ph="WorkoutRecords...WorkoutRecords" />
+            <marker date="1542917569614" expanded="true" signature="539:584" ph="(...)" />
+            <marker date="1542917569614" expanded="true" signature="548:550" ph="ID...ID" />
+            <marker date="1542917569614" expanded="true" signature="564:570" ph="String...String" />
+            <marker date="1542917569614" expanded="true" signature="581:583" ph="ID...ID" />
+            <marker date="1542917569614" expanded="true" signature="584:1113" ph="{...}" />
+            <marker date="1542917569614" expanded="true" signature="594:611" ph="allExerciseSetses...allExerciseSetses" />
+            <marker date="1542917569614" expanded="true" signature="594:1107" ph="allExerciseSetses...{&#10;            id&#10;            createdAt&#10;            usersSets{&#10;                firstName&#10;            }&#10;            workoutSets{title, exercises{name, reps, sets}}&#10;            exercises{name}&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            timeCheck&#10;        }" />
+            <marker date="1542917569614" expanded="true" signature="611:823" ph="(...)" />
+            <marker date="1542917569614" expanded="true" signature="625:631" ph="filter...filter" />
+            <marker date="1542917569614" expanded="true" signature="625:786" ph="filter...{&#10;                usersSets_every:{id: $userId},&#10;                workoutSets:{id: $workout},&#10;                timeCheck_contains:$timeCheck&#10;&#10;            }" />
+            <marker date="1542917569614" expanded="true" signature="633:786" ph="{...}" />
+            <marker date="1542917569614" expanded="true" signature="651:666" ph="usersSets_every...usersSets_every" />
+            <marker date="1542917569614" expanded="true" signature="651:680" ph="usersSets_every...{id: $userId}" />
+            <marker date="1542917569614" expanded="true" signature="667:680" ph="{...}" />
+            <marker date="1542917569614" expanded="true" signature="668:670" ph="id...id" />
+            <marker date="1542917569614" expanded="true" signature="698:709" ph="workoutSets...workoutSets" />
+            <marker date="1542917569614" expanded="true" signature="698:724" ph="workoutSets...{id: $workout}" />
+            <marker date="1542917569614" expanded="true" signature="710:724" ph="{...}" />
+            <marker date="1542917569614" expanded="true" signature="711:713" ph="id...id" />
+            <marker date="1542917569614" expanded="true" signature="742:760" ph="timeCheck_contains...timeCheck_contains" />
+            <marker date="1542917569614" expanded="true" signature="799:806" ph="orderBy...orderBy" />
+            <marker date="1542917569614" expanded="true" signature="823:1107" ph="{...}" />
+            <marker date="1542917569614" expanded="true" signature="837:839" ph="id...id" />
+            <marker date="1542917569614" expanded="true" signature="852:861" ph="createdAt...createdAt" />
+            <marker date="1542917569614" expanded="true" signature="874:883" ph="usersSets...usersSets" />
+            <marker date="1542917569614" expanded="true" signature="874:924" ph="usersSets...{&#10;                firstName&#10;            }" />
+            <marker date="1542917569614" expanded="true" signature="883:924" ph="{...}" />
+            <marker date="1542917569614" expanded="true" signature="901:910" ph="firstName...firstName" />
+            <marker date="1542917569614" expanded="true" signature="937:948" ph="workoutSets...workoutSets" />
+            <marker date="1542917569614" expanded="true" signature="937:984" ph="workoutSets...{title, exercises{name, reps, sets}}" />
+            <marker date="1542917569614" expanded="true" signature="948:984" ph="{...}" />
+            <marker date="1542917569614" expanded="true" signature="949:954" ph="title...title" />
+            <marker date="1542917569614" expanded="true" signature="956:965" ph="exercises...exercises" />
+            <marker date="1542917569614" expanded="true" signature="956:983" ph="exercises...{name, reps, sets}" />
+            <marker date="1542917569614" expanded="true" signature="965:983" ph="{...}" />
+            <marker date="1542917569614" expanded="true" signature="966:970" ph="name...name" />
+            <marker date="1542917569614" expanded="true" signature="972:976" ph="reps...reps" />
+            <marker date="1542917569614" expanded="true" signature="978:982" ph="sets...sets" />
+            <marker date="1542917569614" expanded="true" signature="997:1006" ph="exercises...exercises" />
+            <marker date="1542917569614" expanded="true" signature="997:1012" ph="exercises...{name}" />
+            <marker date="1542917569614" expanded="true" signature="1006:1012" ph="{...}" />
+            <marker date="1542917569614" expanded="true" signature="1007:1011" ph="name...name" />
+            <marker date="1542917569614" expanded="true" signature="1025:1032" ph="setName...setName" />
+            <marker date="1542917569614" expanded="true" signature="1045:1052" ph="repsHit...repsHit" />
+            <marker date="1542917569614" expanded="true" signature="1065:1075" ph="weightUsed...weightUsed" />
+            <marker date="1542917569614" expanded="true" signature="1088:1097" ph="timeCheck...timeCheck" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/SubmitWorkoutScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="389" column="15" lean-forward="false" selection-start-line="389" selection-start-column="15" selection-end-line="389" selection-end-column="15" />
+        <state relative-caret-position="476">
+          <caret line="323" column="23" lean-forward="true" selection-start-line="323" selection-start-column="23" selection-end-line="323" selection-end-column="23" />
           <folding>
-            <marker date="1542557845938" expanded="true" signature="406:716" ph="mutation...{&#10;        createCheckin(checked: $checked, workoutsIds: $workoutIdsArr, usersIds: $userIdsArr, timeCheck: $timeCheck){&#10;            id&#10;            createdAt&#10;            timeCheck&#10;            workouts{title}&#10;        }&#10;    }" />
-            <marker date="1542557845938" expanded="true" signature="414:495" ph="(...)" />
-            <marker date="1542557845938" expanded="true" signature="425:432" ph="Boolean...Boolean" />
-            <marker date="1542557845938" expanded="true" signature="450:455" ph="[...]" />
-            <marker date="1542557845938" expanded="true" signature="451:453" ph="ID...ID" />
-            <marker date="1542557845938" expanded="true" signature="470:475" ph="[...]" />
-            <marker date="1542557845938" expanded="true" signature="471:473" ph="ID...ID" />
-            <marker date="1542557845938" expanded="true" signature="488:494" ph="String...String" />
-            <marker date="1542557845938" expanded="true" signature="495:716" ph="{...}" />
-            <marker date="1542557845938" expanded="true" signature="505:518" ph="createCheckin...createCheckin" />
-            <marker date="1542557845938" expanded="true" signature="505:710" ph="createCheckin...{&#10;            id&#10;            createdAt&#10;            timeCheck&#10;            workouts{title}&#10;        }" />
-            <marker date="1542557845938" expanded="true" signature="518:612" ph="(...)" />
-            <marker date="1542557845938" expanded="true" signature="519:526" ph="checked...checked" />
-            <marker date="1542557845938" expanded="true" signature="538:549" ph="workoutsIds...workoutsIds" />
-            <marker date="1542557845938" expanded="true" signature="567:575" ph="usersIds...usersIds" />
-            <marker date="1542557845938" expanded="true" signature="590:599" ph="timeCheck...timeCheck" />
-            <marker date="1542557845938" expanded="true" signature="612:710" ph="{...}" />
-            <marker date="1542557845938" expanded="true" signature="626:628" ph="id...id" />
-            <marker date="1542557845938" expanded="true" signature="641:650" ph="createdAt...createdAt" />
-            <marker date="1542557845938" expanded="true" signature="663:672" ph="timeCheck...timeCheck" />
-            <marker date="1542557845938" expanded="true" signature="685:693" ph="workouts...workouts" />
-            <marker date="1542557845938" expanded="true" signature="685:700" ph="workouts...{title}" />
-            <marker date="1542557845938" expanded="true" signature="693:700" ph="{...}" />
-            <marker date="1542557845938" expanded="true" signature="694:699" ph="title...title" />
-            <marker date="1542557845938" expanded="true" signature="748:968" ph="query...{&#10;        Workout(id:$id){&#10;            id&#10;            title&#10;            type{title}&#10;            description&#10;            exercises{name, sets, reps, intensity, tempo, id}&#10;            imageUrl&#10;        }&#10;    }" />
-            <marker date="1542557845938" expanded="true" signature="753:762" ph="(...)" />
-            <marker date="1542557845938" expanded="true" signature="758:760" ph="ID...ID" />
-            <marker date="1542557845938" expanded="true" signature="762:968" ph="{...}" />
-            <marker date="1542557845938" expanded="true" signature="772:779" ph="Workout...Workout" />
-            <marker date="1542557845938" expanded="true" signature="772:962" ph="Workout...{&#10;            id&#10;            title&#10;            type{title}&#10;            description&#10;            exercises{name, sets, reps, intensity, tempo, id}&#10;            imageUrl&#10;        }" />
-            <marker date="1542557845938" expanded="true" signature="779:787" ph="(...)" />
-            <marker date="1542557845938" expanded="true" signature="780:782" ph="id...id" />
-            <marker date="1542557845938" expanded="true" signature="787:962" ph="{...}" />
-            <marker date="1542557845938" expanded="true" signature="801:803" ph="id...id" />
-            <marker date="1542557845938" expanded="true" signature="816:821" ph="title...title" />
-            <marker date="1542557845938" expanded="true" signature="834:838" ph="type...type" />
-            <marker date="1542557845938" expanded="true" signature="834:845" ph="type...{title}" />
-            <marker date="1542557845938" expanded="true" signature="838:845" ph="{...}" />
-            <marker date="1542557845938" expanded="true" signature="839:844" ph="title...title" />
-            <marker date="1542557845938" expanded="true" signature="858:869" ph="description...description" />
-            <marker date="1542557845938" expanded="true" signature="882:891" ph="exercises...exercises" />
-            <marker date="1542557845938" expanded="true" signature="882:931" ph="exercises...{name, sets, reps, intensity, tempo, id}" />
-            <marker date="1542557845938" expanded="true" signature="891:931" ph="{...}" />
-            <marker date="1542557845938" expanded="true" signature="892:896" ph="name...name" />
-            <marker date="1542557845938" expanded="true" signature="898:902" ph="sets...sets" />
-            <marker date="1542557845938" expanded="true" signature="904:908" ph="reps...reps" />
-            <marker date="1542557845938" expanded="true" signature="910:919" ph="intensity...intensity" />
-            <marker date="1542557845938" expanded="true" signature="921:926" ph="tempo...tempo" />
-            <marker date="1542557845938" expanded="true" signature="928:930" ph="id...id" />
-            <marker date="1542557845938" expanded="true" signature="944:952" ph="imageUrl...imageUrl" />
-            <marker date="1542557845938" expanded="true" signature="1013:1639" ph="mutation...{&#10;        createExerciseSets(setName: $setName, repsHit:$repsHit, weightUsed:$weightUsed, workoutSetsId: $workoutSetsId, exercisesIds: $exercisesIds, usersSetsIds: $usersSetsIds, timeCheck: $timeCheck, setOrderNo:$setOrderNo ){&#10;            id&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            exercises{name, reps}&#10;            usersSets{firstName}&#10;            workoutSets{title}&#10;            timeCheck&#10;        }&#10;    }" />
-            <marker date="1542557845938" expanded="true" signature="1022:1041" ph="createWorkoutRecord...createWorkoutRecord" />
-            <marker date="1542557845938" expanded="true" signature="1041:1198" ph="(...)" />
-            <marker date="1542557845938" expanded="true" signature="1056:1061" ph="[...]" />
-            <marker date="1542557845938" expanded="true" signature="1057:1059" ph="ID...ID" />
-            <marker date="1542557845938" expanded="true" signature="1073:1079" ph="String...String" />
-            <marker date="1542557845938" expanded="true" signature="1091:1097" ph="String...String" />
-            <marker date="1542557845938" expanded="true" signature="1114:1116" ph="ID...ID" />
-            <marker date="1542557845938" expanded="true" signature="1131:1137" ph="String...String" />
-            <marker date="1542557845938" expanded="true" signature="1154:1159" ph="[...]" />
-            <marker date="1542557845938" expanded="true" signature="1155:1157" ph="ID...ID" />
-            <marker date="1542557845938" expanded="true" signature="1173:1179" ph="String...String" />
-            <marker date="1542557845938" expanded="true" signature="1194:1197" ph="Int...Int" />
-            <marker date="1542557845938" expanded="true" signature="1198:1639" ph="{...}" />
-            <marker date="1542557845938" expanded="true" signature="1208:1226" ph="createExerciseSets...createExerciseSets" />
-            <marker date="1542557845938" expanded="true" signature="1208:1633" ph="createExerciseSets...{&#10;            id&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            exercises{name, reps}&#10;            usersSets{firstName}&#10;            workoutSets{title}&#10;            timeCheck&#10;        }" />
-            <marker date="1542557845938" expanded="true" signature="1226:1424" ph="(...)" />
-            <marker date="1542557845938" expanded="true" signature="1227:1234" ph="setName...setName" />
-            <marker date="1542557845938" expanded="true" signature="1246:1253" ph="repsHit...repsHit" />
-            <marker date="1542557845938" expanded="true" signature="1264:1274" ph="weightUsed...weightUsed" />
-            <marker date="1542557845938" expanded="true" signature="1288:1301" ph="workoutSetsId...workoutSetsId" />
-            <marker date="1542557845938" expanded="true" signature="1319:1331" ph="exercisesIds...exercisesIds" />
-            <marker date="1542557845938" expanded="true" signature="1348:1360" ph="usersSetsIds...usersSetsIds" />
-            <marker date="1542557845938" expanded="true" signature="1377:1386" ph="timeCheck...timeCheck" />
-            <marker date="1542557845938" expanded="true" signature="1400:1410" ph="setOrderNo...setOrderNo" />
-            <marker date="1542557845938" expanded="true" signature="1424:1633" ph="{...}" />
-            <marker date="1542557845938" expanded="true" signature="1438:1440" ph="id...id" />
-            <marker date="1542557845938" expanded="true" signature="1453:1460" ph="setName...setName" />
-            <marker date="1542557845938" expanded="true" signature="1473:1480" ph="repsHit...repsHit" />
-            <marker date="1542557845938" expanded="true" signature="1493:1503" ph="weightUsed...weightUsed" />
-            <marker date="1542557845938" expanded="true" signature="1516:1525" ph="exercises...exercises" />
-            <marker date="1542557845938" expanded="true" signature="1516:1537" ph="exercises...{name, reps}" />
-            <marker date="1542557845938" expanded="true" signature="1525:1537" ph="{...}" />
-            <marker date="1542557845938" expanded="true" signature="1526:1530" ph="name...name" />
-            <marker date="1542557845938" expanded="true" signature="1532:1536" ph="reps...reps" />
-            <marker date="1542557845938" expanded="true" signature="1550:1559" ph="usersSets...usersSets" />
-            <marker date="1542557845938" expanded="true" signature="1550:1570" ph="usersSets...{firstName}" />
-            <marker date="1542557845938" expanded="true" signature="1559:1570" ph="{...}" />
-            <marker date="1542557845938" expanded="true" signature="1560:1569" ph="firstName...firstName" />
-            <marker date="1542557845938" expanded="true" signature="1583:1594" ph="workoutSets...workoutSets" />
-            <marker date="1542557845938" expanded="true" signature="1583:1601" ph="workoutSets...{title}" />
-            <marker date="1542557845938" expanded="true" signature="1594:1601" ph="{...}" />
-            <marker date="1542557845938" expanded="true" signature="1595:1600" ph="title...title" />
-            <marker date="1542557845938" expanded="true" signature="1614:1623" ph="timeCheck...timeCheck" />
+            <element signature="e#1#27#0" expanded="true" />
+            <marker date="1542918068855" expanded="true" signature="522:832" ph="mutation...{&#10;        createCheckin(checked: $checked, workoutsIds: $workoutIdsArr, usersIds: $userIdsArr, timeCheck: $timeCheck){&#10;            id&#10;            createdAt&#10;            timeCheck&#10;            workouts{title}&#10;        }&#10;    }" />
+            <marker date="1542918068855" expanded="true" signature="530:611" ph="(...)" />
+            <marker date="1542918068855" expanded="true" signature="541:548" ph="Boolean...Boolean" />
+            <marker date="1542918068855" expanded="true" signature="566:571" ph="[...]" />
+            <marker date="1542918068855" expanded="true" signature="567:569" ph="ID...ID" />
+            <marker date="1542918068855" expanded="true" signature="586:591" ph="[...]" />
+            <marker date="1542918068855" expanded="true" signature="587:589" ph="ID...ID" />
+            <marker date="1542918068855" expanded="true" signature="604:610" ph="String...String" />
+            <marker date="1542918068855" expanded="true" signature="611:832" ph="{...}" />
+            <marker date="1542918068855" expanded="true" signature="621:634" ph="createCheckin...createCheckin" />
+            <marker date="1542918068855" expanded="true" signature="621:826" ph="createCheckin...{&#10;            id&#10;            createdAt&#10;            timeCheck&#10;            workouts{title}&#10;        }" />
+            <marker date="1542918068855" expanded="true" signature="634:728" ph="(...)" />
+            <marker date="1542918068855" expanded="true" signature="635:642" ph="checked...checked" />
+            <marker date="1542918068855" expanded="true" signature="654:665" ph="workoutsIds...workoutsIds" />
+            <marker date="1542918068855" expanded="true" signature="683:691" ph="usersIds...usersIds" />
+            <marker date="1542918068855" expanded="true" signature="706:715" ph="timeCheck...timeCheck" />
+            <marker date="1542918068855" expanded="true" signature="728:826" ph="{...}" />
+            <marker date="1542918068855" expanded="true" signature="742:744" ph="id...id" />
+            <marker date="1542918068855" expanded="true" signature="757:766" ph="createdAt...createdAt" />
+            <marker date="1542918068855" expanded="true" signature="779:788" ph="timeCheck...timeCheck" />
+            <marker date="1542918068855" expanded="true" signature="801:809" ph="workouts...workouts" />
+            <marker date="1542918068855" expanded="true" signature="801:816" ph="workouts...{title}" />
+            <marker date="1542918068855" expanded="true" signature="809:816" ph="{...}" />
+            <marker date="1542918068855" expanded="true" signature="810:815" ph="title...title" />
+            <marker date="1542918068855" expanded="true" signature="864:1084" ph="query...{&#10;        Workout(id:$id){&#10;            id&#10;            title&#10;            type{title}&#10;            description&#10;            exercises{name, sets, reps, intensity, tempo, id}&#10;            imageUrl&#10;        }&#10;    }" />
+            <marker date="1542918068855" expanded="true" signature="869:878" ph="(...)" />
+            <marker date="1542918068855" expanded="true" signature="874:876" ph="ID...ID" />
+            <marker date="1542918068855" expanded="true" signature="878:1084" ph="{...}" />
+            <marker date="1542918068855" expanded="true" signature="888:895" ph="Workout...Workout" />
+            <marker date="1542918068855" expanded="true" signature="888:1078" ph="Workout...{&#10;            id&#10;            title&#10;            type{title}&#10;            description&#10;            exercises{name, sets, reps, intensity, tempo, id}&#10;            imageUrl&#10;        }" />
+            <marker date="1542918068855" expanded="true" signature="895:903" ph="(...)" />
+            <marker date="1542918068855" expanded="true" signature="896:898" ph="id...id" />
+            <marker date="1542918068855" expanded="true" signature="903:1078" ph="{...}" />
+            <marker date="1542918068855" expanded="true" signature="917:919" ph="id...id" />
+            <marker date="1542918068855" expanded="true" signature="932:937" ph="title...title" />
+            <marker date="1542918068855" expanded="true" signature="950:954" ph="type...type" />
+            <marker date="1542918068855" expanded="true" signature="950:961" ph="type...{title}" />
+            <marker date="1542918068855" expanded="true" signature="954:961" ph="{...}" />
+            <marker date="1542918068855" expanded="true" signature="955:960" ph="title...title" />
+            <marker date="1542918068855" expanded="true" signature="974:985" ph="description...description" />
+            <marker date="1542918068855" expanded="true" signature="998:1007" ph="exercises...exercises" />
+            <marker date="1542918068855" expanded="true" signature="998:1047" ph="exercises...{name, sets, reps, intensity, tempo, id}" />
+            <marker date="1542918068855" expanded="true" signature="1007:1047" ph="{...}" />
+            <marker date="1542918068855" expanded="true" signature="1008:1012" ph="name...name" />
+            <marker date="1542918068855" expanded="true" signature="1014:1018" ph="sets...sets" />
+            <marker date="1542918068855" expanded="true" signature="1020:1024" ph="reps...reps" />
+            <marker date="1542918068855" expanded="true" signature="1026:1035" ph="intensity...intensity" />
+            <marker date="1542918068855" expanded="true" signature="1037:1042" ph="tempo...tempo" />
+            <marker date="1542918068855" expanded="true" signature="1044:1046" ph="id...id" />
+            <marker date="1542918068855" expanded="true" signature="1060:1068" ph="imageUrl...imageUrl" />
+            <marker date="1542918068855" expanded="true" signature="1129:1755" ph="mutation...{&#10;        createExerciseSets(setName: $setName, repsHit:$repsHit, weightUsed:$weightUsed, workoutSetsId: $workoutSetsId, exercisesIds: $exercisesIds, usersSetsIds: $usersSetsIds, timeCheck: $timeCheck, setOrderNo:$setOrderNo ){&#10;            id&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            exercises{name, reps}&#10;            usersSets{firstName}&#10;            workoutSets{title}&#10;            timeCheck&#10;        }&#10;    }" />
+            <marker date="1542918068855" expanded="true" signature="1138:1157" ph="createWorkoutRecord...createWorkoutRecord" />
+            <marker date="1542918068855" expanded="true" signature="1157:1314" ph="(...)" />
+            <marker date="1542918068855" expanded="true" signature="1172:1177" ph="[...]" />
+            <marker date="1542918068855" expanded="true" signature="1173:1175" ph="ID...ID" />
+            <marker date="1542918068855" expanded="true" signature="1189:1195" ph="String...String" />
+            <marker date="1542918068855" expanded="true" signature="1207:1213" ph="String...String" />
+            <marker date="1542918068855" expanded="true" signature="1230:1232" ph="ID...ID" />
+            <marker date="1542918068855" expanded="true" signature="1247:1253" ph="String...String" />
+            <marker date="1542918068855" expanded="true" signature="1270:1275" ph="[...]" />
+            <marker date="1542918068855" expanded="true" signature="1271:1273" ph="ID...ID" />
+            <marker date="1542918068855" expanded="true" signature="1289:1295" ph="String...String" />
+            <marker date="1542918068855" expanded="true" signature="1310:1313" ph="Int...Int" />
+            <marker date="1542918068855" expanded="true" signature="1314:1755" ph="{...}" />
+            <marker date="1542918068855" expanded="true" signature="1324:1342" ph="createExerciseSets...createExerciseSets" />
+            <marker date="1542918068855" expanded="true" signature="1324:1749" ph="createExerciseSets...{&#10;            id&#10;            setName&#10;            repsHit&#10;            weightUsed&#10;            exercises{name, reps}&#10;            usersSets{firstName}&#10;            workoutSets{title}&#10;            timeCheck&#10;        }" />
+            <marker date="1542918068855" expanded="true" signature="1342:1540" ph="(...)" />
+            <marker date="1542918068855" expanded="true" signature="1343:1350" ph="setName...setName" />
+            <marker date="1542918068855" expanded="true" signature="1362:1369" ph="repsHit...repsHit" />
+            <marker date="1542918068855" expanded="true" signature="1380:1390" ph="weightUsed...weightUsed" />
+            <marker date="1542918068855" expanded="true" signature="1404:1417" ph="workoutSetsId...workoutSetsId" />
+            <marker date="1542918068855" expanded="true" signature="1435:1447" ph="exercisesIds...exercisesIds" />
+            <marker date="1542918068855" expanded="true" signature="1464:1476" ph="usersSetsIds...usersSetsIds" />
+            <marker date="1542918068855" expanded="true" signature="1493:1502" ph="timeCheck...timeCheck" />
+            <marker date="1542918068855" expanded="true" signature="1516:1526" ph="setOrderNo...setOrderNo" />
+            <marker date="1542918068855" expanded="true" signature="1540:1749" ph="{...}" />
+            <marker date="1542918068855" expanded="true" signature="1554:1556" ph="id...id" />
+            <marker date="1542918068855" expanded="true" signature="1569:1576" ph="setName...setName" />
+            <marker date="1542918068855" expanded="true" signature="1589:1596" ph="repsHit...repsHit" />
+            <marker date="1542918068855" expanded="true" signature="1609:1619" ph="weightUsed...weightUsed" />
+            <marker date="1542918068855" expanded="true" signature="1632:1641" ph="exercises...exercises" />
+            <marker date="1542918068855" expanded="true" signature="1632:1653" ph="exercises...{name, reps}" />
+            <marker date="1542918068855" expanded="true" signature="1641:1653" ph="{...}" />
+            <marker date="1542918068855" expanded="true" signature="1642:1646" ph="name...name" />
+            <marker date="1542918068855" expanded="true" signature="1648:1652" ph="reps...reps" />
+            <marker date="1542918068855" expanded="true" signature="1666:1675" ph="usersSets...usersSets" />
+            <marker date="1542918068855" expanded="true" signature="1666:1686" ph="usersSets...{firstName}" />
+            <marker date="1542918068855" expanded="true" signature="1675:1686" ph="{...}" />
+            <marker date="1542918068855" expanded="true" signature="1676:1685" ph="firstName...firstName" />
+            <marker date="1542918068855" expanded="true" signature="1699:1710" ph="workoutSets...workoutSets" />
+            <marker date="1542918068855" expanded="true" signature="1699:1717" ph="workoutSets...{title}" />
+            <marker date="1542918068855" expanded="true" signature="1710:1717" ph="{...}" />
+            <marker date="1542918068855" expanded="true" signature="1711:1716" ph="title...title" />
+            <marker date="1542918068855" expanded="true" signature="1730:1739" ph="timeCheck...timeCheck" />
           </folding>
         </state>
       </provider>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Text, View, ActivityIndicator, ScrollView,
+    Text, View, ActivityIndicator, ScrollView,Platform,
     TouchableOpacity, Dimensions, Modal, StyleSheet,
 } from 'react-native';
 import {Ionicons,MaterialCommunityIcons } from '@expo/vector-icons';

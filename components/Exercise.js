@@ -1,8 +1,9 @@
 import React from 'react'
-import {View,Text,Image, StyleSheet,Dimensions,ScrollView,TouchableOpacity,RefreshControl } from 'react-native';
+import {View,Text,Image, StyleSheet,Dimensions,ScrollView,TouchableOpacity,RefreshControl,Platform } from 'react-native';
 import {MaterialCommunityIcons } from '@expo/vector-icons';
 
 const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
 
 class ExerciseCard extends React.Component{
     constructor(props){
@@ -49,26 +50,26 @@ class ExerciseCard extends React.Component{
                             {this.props.name}
                         </Text>
                         <View style={{borderColor:'#fff',borderWidth: 1, marginTop:10,flexDirection: 'row', justifyContent:'center', display: 'flex', alignContent:'center', marginLeft:10}}>
-                            <Text style={{flex:3, color: '#fff',textAlign:'center'}}>Sets:</Text>
-                            <Text style={{flex:3, color: '#fff',textAlign:'center'}}>Reps:</Text>
-                            <Text style={{flex:3, color: '#fff',textAlign:'center'}}>Intensity:</Text>
+                            <Text style={{flex:3, color: '#fff',textAlign:'center',fontSize:(Platform.isPad ? WIDTH*.018 : 11),}}>Sets:</Text>
+                            <Text style={{flex:3, color: '#fff',textAlign:'center',fontSize:(Platform.isPad ? WIDTH*.018 : 11),}}>Reps:</Text>
+                            <Text style={{flex:3, color: '#fff',textAlign:'center',fontSize:(Platform.isPad ? WIDTH*.018 : 11),}}>Intensity:</Text>
                         </View>
                         <View style={{borderColor:'#fff',borderWidth: 1,marginTop:5, flexDirection: 'row', justifyContent:'center', display: 'flex', alignContent:'center', marginLeft:10}}>
                             <Text style={styles.details}>{this.props.sets}</Text>
                             <Text style={styles.details}>{this.props.reps}</Text>
                             <Text style={styles.details}>{this.props.intensity}</Text>
                         </View>
-                        <View style={{marginTop:5, flexDirection: 'row', justifyContent:'flex-start', display: 'flex', alignContent:'center', marginLeft:10}}>
-                            <Text style={{ color: '#fff', textAlign:'center'}}>Rest:</Text>
-                            <Text style={{paddingLeft: 10, fontSize: 14, color: '#ACACAC', fontStyle: 'italic',}}>{this.props.restIntervals}</Text>
+                        <View style={{marginTop:5, flexDirection: 'column', justifyContent:'flex-start', display: 'flex'}}>
+                            <Text style={{ color: '#fff', paddingLeft:10, fontSize:(Platform.isPad ? WIDTH*.018 : 11),}}>Rest:</Text>
+                            <Text style={{paddingLeft: 10, fontSize: (Platform.isPad ? WIDTH*.02 : 12), color: '#ACACAC', fontStyle: 'italic',}}>{this.props.restIntervals}</Text>
                         </View>
                         <View style={{flexWrap:'wrap', marginTop:5, flexDirection: 'column', justifyContent:'flex-start', display: 'flex', alignContent:'center'}}>
-                            <Text style={{ color: '#fff', paddingLeft:10}}>Tempo:</Text>
-                            <Text style={{paddingLeft: 10, fontSize: 14, color: '#ACACAC', fontStyle: 'italic',}}>{this.props.tempo}</Text>
+                            <Text style={{ color: '#fff', paddingLeft:10, fontSize:(Platform.isPad ? WIDTH*.018 : 11),}}>Tempo:</Text>
+                            <Text style={{paddingLeft: 10, fontSize:(Platform.isPad ? WIDTH*.02 : 12), color: '#ACACAC', fontStyle: 'italic',}}>{this.props.tempo}</Text>
                         </View>
                         <View style={{flexWrap:'wrap', marginTop:5, flexDirection: 'column', justifyContent:'flex-start', display: 'flex', alignContent:'center'}}>
-                            <Text style={{ color: '#fff', paddingLeft:10}}>Description:</Text>
-                            <Text style={{paddingLeft: 10, fontSize: 14, color: '#ACACAC', fontStyle: 'italic', padding:2}}>{this.props.description}</Text>
+                            <Text style={{ color: '#fff', paddingLeft:10, fontSize:(Platform.isPad ? WIDTH*.018 : 11),}}>Description:</Text>
+                            <Text style={{paddingLeft: 10, fontSize:(Platform.isPad ? WIDTH*.02 : 12), color: '#ACACAC', fontStyle: 'italic', padding:2}}>{this.props.description}</Text>
                         </View>
                     </View>
 
@@ -86,9 +87,9 @@ class ExerciseCard extends React.Component{
                                 onPress={ () => this._toggleGIFVisible(!this.state.gifVisible)
                                 }
                             >
-                                <Text style={{textAlign:"center", color: "#931414", marginRight: 6}}>Exercise Example</Text>
+                                <Text style={{textAlign:"center", color: "#931414", marginRight: 6,fontSize:(Platform.isPad ? WIDTH*.018 : 11),}}>Exercise Example</Text>
                                 <MaterialCommunityIcons
-                                    name={"chevron-double-down"} type={"MaterialCommunityIcons"} size={35} color={'#931414'}
+                                    name={"chevron-double-down"} type={"MaterialCommunityIcons"} size={Platform.isPad ? WIDTH*.05 : WIDTH*.07} color={'#931414'}
                                     style={{textAlign:"center"}}
                                 />
                             </TouchableOpacity>
@@ -116,9 +117,9 @@ class ExerciseCard extends React.Component{
                             style={{alignItems:'center', flexDirection:'column', justifyContent:'center'}}
                             onPress={ () => this._toggleGIFVisible(!this.state.gifVisible)}
                         >
-                        <Text style={{textAlign:"center", color: "#931414", marginRight: 6}}>Hide Me</Text>
+                        <Text style={{textAlign:"center", color: "#931414", marginRight: 6, fontSize:(Platform.isPad ? WIDTH*.018 : 11),}}>Hide Me</Text>
                         <MaterialCommunityIcons
-                            name={"chevron-double-up"} type={"MaterialCommunityIcons"} size={35} color={'#931414'}
+                            name={"chevron-double-up"} type={"MaterialCommunityIcons"} size={Platform.isPad ? WIDTH*.05 : WIDTH*.07} color={'#931414'}
                             style={{textAlign:"center"}}
                         />
                         </TouchableOpacity>
@@ -194,7 +195,7 @@ const styles = StyleSheet.create({
     title: {
         paddingLeft: 10,
         paddingTop: 5,
-        fontSize: 16,
+        fontSize: (Platform.isPad ? WIDTH*.03 : 16),
         fontWeight: 'bold',
         color: 'red',
         textAlign:'center'
@@ -203,7 +204,7 @@ const styles = StyleSheet.create({
     details: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.02 : 12),
         color: '#ACACAC',
         flex:3,
         textAlign:'center'
@@ -211,7 +212,7 @@ const styles = StyleSheet.create({
     description: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.02 : 12),
         color: '#ACACAC',
         fontStyle: 'italic',
     },

@@ -340,10 +340,10 @@ class GroupFitnessClass extends React.Component{
                                     onPress={() => this.props.navigation.navigate('GroupFitPrograms')}>
                                     <MaterialCommunityIcons
                                         name={"checkbox-marked-circle-outline"}
-                                        size={30}
+                                        size={Platform.isPad ? WIDTH*.04 : 30}
                                         color={'#fff'}
                                     />
-                                    <Text style={{color: "#fff", fontSize: 10, marginTop: 1, alignSelf: 'center'}}>Register</Text>
+                                    <Text style={{color: "#fff", fontSize: (Platform.isPad ? WIDTH*.015 : 10), marginTop: 1, alignSelf: 'center'}}>Register</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -383,10 +383,10 @@ class GroupFitnessClass extends React.Component{
                                     >
                                         <MaterialIcons
                                             name={"ondemand-video"}
-                                            size={30}
+                                            size={Platform.isPad ? WIDTH*.04 : 30}
                                             color={'#fff'}
                                         />
-                                        <Text style={{color:"#fff", alignSelf: "center", fontSize: 10, marginTop: 3}}>Class Video</Text>
+                                        <Text style={{color:"#fff", alignSelf: "center", fontSize: (Platform.isPad ? WIDTH*.015 : 10), marginTop: 3}}>Class Video</Text>
                                     </TouchableOpacity>
                                 )
                                 :
@@ -402,8 +402,8 @@ class GroupFitnessClass extends React.Component{
                                     disabled={this.state.checkInDisable}
                                     onPress={() => this._distanceUserFromRSC()}
                                 >
-                                    <MaterialCommunityIcons name={"target"} size={36} color={'#fff'} />
-                                    <Text style={{color:"#fff", alignSelf: "center", fontSize: 10, marginTop: 0}}>Check-In</Text>
+                                    <MaterialCommunityIcons name={"target"} size={Platform.isPad ? WIDTH*.04 : 30} color={'#fff'} />
+                                    <Text style={{color:"#fff", alignSelf: "center", fontSize: (Platform.isPad ? WIDTH*.015 : 10), marginTop: 0}}>Check-In</Text>
                                 </TouchableOpacity>)
                                 : (<TouchableOpacity
                                     style={{alignItems: "center", flex:3}}
@@ -418,8 +418,8 @@ class GroupFitnessClass extends React.Component{
                                             { cancelable: true }
                                         )
                                     }}>
-                                    <MaterialCommunityIcons name={"target"} size={36} color={'#fff'} />
-                                    <Text style={{color:"#fff", alignSelf: "center", fontSize: 10, marginTop: 0}}>Check-In</Text>
+                                    <MaterialCommunityIcons name={"target"} size={Platform.isPad ? WIDTH*.04 : 30} color={'#fff'} />
+                                    <Text style={{color:"#fff", alignSelf: "center",fontSize: (Platform.isPad ? WIDTH*.015 : 10), marginTop: 0}}>Check-In</Text>
                                 </TouchableOpacity>)
 
                             }
@@ -429,8 +429,8 @@ class GroupFitnessClass extends React.Component{
                                 accessibilityRole={'button'}
                                 onPress={() => {this.showCommentModal(true)}}
                                 style={{alignItems: "center", flex:3}}>
-                                <FontAwesome name={"commenting-o"} size={30} color={'#fff'}/>
-                                <Text style={{color:"#fff", alignSelf: "center", fontSize: 10, marginTop: 3}}>Comment</Text>
+                                <FontAwesome name={"commenting-o"} size={Platform.isPad ? WIDTH*.04 : 30} color={'#fff'}/>
+                                <Text style={{color:"#fff", alignSelf: "center", fontSize: (Platform.isPad ? WIDTH*.015 : 10), marginTop: 3}}>Comment</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -449,10 +449,10 @@ class GroupFitnessClass extends React.Component{
                                     onPress={() => {this.showCommentModal(!this.state.addCommentModalVisible)}}
                                     style={styles.closeButton}
                                 >
-                                    <MaterialCommunityIcons name={"close-box-outline"} size={30} color={"#156DFA"}/>
+                                    <MaterialCommunityIcons name={"close-box-outline"} size={Platform.isPad ? WIDTH*.04 : 30} color={"#156DFA"}/>
                                 </TouchableOpacity>
 
-                                <Text style={{fontStyle: "italic", fontWeight: "bold"}}>Have a comment?</Text>
+                                <Text style={{fontStyle: "italic", fontWeight: "bold", fontSize: (Platform.isPad ? WIDTH*.015 : 10),}}>Have a comment?</Text>
                                 <TextInput
                                     multiline={true}
                                     numberOfLines={9}
@@ -536,7 +536,7 @@ const styles = StyleSheet.create({
 
     },
     commentBubbleText:{
-        fontSize:10,
+        fontSize: (Platform.isPad ? WIDTH*.015 : 10),
         fontFamily: "italic",
         color:"#fff",
         alignSelf: 'flex-end',
@@ -603,7 +603,7 @@ const styles = StyleSheet.create({
     },
     buttonText:{
         fontWeight:'bold',
-        fontSize: 16,
+        fontSize: (Platform.isPad ? WIDTH*.03 : 16),
         color: "#fff",
         textAlign:'center',
         // alignSelf: 'center',
@@ -644,14 +644,14 @@ const styles = StyleSheet.create({
     title: {
         paddingLeft: 10,
         paddingTop: 5,
-        fontSize: 18,
+        fontSize: (Platform.isPad ? WIDTH*.033 : 18),
         fontWeight: 'bold',
         color: '#931414'
     },
     time: {
         paddingLeft: 10,
         marginTop: 8,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 : 14),
         color: '#ACACAC',
         //position: 'absolute',
         //right: 0,
@@ -659,34 +659,34 @@ const styles = StyleSheet.create({
     instructor: {
         paddingLeft: 10,
         marginTop: 8,
-        fontSize: 15,
+        fontSize: (Platform.isPad ? WIDTH*.028 : 15),
         //fontWeight: 'bold',
         color: '#ffffff'
     },
     days: {
         paddingLeft: 10,
         marginTop: 8,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 : 14),
         color: '#ACACAC'
     },
 
     description: {
         paddingLeft: 10,
         marginTop: 8,
-        fontSize: 12,
+        fontSize: (Platform.isPad ? WIDTH*.02 : 12),
         fontStyle: "italic",
         color: '#ACACAC'
     },
     location: {
         paddingLeft: 10,
         marginTop: 8,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 : 14),
         color: '#ACACAC'
     },
     category: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 : 14),
         color: '#ACACAC'
     },
     image: {

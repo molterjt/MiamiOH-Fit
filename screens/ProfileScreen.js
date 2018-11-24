@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    Button, AsyncStorage, Text, View, ActivityIndicator, ScrollView,
+    Button, AsyncStorage, Text, View, ActivityIndicator, ScrollView,Platform,
     TouchableOpacity, Dimensions, StyleSheet, RefreshControl, Easing, Animated
 } from 'react-native';
 import {Ionicons,MaterialCommunityIcons } from '@expo/vector-icons';
@@ -118,7 +118,7 @@ class ProfileScreen extends React.Component{
         const params = navigation.state.params || {};
         return {
             headerRight: (
-                <Logout buttonText={'Logout'}/>
+                <Logout buttonText={'Logout'} style={{fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}/>
             ),
         };
     };
@@ -250,9 +250,9 @@ class ProfileScreen extends React.Component{
                     }
                 >
                     <View style={{width: WIDTH, backgroundColor: "transparent", alignContent:'center',justifyContent:'center', alignItems:'center' }}>
-                        <Text style={{color:'white'}}>Pull-To-Refresh</Text>
+                        <Text style={{color:'white', fontSize: (Platform.isPad ? WIDTH*.015 : 10)}}>Pull-To-Refresh</Text>
                         <MaterialCommunityIcons
-                            name={"chevron-double-down"} type={"MaterialCommunityIcons"} size={35} color={'blue'}
+                            name={"chevron-double-down"} type={"MaterialCommunityIcons"} size={Platform.isPad ? WIDTH*.05 : 35} color={'blue'}
                         />
                     </View>
                     <UserProfile
@@ -275,43 +275,44 @@ class ProfileScreen extends React.Component{
                                 this.jumpToUserCheckinHistory(User.id);
                             }}
                         >
-                            <Text style={{textAlign:"center", color: "#fff", marginRight: 0}}>All Workout, GroupFit & Event Records</Text>
+                            <Text style={{textAlign:"center", color: "#fff", marginRight: 0,
+                            fontSize: (Platform.isPad ? WIDTH*.02 : 12),}}>All Workout, GroupFit & Event Records</Text>
                             <MaterialCommunityIcons
-                                name={"library-books"} type={"MaterialCommunityIcons"} size={35} color={'#fff'}
+                                name={"library-books"} type={"MaterialCommunityIcons"} size={Platform.isPad ? WIDTH*.05 : 35} color={'#fff'}
                                 style={{textAlign:"center"}}
                             />
                         </TouchableOpacity>
                     </View>
                     <View>
                         <View style={{borderRadius: 4, shadowOffset:{  width: 1,  height: 1,  }, shadowColor: '#CCC',backgroundColor: '#fff', margin:5, padding:5, borderColor: '#000', borderWidth: 2, alignItems: 'center'}}>
-                            <Text style={{fontStyle: 'italic', fontWeight: 'bold', fontSize: 16}}>Latest Workout Completed</Text>
+                            <Text style={{fontStyle: 'italic', fontWeight: 'bold', fontSize: (Platform.isPad ? WIDTH*.03 : 16)}}>Latest Workout Completed</Text>
                         </View>
                         {User.workoutCheckins.map(({workouts, createdAt, timeCheck}, index) => (
                             workouts.map((obj) => (
                                 <View key={index} style={{borderRadius: 4,
                                     shadowOffset:{  width: 1,  height: 1,  }, shadowColor: '#CCC',backgroundColor: '#eff4f4', margin:2, padding:5, borderColor: '#000', borderWidth: 2}}>
                                     <View style={{flexDirection: 'row', display: 'flex'}}>
-                                        <Text style={{fontSize: 16, fontWeight: 'bold', color: '#931414', marginBottom: 4}}>{obj.title}</Text>
+                                        <Text style={{fontSize: (Platform.isPad ? WIDTH*.03 : 16), fontWeight: 'bold', color: '#931414', marginBottom: 4}}>{obj.title}</Text>
                                     </View>
                                     <View style={{flexDirection:'row', marginTop: 5, marginBottom:5}}>
-                                        <Text style={{fontWeight: 'bold'}}>TimeStamp: </Text>
-                                        <Text style={{fontStyle: 'italic'}}>{moment(createdAt).format('M/D/Y')} at {moment(createdAt).format('hh:mm a')}</Text>
+                                        <Text style={{fontWeight: 'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>TimeStamp: </Text>
+                                        <Text style={{fontStyle: 'italic', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{moment(createdAt).format('M/D/Y')} at {moment(createdAt).format('hh:mm a')}</Text>
                                     </View>
                                     <View style={{flexDirection:'row', flexWrap:'wrap', marginBottom: 5}}>
-                                        <Text style={{fontWeight: 'bold'}}>Type: </Text>
-                                        <Text style={{fontStyle: 'italic'}}>{obj.type.map(({title}) => title).join(', ')}</Text>
+                                        <Text style={{fontWeight: 'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Type: </Text>
+                                        <Text style={{fontStyle: 'italic', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{obj.type.map(({title}) => title).join(', ')}</Text>
                                     </View>
                                     <View style={{borderWidth: 1, padding: 5}}>
                                     <View style={{flex:1, flexDirection:'row', flexWrap:'wrap', marginTop:10}}>
-                                        <Text style={{width: '55%', fontWeight:'bold', paddingLeft: 10}}>Exercises:</Text>
-                                        <Text style={{width: '20%', fontWeight:'bold'}}>Sets:</Text>
-                                        <Text style={{width: '20%', fontWeight:'bold'}}>Reps:</Text>
+                                        <Text style={{width: '55%', fontWeight:'bold', paddingLeft: 10, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Exercises:</Text>
+                                        <Text style={{width: '20%', fontWeight:'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Sets:</Text>
+                                        <Text style={{width: '20%', fontWeight:'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Reps:</Text>
                                     </View>
                                     {obj.exercises.map(({name, sets, reps}, index) => (
                                         <View key={index} style={{flex:1, flexDirection:'row', flexWrap:'wrap',}}>
-                                            <Text style={{ fontStyle: 'italic', padding:3, width: '55%', paddingLeft:10}}>{name}</Text>
-                                            <Text style={{ fontStyle: 'italic', padding:3, width: '20%'}}>{sets}</Text>
-                                            <Text style={{fontStyle: 'italic', padding:3, width: '20%'}}>{reps}</Text>
+                                            <Text style={{ fontStyle: 'italic', padding:3, width: '55%', paddingLeft:10, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{name}</Text>
+                                            <Text style={{ fontStyle: 'italic', padding:3, width: '20%', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{sets}</Text>
+                                            <Text style={{fontStyle: 'italic', padding:3, width: '20%',fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{reps}</Text>
                                         </View>
                                     ))}
                                     </View>
@@ -323,7 +324,7 @@ class ProfileScreen extends React.Component{
                     </View>
                     <View style={{marginTop:20}}>
                         <View style={{borderRadius: 4, shadowOffset:{  width: 1,  height: 1,  }, shadowColor: '#CCC',backgroundColor: '#fff', margin:5, padding:5, borderColor: '#000', borderWidth: 2, alignItems: 'center'}}>
-                            <Text style={{fontStyle: 'italic', fontWeight: 'bold', fontSize: 16}}>Latest GroupFit Class Checkin</Text>
+                            <Text style={{fontStyle: 'italic', fontWeight: 'bold', fontSize: (Platform.isPad ? WIDTH*.03 : 16)}}>Latest GroupFit Class Checkin</Text>
                         </View>
                         {User.classCheckIns.map(({createdAt, classes}) => (
                             classes.map((obj, index) => (
@@ -331,17 +332,17 @@ class ProfileScreen extends React.Component{
                                     shadowOffset:{  width: 1,  height: 1,  },
                                     shadowColor: '#CCC',backgroundColor: '#eff4f4', margin:2, padding:5, borderColor: '#000', borderWidth: 2}}>
                                     <View style={{flexDirection: 'row', display: 'flex'}}>
-                                        <Text style={{fontWeight: 'bold', color: '#931414', fontSize: 16}}>{obj.title}</Text>
-                                        <Text style={{position:'absolute', right: 0, fontSize: 12}}>{obj.time}</Text>
+                                        <Text style={{fontWeight: 'bold', color: '#931414',fontSize: (Platform.isPad ? WIDTH*.03 : 16)}}>{obj.title}</Text>
+                                        <Text style={{position:'absolute', right: 0, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{obj.time}</Text>
                                     </View>
                                     <View style={{flexDirection: 'row', display: 'flex'}}>
-                                        <Text style={{fontWeight:'bold'}}>Type: </Text>
-                                        <Text style={{fontStyle: 'italic'}}> {obj.category.map(({title}) => title).join(', ')}</Text>
-                                        <Text style={{position:'absolute', right: 0, fontSize: 12}}>{obj.days.map(({name}) => name).join(', ')}</Text>
+                                        <Text style={{fontWeight:'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Type: </Text>
+                                        <Text style={{fontStyle: 'italic', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}> {obj.category.map(({title}) => title).join(', ')}</Text>
+                                        <Text style={{position:'absolute', right: 0, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{obj.days.map(({name}) => name).join(', ')}</Text>
                                     </View>
                                     <View style={{flexDirection: 'row', display: 'flex'}}>
-                                        <Text style={{fontWeight:'bold'}}>TimeStamp: </Text>
-                                        <Text style={{fontStyle: 'italic'}}>{moment(createdAt).format('M/D/Y')} at {moment(createdAt).format('hh:mm:ss a')}</Text>
+                                        <Text style={{fontWeight:'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>TimeStamp: </Text>
+                                        <Text style={{fontStyle: 'italic', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{moment(createdAt).format('M/D/Y')} at {moment(createdAt).format('hh:mm:ss a')}</Text>
                                     </View>
                                 </View>
                             ))
@@ -437,12 +438,12 @@ const styles = StyleSheet.create({
     },
     trainerDetailText: {
         color: "#fff",
-        fontSize: 12
+        fontSize: (Platform.isPad ? WIDTH*.02 : 12),
     },
     trainerDetailName:{
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 16
+        fontSize: (Platform.isPad ? WIDTH*.03 : 16),
     },
     animationContainer: {
         flex: 1,

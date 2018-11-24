@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     Text, View, StatusBar, ActivityIndicator, TextInput, TouchableOpacity,StyleSheet,
-    Dimensions, ScrollView, Alert, AccessibilityInfo,AsyncStorage
+    Dimensions, ScrollView, Alert, AccessibilityInfo,AsyncStorage, Platform
 } from 'react-native';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import { CheckBox } from 'react-native-elements'
@@ -129,7 +129,7 @@ class EditScreen extends React.Component {
                 </View>
                 <ScrollView>
                     <Text
-                        style={{textAlign:'center', fontStyle:'italic', color: '#fff', fontSize: 12}}
+                        style={{textAlign:'center', fontStyle:'italic', color: '#fff', fontSize: (Platform.isPad ? WIDTH*.02 : 12),}}
                         accessibilityLabel={'Interest Check Box Header'}
                         accessibilityRole={'header'}
                     >
@@ -155,7 +155,7 @@ class EditScreen extends React.Component {
                                                 <CheckBox
                                                     // ref={obj.id}
                                                     containerStyle={{ borderRadius:15, borderWidth:2, borderColor:'#000', backgroundColor: '#fff'}}
-                                                    textStyle={{color: '#000', fontSize: 12,}}
+                                                    textStyle={{color: '#000', fontSize: (Platform.isPad ? WIDTH*.02 : 12),}}
                                                     value={obj.id}
                                                     title={obj.title}
                                                     checkedColor={'#931414'}
@@ -252,8 +252,9 @@ const styles = StyleSheet.create({
         width: WIDTH * .4,
     },
     textInput: {
-        alignSelf: 'stretch',
-        height: 40,
+        alignSelf: 'center',
+        width: WIDTH*.65,
+        height: (Platform.isPad ? HEIGHT*.05 : 40),
         margin: 10,
         padding: 10,
         borderColor: '#000000',
@@ -276,7 +277,7 @@ const styles = StyleSheet.create({
         borderColor: '#fff',
     },
     buttonText:{
-        fontSize: 16,
+        fontSize: (Platform.isPad ? WIDTH*.03 : 16),
         fontWeight: 'bold',
         color: "#ffffff",
         alignSelf: 'center',

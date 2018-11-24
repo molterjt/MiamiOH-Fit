@@ -226,12 +226,12 @@ class HomeScreen extends React.Component{
                         alignItems: 'center', backgroundColor: "#931414", width: "50%", alignSelf: "center",
                         borderRadius: 10,
                     }}>
-                    <Text style={{color: "#fff", fontSize: 18}}>
+                    <Text style={{color: "#fff", fontSize: Platform.isPad ? W*.035 : 18}}>
                         FindYourFIT
                     </Text>
                     <MaterialCommunityIcons
                         name={"checkbox-marked-circle-outline"}
-                        size={35}
+                        size={Platform.isPad ? W*.04 :35}
                         color={"white"}
                     />
                 </TouchableOpacity>
@@ -282,14 +282,14 @@ class HomeScreen extends React.Component{
                             resizeMode={'cover'}
                             style={{width: H*.3, height: H*.3, alignSelf:'center'}}
                         />
-                        <Text style={{fontStyle:'italic', padding: 20, textAlign:'center'}}>
+                        <Text style={{fontStyle:'italic', padding: 20, textAlign:'center', fontSize: Platform.isPad ? W*.02 : 12}}>
                             The Fitness Department strives to create an environment of
                             inclusion for the Miami Recreation community to develop their
                             fitness identity through a variety of options to reach and discover
                             their individual fitness goals.
                         </Text>
 
-                            <Text style={{textAlign:'center'}}>
+                            <Text style={{textAlign:'center', fontSize: Platform.isPad ? W*.02 : 12}}>
                                 Tell us how we can help you find your Fit:
                             </Text>
 
@@ -315,7 +315,7 @@ class HomeScreen extends React.Component{
                                 onPress={ () => this._createComment()}
                                 style={styles.formButton}
                             >
-                                <Text style={{color:'#fff', fontWeight:'bold'}}>Submit</Text>
+                                <Text style={{color:'#fff', fontWeight:'bold', fontSize: Platform.isPad ? W*.02 : 12}}>Submit</Text>
                             </TouchableOpacity>
                         </KeyboardAvoidingView>
                     </ScrollView>

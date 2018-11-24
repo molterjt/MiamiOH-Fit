@@ -4,8 +4,12 @@ import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
 import {
     StyleSheet, ActivityIndicator, Image, Text, View,
-    ScrollView, TouchableOpacity,
+    ScrollView, TouchableOpacity,Dimensions, Platform
 } from 'react-native';
+
+const window = Dimensions.get('window');
+const W = window.width;
+const H = window.height;
 
 const getInstructor = gql`
     query($id: ID!){
@@ -39,7 +43,7 @@ class InstructorContainer extends React.Component {
                            alt={'Instructor Profile'}
                            resizeMode="contain" />
                     <View style={styles.rowText}>
-                        <Text style={styles.title} numberOfLines={1} ellipsizeMode ={'tail'}>
+                        <Text style={styles.title} ellipsizeMode ={'tail'}>
                             {this.props.firstName + " " + this.props.lastName}
                         </Text>
                         <Text style={styles.instructor} numberOfLines={1} ellipsizeMode ={'tail'}>
@@ -198,26 +202,26 @@ const styles = StyleSheet.create({
     title: {
         paddingLeft: 5,
         paddingTop: 5,
-        fontSize: 16,
+        fontSize: (Platform.isPad ? W*.03 : 16),
         fontWeight: 'bold',
         color: '#931414'
     },
     time: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? .025 : 14),
         color: '#4F4F54'
     },
     days: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 12,
+        fontSize: (Platform.isPad ? W*.02 : 12),
         color: '#6A7275'
     },
     location: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? W*.02 : 14),
         color: '#777'
     },
     thumbnail: {
@@ -227,7 +231,7 @@ const styles = StyleSheet.create({
         borderColor: '#ffffff'
     },
     rowText: {
-        flex: 4,
+        flex: 2,
         flexDirection: 'column'
     },
     rowCard:{
@@ -254,7 +258,7 @@ const styles = StyleSheet.create({
     },
     imageRowContainer: {
         flexDirection: 'row',
-        height: 200,
+        height: H*.25,
         padding: 5,
         marginRight: 10,
         marginLeft: 10,
@@ -263,13 +267,13 @@ const styles = StyleSheet.create({
     instructor: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 12,
+        fontSize: (Platform.isPad ? W*.02 : 12),
         color: '#ffffff'
     },
     description: {
-        paddingLeft: 10,
+        padding: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? W*.025 : 14),
         fontStyle: 'italic',
         color: '#ACACAC'
     },
@@ -280,9 +284,9 @@ const styles = StyleSheet.create({
         color: '#ACACAC'
     },
     image: {
-        flex: 4,
-        height: 200,
-        width: 160
+        flex:2,
+        height: H*.35,
+        width: W*.4
     },
 
 });

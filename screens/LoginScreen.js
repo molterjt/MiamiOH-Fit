@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     Button, Text, TextInput, Alert, ActivityIndicator,Dimensions,KeyboardAvoidingView,
-    View, StyleSheet, ImageBackground,Animated,Easing, Image,
+    View, StyleSheet, ImageBackground,Animated,Easing, Image, Platform,
     TouchableOpacity, AsyncStorage
 } from 'react-native';
 import {withNavigation} from 'react-navigation';
@@ -294,7 +294,7 @@ class Login extends React.Component{
                             }}
                             onBlur={() => this.setState({graphQL_Error: null})}
                             type={"text"}
-                            placeholder={'UniqueId@MiamiOH.edu'}
+                            placeholder={'Enter your email (ex: UniqueId@MiamiOH.edu)'}
                             style={styles.textInput}
                             autoCapitalize={'none'}
                             accessibilityLabel={'Email field for Registration/Login'}
@@ -392,7 +392,7 @@ class Login extends React.Component{
                                 accessibilityRole={'button'}
                                 onPress={ () => this.setState({login: !this.state.login})}
                             >
-                                <Text style={{color:'#0a3efa', textAlign:'center', fontSize:16}}>
+                                <Text style={{color:'#0a3efa', textAlign:'center', fontSize: Platform.isPad ? W*.025 :14}}>
                                    Login
                                 </Text>
                             </TouchableOpacity>
@@ -404,7 +404,7 @@ class Login extends React.Component{
                                 accessibilityRole={'button'}
                                 onPress={ () => this.setState({login: !this.state.login})}
                             >
-                                <Text style={{color:'#0a3efa', textAlign:'center', fontSize:16}}>
+                                <Text style={{color:'#0a3efa', textAlign:'center', fontSize: Platform.isPad ? W*.025 :14}}>
                                      Register
                                 </Text>
                             </TouchableOpacity>
@@ -504,7 +504,7 @@ const styles = StyleSheet.create({
         borderColor: '#000',
     },
     buttonText:{
-        fontSize: 16,
+        fontSize: Platform.isPad ? W*.03 :16,
         color: "#ffffff",
         alignSelf: 'center',
         alignContent:'center',

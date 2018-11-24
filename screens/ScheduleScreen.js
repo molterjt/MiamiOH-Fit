@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    StyleSheet, Text, View, ActivityIndicator,
+    StyleSheet, Text, View, ActivityIndicator, Platform, Dimensions,
     TouchableOpacity, FlatList, RefreshControl,
 } from 'react-native';
 import gql from 'graphql-tag';
@@ -10,6 +10,11 @@ import ScheduleItem from '../components/ScheduleItem';
 import {Entypo} from '@expo/vector-icons';
 import Swiper from 'react-native-swiper';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
+
+const window = Dimensions.get('window');
+const W = window.width;
+const H = window.height;
+const arrowSize =  Platform.isPad ? W*.03 : 25
 
 const ALL_DAYS_SCHEDULE_QUERY = gql`
     query{
@@ -204,13 +209,13 @@ class AllGFClassView extends React.Component {
                     <View style={styles.dayScheduleContainer}>
                         <Entypo
                             name={"chevron-thin-left"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginRight: 35 }}
                         />
                         <Text style={styles.text}>Monday</Text>
                         <Entypo
                             name={"chevron-thin-right"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginLeft: 35}}
                         />
                     </View>
@@ -233,13 +238,13 @@ class AllGFClassView extends React.Component {
                     <View style={styles.dayScheduleContainer}>
                         <Entypo
                             name={"chevron-thin-left"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginRight: 35 }}
                         />
                         <Text style={styles.text}>Tuesday</Text>
                         <Entypo
                             name={"chevron-thin-right"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginLeft: 35}}
                         />
                     </View>
@@ -262,13 +267,13 @@ class AllGFClassView extends React.Component {
                     <View style={styles.dayScheduleContainer}>
                         <Entypo
                             name={"chevron-thin-left"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginRight: 35 }}
                         />
                         <Text style={styles.text}>Wednesday</Text>
                         <Entypo
                             name={"chevron-thin-right"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginLeft: 35}}
                         />
                     </View>
@@ -291,13 +296,13 @@ class AllGFClassView extends React.Component {
                     <View style={styles.dayScheduleContainer}>
                         <Entypo
                             name={"chevron-thin-left"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginRight: 35 }}
                         />
                         <Text style={styles.text}>Thursday</Text>
                         <Entypo
                             name={"chevron-thin-right"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginLeft: 35}}
                         />
                     </View>
@@ -320,13 +325,13 @@ class AllGFClassView extends React.Component {
                     <View style={styles.dayScheduleContainer}>
                         <Entypo
                             name={"chevron-thin-left"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginRight: 35 }}
                         />
                         <Text style={styles.text}>Friday</Text>
                         <Entypo
                             name={"chevron-thin-right"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginLeft: 35}}
                         />
                     </View>
@@ -349,13 +354,13 @@ class AllGFClassView extends React.Component {
                     <View style={styles.dayScheduleContainer}>
                         <Entypo
                             name={"chevron-thin-left"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginRight: 35 }}
                         />
                         <Text style={styles.text}>Saturday</Text>
                         <Entypo
                             name={"chevron-thin-right"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginLeft: 35}}
                         />
                     </View>
@@ -378,13 +383,13 @@ class AllGFClassView extends React.Component {
                     <View style={styles.dayScheduleContainer}>
                         <Entypo
                             name={"chevron-thin-left"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginRight: 35 }}
                         />
                         <Text style={styles.text}>Sunday</Text>
                         <Entypo
                             name={"chevron-thin-right"} type={"Entypo"}
-                            size={25} color={'#ffffff'}
+                            size={arrowSize} color={'#ffffff'}
                             style={{marginTop: 6, marginLeft: 35}}
                         />
                     </View>
@@ -436,10 +441,10 @@ class ScheduleScreen extends React.Component{
                     onPress={() => navigation.navigate('GroupFitPrograms')}>
                     <MaterialCommunityIcons
                         name={"checkbox-marked-circle-outline"}
-                        size={25}
+                        size={Platform.isPad ? W*.03 : 25}
                         color={'#931414'}
                     />
-                    <Text style={{color: "#000", fontSize: 10, fontWeight:'bold', marginTop:-5, alignSelf: 'center'}}>Register</Text>
+                    <Text style={{color: "#000", fontSize: (Platform.isPad ? W*.015 : 10), fontWeight:'bold', marginTop:-5, alignSelf: 'center'}}>Register</Text>
                 </TouchableOpacity>
             ),
         };
@@ -482,7 +487,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        fontSize: 24,
+        fontSize: (Platform.isPad ? W*.04 : 24),
         marginLeft: 40,
         marginRight: 40,
     },

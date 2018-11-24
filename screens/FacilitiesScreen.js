@@ -110,10 +110,10 @@ class FacilityDetail extends React.Component{
                                         <TouchableWithoutFeedback key={id}>
                                         <View key={id} style={{flexDirection: "column", margin: 5}}>
                                             <View style={{flex: 2, flexDirection: 'row', borderTopWidth: 1, borderColor: '#000'}}>
-                                                <Text style={{marginTop: 10, fontSize: 18, fontWeight: '700', width:width*.54}}>{facilityName}</Text>
+                                                <Text style={{marginTop: 10, fontSize: Platform.isPad ? width*.035 : 18, fontWeight: '700', width:width*.54}}>{facilityName}</Text>
                                                 {open === true
-                                                    ? <Text style={{marginTop: 10, color: 'red', position: 'absolute', right: 10}}>Open</Text>
-                                                    : <Text style={{marginTop: 10, color: 'red', position: 'absolute', right: 10 }}>Closed</Text>
+                                                    ? <Text style={{fontSize: Platform.isPad ? width*.015 : 10, marginTop: 10, color: 'red', position: 'absolute', right: 10}}>Open</Text>
+                                                    : <Text style={{fontSize: Platform.isPad ? width*.015 : 10, marginTop: 10, color: 'red', position: 'absolute', right: 10 }}>Closed</Text>
                                                 }
                                             </View>
                                             <Image
@@ -121,13 +121,13 @@ class FacilityDetail extends React.Component{
                                                 source={{uri: imageUrl}}
                                                 alt={"Fitness Facility Image"}
                                                 resizeMode={"cover"}
-                                                style={{margin: 5, borderWidth: 1, borderColor: "#000", width: 'auto', height:240,  borderRadius: 10}}
+                                                style={{margin: 5, borderWidth: 1, borderColor: "#000", width: width*.9, height:height*.3,  borderRadius: 10}}
                                             />
                                             {hours
                                                 ?
                                                 (<View style={{borderBottomWidth: 1, borderColor: 'blue'}}>
-                                                        <Text style={{fontSize:10, fontWeight:"bold"}}>Hours:</Text>
-                                                        <Text style={{fontSize: 12, fontStyle: 'italic', margin: 5, }}>{hours}</Text>
+                                                        <Text style={{fontSize: Platform.isPad ? width*.015 : 10, fontWeight:"bold"}}>Hours:</Text>
+                                                        <Text style={{fontSize: Platform.isPad ? width*.02 : 12, fontStyle: 'italic', margin: 5, }}>{hours}</Text>
                                                 </View>
                                                 )
                                                 :
@@ -136,8 +136,8 @@ class FacilityDetail extends React.Component{
                                             {description
                                                 ?
                                                 (<View style={{borderBottomWidth: 1, borderColor: 'blue'}}>
-                                                    <Text style={{marginTop: 5, fontSize:10, fontWeight:"bold"}}>Description:</Text>
-                                                    <Text style={{fontSize: 12, fontStyle: 'italic',margin: 5, borderBottomWidth: 1, borderColor: 'blue'}}>{description}</Text>
+                                                    <Text style={{marginTop: 5, fontSize: Platform.isPad ? width*.015 : 10, fontWeight:"bold"}}>Description:</Text>
+                                                    <Text style={{fontSize: Platform.isPad ? width*.02 : 12, fontStyle: 'italic',margin: 5, borderBottomWidth: 1, borderColor: 'blue'}}>{description}</Text>
                                                 </View>
                                                 )
                                                 :
@@ -146,9 +146,9 @@ class FacilityDetail extends React.Component{
                                             {events.length !== 0
                                                 ?
                                                 (<View style={{borderBottomWidth: 1, borderColor: 'blue', padding: 3}}>
-                                                    <Text style={{marginTop: 10, fontSize:12, fontWeight:"bold", alignSelf:'center'}}>Events:</Text>
+                                                    <Text style={{marginTop: 10, fontSize: Platform.isPad ? width*.02 : 12, fontWeight:"bold", alignSelf:'center'}}>Events:</Text>
                                                     {events.map(({name, time, date}, index) =>
-                                                        <Text  key={index} style={{fontSize: 12, fontStyle: 'italic', margin: 5, }}>{name} @ {time} on {date}</Text>
+                                                        <Text  key={index} style={{fontSize: Platform.isPad ? width*.02 : 12, fontStyle: 'italic', margin: 5, }}>{name} @ {time} on {date}</Text>
                                                     )}
                                                 </View>)
                                                 :
@@ -157,15 +157,15 @@ class FacilityDetail extends React.Component{
                                             {classes.length !== 0
                                                 ?
                                                 (<View>
-                                                    <Text style={{marginTop: 10, fontSize:12, fontWeight:"bold", alignSelf:'center'}}>Classes:</Text>
+                                                    <Text style={{marginTop: 10, fontSize: Platform.isPad ? width*.02 : 12, fontWeight:"bold", alignSelf:'center'}}>Classes:</Text>
                                                     <View style={{padding: 1, marginTop: 10, flex:2, flexDirection:'row', flexWrap:'wrap', alignItems: 'center', justifyContent:'space-between'}}>
                                                     {classes.map((obj, index) => (
                                                         <View key={index} style={{ padding: 2, width: width*.42, borderBottomWidth:1,  borderColor:"blue"}}>
-                                                        <Text style={{marginTop: 5, fontWeight: 'bold', fontSize: 10, }}>  {obj.days.map(({name}) => name).join(', ')}</Text>
-                                                        <Text style={{marginTop: 5, fontSize: 12, fontStyle: 'italic',margin: 5}}>{obj.title}</Text>
-                                                        <Text style={{fontSize: 12, fontStyle: 'italic',margin: 5}}>{obj.time}</Text>
+                                                        <Text style={{marginTop: 5, fontWeight: 'bold', fontSize: Platform.isPad ? width*.015 : 10, }}>  {obj.days.map(({name}) => name).join(', ')}</Text>
+                                                        <Text style={{marginTop: 5, fontSize: Platform.isPad ? width*.02 : 10, fontStyle: 'italic',margin: 5}}>{obj.title}</Text>
+                                                        <Text style={{fontSize: Platform.isPad ? width*.02 : 10, fontStyle: 'italic',margin: 5}}>{obj.time}</Text>
                                                         {obj.cancelled === true
-                                                            ? <Text style={{fontSize: 10, color: 'red', fontStyle: 'italic',margin: 5}}>Cancelled</Text>
+                                                            ? <Text style={{fontSize: Platform.isPad ? width*.015 : 10, color: 'red', fontStyle: 'italic',margin: 5}}>Cancelled</Text>
                                                             : <Text/>
                                                         }
                                                     </View>
@@ -359,11 +359,11 @@ class FacilitiesScreen extends React.Component {
                         onPress={() => this.map.animateToRegion(this.state.region, 200)}
                         style={{alignItems:"center", flexDirection:"row", padding: 5, marginTop:25,}}
                     >
-                        <Text style={{color:"blue", fontSize: 16, marginRight: 10}}>Reset Map</Text>
+                        <Text style={{color:"blue", fontSize: Platform.isPad ? width*.03 : 16, marginRight: 10}}>Reset Map</Text>
                         <MaterialCommunityIcons
                             accessibilityRole={'imageButton'}
                             name={"target-variant"}
-                            type={"materialCommunityIcons"} size={30}
+                            type={"materialCommunityIcons"} size={Platform.isPad ? width*.045 : 30}
                             color={"blue"}
                             alt={"Map Location Reset Symbol"}
                         />
@@ -390,7 +390,7 @@ class FacilitiesScreen extends React.Component {
 
                         <Marker key={index} coordinate={marker.coordinate} title={marker.title}>
                             <Animated.View style={[styles.markerWrap, opacityStyle]}>
-                                <MaterialIcons name={'my-location'} color={'#931414'} size={28} />
+                                <MaterialIcons name={'my-location'} color={'#931414'} size={Platform.isPad ? width*.04 : 28} />
                             </Animated.View>
                         </Marker>
 
@@ -497,13 +497,13 @@ const styles = StyleSheet.create({
         marginBottom: 12,
     },
     cardTitle: {
-        fontSize: 14,
+        fontSize: (Platform.isPad ? width*.025 : 14),
         marginTop: 5,
         fontWeight: "bold",
         color: "#931414",
     },
     cardDescription: {
-        fontSize: 12,
+        fontSize: (Platform.isPad ? width*.02 : 12),
         color: "#000",
         marginBottom: 4
     },
@@ -512,14 +512,14 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     marker: {
-        width: 8,
-        height: 8,
+        width: Platform.isPad ? width*.03 : 8,
+        height: Platform.isPad ? width*.03 : 8,
         borderRadius: 4,
         backgroundColor: "red",
     },
     ring: {
-        width: 24,
-        height: 24,
+        width: Platform.isPad ? width*.04 : 24,
+        height: Platform.isPad ? width*.04 : 24,
         borderRadius: 12,
         backgroundColor: "white",
         opacity: 0.4,
@@ -528,14 +528,14 @@ const styles = StyleSheet.create({
         borderColor: "red",
     },
     myMarker: {
-        width: 8,
-        height: 8,
+        width: Platform.isPad ? width*.03 : 8,
+        height: Platform.isPad ? width*.03 : 8,
         borderRadius: 4,
         backgroundColor: "#0c3eff",
     },
     myRing: {
-        width: 24,
-        height: 24,
+        width: Platform.isPad ? width*.04 : 24,
+        height: Platform.isPad ? width*.04 : 24,
         borderRadius: 12,
         backgroundColor: "white",
         opacity: 0.4,
@@ -564,8 +564,8 @@ const styles = StyleSheet.create({
     ModalInsideView:{
         alignItems: 'center',
         backgroundColor : "#fff",
-        height: 600 ,
-        width: '90%',
+        height: height*.8 ,
+        width: '95%',
         borderRadius:10,
         borderWidth: 3,
         borderColor: '#156DFA',
@@ -581,11 +581,11 @@ const styles = StyleSheet.create({
     },
     trainerDetailText: {
         color: "#fff",
-        fontSize: 12
+        fontSize: (Platform.isPad ? width*.02 : 12)
     },
     trainerDetailName:{
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 16
+        fontSize: (Platform.isPad ? width*.03 : 16)
     }
 });

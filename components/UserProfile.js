@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Dimensions,} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, Dimensions, Platform} from 'react-native';
 import {Entypo} from '@expo/vector-icons'
 import {withNavigation} from 'react-navigation';
 
@@ -24,7 +24,7 @@ class UserProfile extends React.Component{
                             onPress={() => this.props.navigation.navigate('Edit', {itemId: this.props.id})}
                         >
                             <Entypo
-                                name={"edit"} type={"MaterialIcons"} size={30} color={'#156DFA'}
+                                name={"edit"} type={"MaterialIcons"} size={Platform.isPad ? WIDTH*.04 : 30} color={'#156DFA'}
                             />
                         </TouchableOpacity>
 
@@ -79,8 +79,7 @@ const styles = StyleSheet.create({
     headText: {
         paddingLeft: 10,
         paddingTop: 8,
-
-        fontSize: 16,
+        fontSize: (Platform.isPad ? WIDTH*.03 : 16),
         fontWeight: 'bold',
         color: '#777'
     },
@@ -88,19 +87,19 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight:4,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 : 14),
         color: '#777'
     },
     blurb: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 : 14),
         color: '#777'
     },
     location: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 : 14),
         color: '#777'
     },
     thumbnail: {

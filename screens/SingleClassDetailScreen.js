@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import {graphql, Query} from 'react-apollo';
 import {
-    StyleSheet, ActivityIndicator, Text, View, Modal,
+    StyleSheet, ActivityIndicator, Text, View, Modal, Platform,Dimensions,
     ScrollView, TouchableOpacity, AsyncStorage, TouchableWithoutFeedback
 } from 'react-native';
 import GroupFitnessClass from '../components/GroupFitnessClass';
 import {FontAwesome, MaterialCommunityIcons} from '@expo/vector-icons';
 import moment from 'moment';
 
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
 
 const SINGLE_CLASS_QUERY = gql`
     query SingleClass($id: ID!){
@@ -52,7 +54,7 @@ const ClassComments = ({id}) => (
                                 <Text style={styles.commentText}>
                                     {obj.content}
                                 </Text>
-                                <Text style={{fontSize: 10, fontStyle:'italic'}}>
+                                <Text style={{fontSize: (Platform.isPad ? WIDTH*.015 : 10), fontStyle:'italic'}}>
                                     ~{'[' + obj.userComment.username + ' @ ' + moment(obj.createdAt).format("M/D/Y hh:mm a") +  ']'}
                                 </Text>
                             </View>
@@ -123,14 +125,15 @@ class SingleClassDetailScreen extends React.Component {
                     classCheckinId={this.props.data.GroupFitClass.id}
 
                 />
-                <View style={{flexDirection: "row", justifyContent:"center", alignSelf: "center",
-                    padding: 5, backgroundColor: "transparent", height: 68, width: "80%", marginTop: 15}}>
+
+                <View style={{flexDirection: "row", justifyContent:"space-between", alignItems: "center", backgroundColor: "transparent", marginRight: 10,
+                    marginLeft: 10, paddingTop: 20, paddingBottom: 10, borderWidth: 1}}>
                     <TouchableOpacity
                         accessible={true}
                         accessibilityLabel={'Instructor Button Link'}
                         accessibilityHint={'Links to fitness class instructor profile'}
                         accessibilityRole={'link'}
-                        style={{ marginRight: 50 }}
+                        style={{ flex:2, alignItems:'center' }}
                         onPress={ () => {
                             console.log( `${GroupFitClass.instructor.id}`);
                             this.props.navigation.navigate('Instructor', {itemId: `${GroupFitClass.instructor.id}`})
@@ -138,8 +141,8 @@ class SingleClassDetailScreen extends React.Component {
                     >
                         <MaterialCommunityIcons
                             name={"arrow-expand-all"} type={"FontAwesome"}
-                            size={30} color={"#156DFA"}
-                            style={styles.thumb}
+                            size={Platform.isPad ? WIDTH*.04 : 30} color={"#156DFA"}
+                            // style={styles.thumb}
                         />
                         <Text style={styles.buttonText}>More with {GroupFitClass.instructor.firstName}</Text>
                     </TouchableOpacity>
@@ -149,11 +152,12 @@ class SingleClassDetailScreen extends React.Component {
                         accessibilityHint={'Opens modal window of class comments left from all users'}
                         accessibilityRole={'button'}
                         onPress={() => {this.showModal(true)}}
+                        style={{flex:2, alignItems:'center'}}
                     >
                         <MaterialCommunityIcons
                             name={"comment-text-outline"}
-                            size={30} color={"#156DFA"}
-                            style={styles.thumb}
+                            size={Platform.isPad ? WIDTH*.04 : 30}  color={"#156DFA"}
+                            // style={styles.thumb}
                         />
                         <Text style={styles.buttonText}>Class Comments</Text>
                     </TouchableOpacity>
@@ -180,16 +184,17 @@ class SingleClassDetailScreen extends React.Component {
                                                 onPress={() => {this.showModal(!this.state.commentModalVisible)}}
                                                 style={styles.closeButton}
                                             >
-                                                <MaterialCommunityIcons name={"close-box-outline"} size={30} color={"#156DFA"}/>
+                                                <MaterialCommunityIcons name={"close-box-outline"} size={Platform.isPad ? WIDTH*.03 : 30} color={"#156DFA"}/>
                                             </TouchableOpacity>
                                             </View>
-                                            <Text style={{fontStyle: "italic", fontWeight: "bold", color: "#156DFA", textAlign:'center', marginTop: 10}}>Comments & Feedback:</Text>
+                                            <Text style={{fontStyle: "italic", fontWeight: "bold", color: "#156DFA", textAlign:'center', marginTop: 10,  fontSize: (Platform.isPad ? WIDTH*.015 : 10),}}>Comments & Feedback:</Text>
                                             <ClassComments id ={this.props.navigation.state.params.itemId} />
                                         </View>
                                 </TouchableWithoutFeedback>
                             </ScrollView>
                         </TouchableOpacity>
                     </Modal>
+                <View style={{height:20}}/>
             </ScrollView>
         );
     }
@@ -240,7 +245,7 @@ const styles = StyleSheet.create({
         height: 30,
     },
     buttonText: {
-        fontSize: 10,
+        fontSize: (Platform.isPad ? WIDTH*.015 : 10),
         color: "#156DFA",
         alignSelf: 'center',
         alignContent: 'center',
@@ -253,7 +258,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     commentText:{
-        fontSize: 14,
+        fontSize: (Platform.isPad ? WIDTH*.025 : 14),
         fontWeight: 'bold',
         backgroundColor: "#fff"
     },

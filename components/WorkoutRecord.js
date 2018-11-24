@@ -62,7 +62,7 @@ class WorkoutRecord extends React.Component{
                 >
                     <Ionicons
                         name={"ios-expand"}
-                        size={28}
+                        size={Platform.isPad ? WIDTH*.03 : 24}
                         alt={"expand facility info"}
                         color={"#931414"}
                         style={{fontWeight: 'bold'}}
@@ -87,12 +87,12 @@ class WorkoutRecord extends React.Component{
                                         }}
                                         style={{ marginTop:50, marginBottom: 5, marginLeft:2, flexDirection:'row' }}
                                     >
-                                        <MaterialCommunityIcons name={"chevron-double-left"} size={40} color={"#277bfa"} />
+                                        <MaterialCommunityIcons name={"chevron-double-left"} size={Platform.isPad ? WIDTH*.03 : 30} color={"#277bfa"} />
                                     </TouchableOpacity>
                                     <ScrollView contentContainerStyle={{justifyContent: 'space-evenly',}} style={{flex: 1, }}>
                                         <View style={{flex:4, marginTop:5, marginBottom: 30, borderWidth:0, flexDirection:"column", justifyContent:'space-around', flexWrap: 'wrap'}}>
-                                            <Text style={{fontSize: 16, padding: 8, textAlign: 'center', fontWeight: 'bold', color: '#931414', marginBottom: 5}}>{this.props.workoutTitle}</Text>
-                                            <Text style={{fontSize: 12, padding: 1, textAlign: 'center',  color: '#000', marginBottom: 5}}>
+                                            <Text style={{fontSize: (Platform.isPad ? WIDTH*.03 : 16), padding: 8, textAlign: 'center', fontWeight: 'bold', color: '#931414', marginBottom: 5}}>{this.props.workoutTitle}</Text>
+                                            <Text style={{fontSize: (Platform.isPad ? WIDTH*.03 : 16), padding: 1, textAlign: 'center',  color: '#000', marginBottom: 5}}>
                                                 Completed: {moment(this.props.timeCheck).format('M/D/Y h a')}
                                             </Text>
                                             {data.allExerciseSetses.map(({exercises, setName, repsHit, weightUsed}, index) => (
@@ -105,22 +105,22 @@ class WorkoutRecord extends React.Component{
                                                                 backgroundColor:'#29282A', width:'45%', justifyContent:'center'
                                                             }}
                                                         >
-                                                            <Text style={{textAlign: 'center', color:'red', fontWeight:'bold'}}>{name}</Text>
+                                                            <Text style={{textAlign: 'center', color:'red', fontWeight:'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{name}</Text>
                                                             <View style={{flexDirection:'row',  justifyContent:'center', marginTop:3}}>
-                                                                <Text style={{fontWeight:'bold', textAlign:'center', color: '#fff'}}>Set:</Text>
-                                                                <Text style={{marginLeft: 3,textAlign:'center', color: '#fff'}}>{setName}</Text>
+                                                                <Text style={{fontWeight:'bold', textAlign:'center', color: '#fff', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Set:</Text>
+                                                                <Text style={{marginLeft: 3,textAlign:'center', color: '#fff',fontSize: (Platform.isPad ? WIDTH*.02 : 12)  }}>{setName}</Text>
                                                             </View>
                                                         </View>
 
                                                     )}
                                                     <View style={{flex:1, borderWidth:2, borderColor:'#fff'}}>
                                                         <View style={{flexDirection:'row', padding:5, alignContent:'center', justifyContent:'space-around', backgroundColor: '#931414', height: 35, borderWidth:3, borderColor:'#fff'}}>
-                                                            <Text style={{fontWeight:'bold',textAlign:'center',width:'48%', color: '#fff',alignSelf:'center'}}>Weight:</Text>
-                                                            <Text style={{fontWeight:'bold',textAlign:'center',width:'48%', color: '#fff',alignSelf:'center'}}>Reps:</Text>
+                                                            <Text style={{fontWeight:'bold',textAlign:'center',width:'48%', color: '#fff',alignSelf:'center', fontSize: (Platform.isPad ? WIDTH*.02 : 12) }}>Weight:</Text>
+                                                            <Text style={{fontWeight:'bold',textAlign:'center',width:'48%', color: '#fff',alignSelf:'center', fontSize: (Platform.isPad ? WIDTH*.02 : 12) }}>Reps:</Text>
                                                         </View>
                                                         <View style={{flexDirection:'row', padding:5, alignContent:'center', justifyContent:'space-around', height: 40, borderWidth:2, borderColor:'#fff'}}>
-                                                            <Text style={{textAlign:'center',width:'48%', color: '#fff', borderWidth:1, borderColor:'#fff', alignSelf:'center'}}>{weightUsed} lbs</Text>
-                                                            <Text style={{textAlign:'center',width:'48%', color: '#fff', borderWidth:1, borderColor:'#fff', alignSelf:'center'}}>{repsHit}</Text>
+                                                            <Text style={{textAlign:'center',width:'48%', color: '#fff', borderWidth:1, borderColor:'#fff', alignSelf:'center', fontSize: (Platform.isPad ? WIDTH*.02 : 12) }}>{weightUsed} lbs</Text>
+                                                            <Text style={{textAlign:'center',width:'48%', color: '#fff', borderWidth:1, borderColor:'#fff', alignSelf:'center', fontSize: (Platform.isPad ? WIDTH*.02 : 12) }}>{repsHit}</Text>
                                                         </View>
                                                     </View>
 

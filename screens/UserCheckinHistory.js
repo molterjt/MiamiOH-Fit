@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    AsyncStorage, Text, View, ActivityIndicator, ScrollView,
+    AsyncStorage, Text, View, ActivityIndicator, ScrollView, Platform,
     TouchableOpacity, Dimensions, Alert, RefreshControl
 } from 'react-native';
 import {Ionicons,MaterialCommunityIcons } from '@expo/vector-icons';
@@ -166,7 +166,7 @@ class UserCheckinHistory extends React.Component{
                         borderWidth: 2,
                         alignItems: 'center',
                     }}>
-                        <Text style={{fontStyle: 'italic', fontWeight: 'bold', fontSize: 16}}>Workout Completion History</Text>
+                        <Text style={{fontStyle: 'italic', fontWeight: 'bold', fontSize: (Platform.isPad ? WIDTH*.03 : 16), }}>Workout Completion History</Text>
                     </View>
                     {workoutsVisible
                         ?
@@ -183,19 +183,19 @@ class UserCheckinHistory extends React.Component{
                                         onPress={() => this._deleteThisCheckin(id)}
                                     >
                                         <Ionicons
-                                            name={"ios-remove-circle-outline"} type={"Ionicons"} size={25} color={'black'} style={{justifyContent: 'flex-end'}}
+                                            name={"ios-remove-circle-outline"} type={"Ionicons"} size={Platform.isPad ? WIDTH*.03 : 28} color={'black'} style={{justifyContent: 'flex-end'}}
                                         />
                                     </TouchableOpacity>
                                     <View style={{flexDirection: 'row', display: 'flex'}}>
-                                        <Text style={{fontSize: 16, fontWeight: 'bold', color: '#931414', marginBottom: 4}}>{obj.title}</Text>
+                                        <Text style={{fontSize: (Platform.isPad ? WIDTH*.03 : 16), fontWeight: 'bold', color: '#931414', marginBottom: 4}}>{obj.title}</Text>
                                     </View>
                                     <View style={{flexDirection:'row', marginTop: 5, marginBottom:5}}>
-                                        <Text style={{fontWeight: 'bold'}}>TimeStamp: </Text>
-                                        <Text style={{fontStyle: 'italic'}}>{moment(createdAt).format('M/D/Y')} at {moment(createdAt).format('hh:mm a')}</Text>
+                                        <Text style={{fontWeight: 'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>TimeStamp: </Text>
+                                        <Text style={{fontStyle: 'italic', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{moment(createdAt).format('M/D/Y')} at {moment(createdAt).format('hh:mm a')}</Text>
                                     </View>
                                     <View style={{flexDirection:'row', flexWrap:'wrap', marginBottom: 5}}>
-                                        <Text style={{fontWeight: 'bold'}}>Type: </Text>
-                                        <Text style={{fontStyle: 'italic'}}>{obj.type.map(({title}) => title).join(', ')}</Text>
+                                        <Text style={{fontWeight: 'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Type: </Text>
+                                        <Text style={{fontStyle: 'italic', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{obj.type.map(({title}) => title).join(', ')}</Text>
                                     </View>
                                     <WorkoutRecord userId={users.id} timeCheck={timeCheck} workoutId={obj.id} workoutTitle={obj.title}/>
                                 </View>
@@ -210,9 +210,9 @@ class UserCheckinHistory extends React.Component{
                                         onPress={ () => this._toggleWorkoutsVisible(!this.state.workoutsVisible)
                                         }
                                     >
-                                        <Text style={{textAlign:"center", color: "#931414", marginRight: 6}}>Hide Workouts Records</Text>
+                                        <Text style={{textAlign:"center", color: "#931414", marginRight: 6, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Hide Workouts Records</Text>
                                         <MaterialCommunityIcons
-                                            name={"chevron-double-up"} type={"MaterialCommunityIcons"} size={35} color={'#931414'}
+                                            name={"chevron-double-up"} type={"MaterialCommunityIcons"} size={Platform.isPad ? WIDTH*.04 : 35} color={'#931414'}
                                             style={{textAlign:"center"}}
                                         />
                                     </TouchableOpacity>
@@ -231,9 +231,9 @@ class UserCheckinHistory extends React.Component{
                                     onPress={ () => this._toggleWorkoutsVisible(!this.state.workoutsVisible)
                                     }
                                 >
-                                    <Text style={{textAlign:"center", color: "#931414", marginRight: 6}}>Show Workout Records</Text>
+                                    <Text style={{textAlign:"center", color: "#931414", marginRight: 6, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Show Workout Records</Text>
                                     <MaterialCommunityIcons
-                                        name={"chevron-double-down"} type={"MaterialCommunityIcons"} size={35} color={'#931414'}
+                                        name={"chevron-double-down"} type={"MaterialCommunityIcons"} size={Platform.isPad ? WIDTH*.04 : 35} color={'#931414'}
                                         style={{textAlign:"center"}}
                                     />
                                 </TouchableOpacity>
@@ -254,7 +254,7 @@ class UserCheckinHistory extends React.Component{
                         borderWidth: 2,
                         alignItems: 'center',
                     }}>
-                        <Text style={{fontStyle: 'italic', fontWeight: 'bold', fontSize: 16}}>GroupFit Class Check-In History</Text>
+                        <Text style={{fontStyle: 'italic', fontWeight: 'bold', fontSize: (Platform.isPad ? WIDTH*.03 : 16)}}>GroupFit Class Check-In History</Text>
                     </View>
                     {
                         classesVisible
@@ -275,21 +275,21 @@ class UserCheckinHistory extends React.Component{
                                                 onPress={() => this._deleteThisCheckin(id)}
                                             >
                                                 <Ionicons
-                                                    name={"ios-remove-circle-outline"} type={"Ionicons"} size={25} color={'black'} style={{ justifyContent: 'flex-end'}}
+                                                    name={"ios-remove-circle-outline"} type={"Ionicons"}size={Platform.isPad ? WIDTH*.03 : 25} color={'black'} style={{ justifyContent: 'flex-end'}}
                                                 />
                                             </TouchableOpacity>
                                             <View style={{padding:2, flexDirection: 'row', display: 'flex', marginTop:10}}>
-                                                <Text style={{fontWeight: 'bold', color: '#931414', fontSize: 16}}>{obj.title}</Text>
-                                                <Text style={{position:'absolute', right: 0, fontSize: 12}}>{obj.time}</Text>
+                                                <Text style={{fontWeight: 'bold', color: '#931414', fontSize: (Platform.isPad ? WIDTH*.03 : 16), marginRight:6, marginTop: 8}}>{obj.title}</Text>
+                                                <Text style={{position:'absolute', right: 0, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{obj.time}</Text>
                                             </View>
                                             <View style={{padding:2, flexDirection: 'row', display: 'flex'}}>
-                                                <Text style={{fontWeight:'bold'}}>Type: </Text>
-                                                <Text style={{fontStyle: 'italic'}}> {obj.category.map(({title}) => title).join(', ')}</Text>
-                                                <Text style={{position:'absolute', right: 0, fontSize: 12}}>{obj.days.map(({name}) => name).join(', ')}</Text>
+                                                <Text style={{fontWeight:'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Type: </Text>
+                                                <Text style={{fontStyle: 'italic', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}> {obj.category.map(({title}) => title).join(', ')}</Text>
+                                                <Text style={{position:'absolute', right: 0, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{obj.days.map(({name}) => name).join(', ')}</Text>
                                             </View>
                                             <View style={{padding:2, flexDirection: 'row', display: 'flex'}}>
-                                                <Text style={{fontWeight:'bold'}}>TimeStamp: </Text>
-                                                <Text style={{fontStyle: 'italic'}}>{moment(createdAt).format('M/D/Y')} at {moment(createdAt).format('hh:mm:ss a')}</Text>
+                                                <Text style={{fontWeight:'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>TimeStamp: </Text>
+                                                <Text style={{fontStyle: 'italic', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{moment(createdAt).format('M/D/Y')} at {moment(createdAt).format('hh:mm:ss a')}</Text>
                                             </View>
                                         </View>
                                     ))
@@ -303,9 +303,9 @@ class UserCheckinHistory extends React.Component{
                                         onPress={ () => this._toggleClassesVisible(!this.state.classesVisible)
                                         }
                                     >
-                                        <Text style={{textAlign:"center", color: "#931414", marginTop: 8}}>Hide GroupFit Records</Text>
+                                        <Text style={{textAlign:"center", color: "#931414", marginTop: 8, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Hide GroupFit Records</Text>
                                         <MaterialCommunityIcons
-                                            name={"chevron-double-up"} type={"MaterialCommunityIcons"} size={35} color={'#931414'}
+                                            name={"chevron-double-up"} type={"MaterialCommunityIcons"} size={Platform.isPad ? WIDTH*.04 : 35} color={'#931414'}
                                             style={{textAlign:"center"}}
                                         />
                                     </TouchableOpacity>
@@ -324,9 +324,9 @@ class UserCheckinHistory extends React.Component{
                                         onPress={ () => this._toggleClassesVisible(!this.state.classesVisible)
                                         }
                                     >
-                                        <Text style={{textAlign:"center", color: "#931414", marginTop: 8}}>Show GroupFit Records</Text>
+                                        <Text style={{textAlign:"center", color: "#931414", marginTop: 8, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Show GroupFit Records</Text>
                                         <MaterialCommunityIcons
-                                            name={"chevron-double-down"} type={"MaterialCommunityIcons"} size={35} color={'#931414'}
+                                            name={"chevron-double-down"} type={"MaterialCommunityIcons"}size={Platform.isPad ? WIDTH*.04 : 35} color={'#931414'}
                                             style={{textAlign:"center"}}
                                         />
                                     </TouchableOpacity>
@@ -345,7 +345,7 @@ class UserCheckinHistory extends React.Component{
                         borderWidth: 2,
                         alignItems: 'center',
                     }}>
-                     <Text style={{fontStyle: 'italic', fontWeight: 'bold', fontSize: 16}}>Event Check-In & Registration History</Text>
+                     <Text style={{fontStyle: 'italic', fontWeight: 'bold', fontSize: (Platform.isPad ? WIDTH*.03 : 16)}}>Event Check-In & Registration History</Text>
                     </View>
                     {
                         this.state.eventsVisible
@@ -366,20 +366,20 @@ class UserCheckinHistory extends React.Component{
                                                     onPress={() => this._deleteThisCheckin(id)}
                                                 >
                                                     <Ionicons
-                                                        name={"ios-remove-circle-outline"} type={"Ionicons"} size={25} color={'black'} style={{ justifyContent: 'flex-end'}}
+                                                        name={"ios-remove-circle-outline"} type={"Ionicons"} size={Platform.isPad ? WIDTH*.03 : 25} color={'black'} style={{ justifyContent: 'flex-end'}}
                                                     />
                                                 </TouchableOpacity>
-                                                <View style={{padding:2,flexDirection: 'row', display: 'flex', marginTop:10}}>
-                                                    <Text style={{fontWeight: 'bold', color: '#931414', fontSize: 16}}>{obj.name}</Text>
-                                                    <Text style={{position:'absolute', right: 0, fontSize: 12}}>Event Date: {obj.date}</Text>
+                                                <View style={{padding:2,flexDirection: 'row', display: 'flex', marginTop:10, flexWrap:'wrap'}}>
+                                                    <Text style={{fontWeight: 'bold', color: '#931414', fontSize: (Platform.isPad ? WIDTH*.03 : 16), marginRight:8, marginTop: 12}}>{obj.name}</Text>
+                                                    <Text style={{position:'absolute', right: 0, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Event Date: {obj.date}</Text>
                                                 </View>
                                                 <View style={{padding:2, flexDirection: 'row', display: 'flex', flexWrap:'wrap'}}>
-                                                    <Text style={{fontWeight:'bold'}}>Description: </Text>
-                                                    <Text style={{fontStyle: 'italic'}}> {obj.description}</Text>
+                                                    <Text style={{fontWeight:'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Description: </Text>
+                                                    <Text style={{fontStyle: 'italic', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}> {obj.description}</Text>
                                                 </View>
                                                 <View style={{padding:2, flexDirection: 'row', display: 'flex'}}>
-                                                    <Text style={{fontWeight:'bold'}}>TimeStamp: </Text>
-                                                    <Text style={{fontStyle: 'italic'}}>{moment(createdAt).format('M/D/Y')} at {moment(createdAt).format('hh:mm:ss a')}</Text>
+                                                    <Text style={{fontWeight:'bold', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>TimeStamp: </Text>
+                                                    <Text style={{fontStyle: 'italic', fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>{moment(createdAt).format('M/D/Y')} at {moment(createdAt).format('hh:mm:ss a')}</Text>
                                                 </View>
                                             </View>
                                         ))
@@ -393,9 +393,9 @@ class UserCheckinHistory extends React.Component{
                                             onPress={ () => this._toggleEventsVisible(!this.state.eventsVisible)
                                             }
                                         >
-                                            <Text style={{textAlign:"center", color: "#931414", marginTop: 8}}>Hide Events Records</Text>
+                                            <Text style={{textAlign:"center", color: "#931414", marginTop: 8, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Hide Events Records</Text>
                                             <MaterialCommunityIcons
-                                                name={"chevron-double-up"} type={"MaterialCommunityIcons"} size={35} color={'#931414'}
+                                                name={"chevron-double-up"} type={"MaterialCommunityIcons"} size={Platform.isPad ? WIDTH*.04 : 35} color={'#931414'}
                                                 style={{textAlign:"center"}}
                                             />
                                         </TouchableOpacity>
@@ -414,9 +414,9 @@ class UserCheckinHistory extends React.Component{
                                         onPress={ () => this._toggleEventsVisible(!this.state.eventsVisible)
                                         }
                                     >
-                                        <Text style={{textAlign:"center", color: "#931414", marginTop: 8}}>Show Events Records</Text>
+                                        <Text style={{textAlign:"center", color: "#931414", marginTop: 8, fontSize: (Platform.isPad ? WIDTH*.02 : 12)}}>Show Events Records</Text>
                                         <MaterialCommunityIcons
-                                            name={"chevron-double-down"} type={"MaterialCommunityIcons"} size={35} color={'#931414'}
+                                            name={"chevron-double-down"} type={"MaterialCommunityIcons"} size={Platform.isPad ? WIDTH*.04 : 35} color={'#931414'}
                                             style={{textAlign:"center"}}
                                         />
                                     </TouchableOpacity>

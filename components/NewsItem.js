@@ -62,27 +62,27 @@ const styles = StyleSheet.create({
     title: {
         paddingLeft: 10,
         paddingTop: 5,
-        fontSize: (Platform.isPad ? WIDTH/35 : 18),
+        fontSize: (Platform.isPad ? WIDTH/35 : 16),
         fontWeight: 'bold',
         color: '#fff'
     },
     instructor: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: (Platform.isPad ? WIDTH/40 : 14),
+        fontSize: (Platform.isPad ? WIDTH/40 : 12),
         color: '#fff'
     },
     blurb: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: (Platform.isPad ? WIDTH/40 : 14),
+        fontSize: (Platform.isPad ? WIDTH/40 : 12),
         fontStyle: 'italic',
         color: '#fff'
     },
     location: {
         paddingLeft: 10,
         marginTop: 5,
-        fontSize: (Platform.isPad ? WIDTH/40 : 14),
+        fontSize: (Platform.isPad ? WIDTH/40 : 12),
         color: '#fff'
     },
 
@@ -90,9 +90,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent:'center',
         alignSelf:'center',
-
-        height: (Platform.isPad ? HEIGHT*.18 : HEIGHT*.20),
-        width: (Platform.isPad ? WIDTH*.16 : WIDTH*.22),
+        height: (Platform.isPad ? HEIGHT*.18 : HEIGHT*.18),
+        width: (Platform.isPad ? WIDTH*.16 : WIDTH*.2),
         backgroundColor: 'transparent',
         borderColor: '#fff',
         borderWidth: 1,
